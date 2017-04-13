@@ -1,0 +1,155 @@
+=============================================================================
+     KEYS README for vasFMC - (c) by Alex Wemmer <alex@wemmer.at>
+     http://www.vas-project.org
+=============================================================================
+
+
+This README contains a reference to all key inputs used by vasFMC.
+The key inputs are only processed if the respective window has focus.
+
+
+
+=============================================================================
+
+* Primary Flight Display - PFD
+
+    Alt + Arrow Keys (+Shift)       Move the window by pixel or 10 pixel.
+    Left Mouse Button
+
+    Alt + U                         Place the window on the upper left corner
+                                    of the screen. This is useful if the
+                                    window is located outside your screen.
+
+    Alt + K                         En/Disable the keep on top mode.
+
+    Alt + Arrow + Control (+Shift)  Resize the window.
+    Left Mouse Button + Control
+
+    Alt + Q                         Adjust height to make window quadratic.
+
+
+
+=============================================================================
+
+* Navigation Display - ND
+
+    Alt + Arrow Keys (+Shift)       Move the window by pixel or 10 pixel.
+    Left Mouse Button
+
+    Alt + U                         Place the window on the upper left corner
+                                    of the screen. This is useful if the
+                                    window is located outside your screen.
+
+    Alt + K                         En/Disable the keep on top mode.
+
+    Alt + Arrow + Control (+Shift)  Resize the window.
+    Left Mouse Button + Control
+
+    Alt + Q                         Adjust height to make window quadratic.
+
+    Alt + M (+Shift)                Switch between the different modes
+                                    ARC, ROSE, VOR, ILS, PLAN.
+                                    Shift reverses the order.
+
+    Alt + L                         Switch through the left pointer modes
+                                    NONE, ADF1, VOR1.
+
+    Alt + R                         Switch through the right pointer modes
+                                    NONE, ADF2, VOR2.
+                                    Note: ADF2 may not work.
+
+    Alt + T                         En/Disable TCAS.
+
+    Alt + A                         En/Disable display of surrounding aiports.
+
+    Alt + V                         En/Disable display of surrounding VORs.
+
+    Alt + N                         En/Disable display of surrounding NDBs.
+
+    Alt + D                         En/Disable display of shorelines.
+
+    Alt + W                         Toggle HDG and TRK display in B-style.
+
+    Alt + +/-                       In/Decrease display range.
+    Mousewheel
+
+
+
+=============================================================================
+
+Electronic Centralized Aircraft Monitoring - ECAM
+
+    Alt + Arrow Keys (+Shift)       Move the window by pixel or 10 pixel.
+    Left Mouse Button
+
+    Alt + U                         Place the window on the upper left corner
+                                    of the screen. This is useful if the
+                                    window is located outside your screen.
+
+    Alt + K                         En/Disable the keep on top mode.
+
+    Alt + Arrow + Control (+Shift)  Resize the window.
+    Left Mouse Button + Control
+
+    Alt + Q                         Adjust height to make window quadratic.
+
+
+
+=============================================================================
+
+* Flight Control Unit - FCU
+
+    Alt + Arrow Keys (+Shift)       Move the window by pixel or 10 pixel.
+    Left Mouse Button
+
+    Alt + U                         Place the window on the upper left corner
+                                    of the screen. This is useful if the
+                                    window is located outside your screen.
+
+    Alt + K                         En/Disable the keep on top mode.
+
+
+
+=============================================================================
+
+* Multifunction Control Display Unit - MCDU
+
+    Alt + Arrow Keys (+Shift)       Move the window by pixel or 10 pixel.
+    Left Mouse Button
+
+    Alt + U                         Place the window on the upper left corner
+                                    of the screen. This is useful if the
+                                    window is located outside your screen.
+
+    Alt + K                         En/Disable the keep on top mode.
+
+    Alt + D                         En/Disable the display only mode.
+
+    A-Z 1-9 .+-/ Space              Normal text input.
+
+    Backspace                       Same as the CLR button.
+                                    Note: If you press the MCDU CLR button
+                                    with the mouse longer than 500ms, the 
+                                    whole scratchpad will be cleared at once.
+
+    *                               Same as the OFY (overfly) button.
+
+    Arrow Up/Down                   Same as the ^ and v buttons.
+    Page Up/Down
+
+    Arrow Left/Right                Same as the <- and -> buttons.
+    Home/End
+
+    F1-F6                           Left line select key 1 to 6.
+
+    F7-F12                          Right line select key 1 to 6.
+
+    Shift + F1-F12                  Same as the buttons DIR to MCDU MENU
+                                    (upper two rows of page select keys).
+
+    Control + F1                    Same as the AIRPORT button.
+
+    Control + F2                    Same as the PASTE button.
+    Insert
+
+    Mousewheel                      Scroll MCDU display up/down when scrollable.

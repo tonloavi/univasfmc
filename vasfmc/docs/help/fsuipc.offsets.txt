@@ -1,0 +1,338 @@
+=============================================================================
+     FSUIPC offsets for vasFMC - (c) by Alex Wemmer <alex@wemmer.at>
+     http://www.vas-project.org
+=============================================================================
+
+
+=============================================================================
+    ATTENTION: These offsets are only useable with a registered FSUIPC 
+=============================================================================
+
+
+If you have a FSUIPC version greater or equal to 3.779 (FS9) or 4.25 (FSX)
+you can copy the "vasfmc.mcro" file, which can be found in the vasFMC
+installation directory, to the flightsimulator "Modules" directory. You must
+restart or reload the FSUIPC stuff in the flightsim to make this effective.
+Thereafter the predefined vasFMC controls are available in the buttons and
+keys assignment tabs of the FSUIPC option dialog.
+
+Just select the key or joystick button you want to configure, select the
+vasFMC control you want to assign and you are finished.
+
+
+=============================================================================
+
+In case you have a FSUIPC version lower than 3.779 or 4.25 or don't want to
+use the predefined vasFMC controls, you may manually assign the following
+offsets to your buttons and keys.
+
+Start Offset = 0x6dd0 (Note: 0x stands for hexadecimal)
+
+* Offset 0x0      ND left control 
+* Offset 0x6      ND right control 
+
+    Possible values:
+
+    +1=increase range
+    -1=decrease range
+
+    +2=next mode
+    -2=previous mode
+
+    +10=range 1 (config dependent)
+    +11=range 2 (config dependent)
+    +12=range 3 (config dependent)
+    +13=range 4 (config dependent)
+    +14=range 5 (config dependent)
+    +15=range 6 (config dependent)
+    +16=range 7 (config dependent)
+    +17=range 8 (config dependent)
+    +18=range 9 (config dependent)
+
+    +20=mode ILS rose
+    +21=mode VOR rose
+    +22=mode NAV rose
+    +23=mode NAV arc
+    +24=mode PLAN
+    
+    +50=toggle left arrow 
+    +51=toggle right arrow
+    +52=left arrow off
+    +53=left arrow NDB
+    +54=left arrow VOR
+    +55=right arrow off
+    +56=right arrow NDB
+    +57=right arrow VOR
+
+    +60=toggle airports
+    +61=toggle VORs
+    +62=toggle NDBs
+    +63=toggle GEO data
+    +64=toggle TCAS
+    +65=toggle ND constraints
+
+    +70=toggle hide/show ND
+    +71=toggle en/disable ND keep on top
+    +72=make ND active window
+
+    +80=enable airport display
+    +81=disable airport display
+    +82=enable VOR display
+    +83=disable VOR display
+    +84=enable NDB display
+    +85=disable NDB display
+    +86=enable GEO data display
+    +87=disable GEO data display
+    +88=enable ND constraints display
+    +89=disable ND constraints display
+
+
+=============================================================================
+
+* Offset 0x1      PFD left control     
+* Offset 0x7      PFD right control     
+
+    Possible values:
+
+    +70=toggle hide/show PFD
+    +71=toggle en/disable PFD keep on top
+    +72=make PFD active window
+    +73=toggle altimeter display (hpa, inches)
+    +74=toggle metric altimeter display
+    +75=toggle PFD ILS display
+
+    +80=set altimeter display hpa
+    +81=set altimeter display inches
+    +82=enable metric altitude display
+    +83=disable metric altitude display
+    +84=enable PFD ILS display
+    +85=disable PFD ILS display
+
+
+=============================================================================
+
+* Offset 0x2      CDU left control
+* Offset 0x8      CDU right control
+
+    Possible values:
+
+    1=key A
+    2=key B
+    3=key C
+    4=key D
+    5=key E
+    6=key F
+    7=key G
+    8=key H
+    9=key I
+    10=key J
+    11=key K
+    12=key L
+    13=key M
+    14=key N
+    15=key O
+    16=key P
+    17=key Q
+    18=key R
+    19=key S
+    20=key T
+    21=key U
+    22=key V
+    23=key W
+    24=key X
+    25=key Y
+    26=key Z
+
+    27=key 1
+    28=key 2
+    29=key 3
+    30=key 4
+    31=key 5
+    32=key 6
+    33=key 7
+    34=key 8
+    35=key 9
+    36=key 0
+
+    37=key CLR
+    38=key plus/minus
+    39=key plus/minus
+    40=key space
+    41=key period
+    42=key slash
+    43=key clipboard
+    44=key overfly
+
+    45=key LLSK1
+    46=key LLSK2
+    47=key LLSK3
+    48=key LLSK4
+    49=key LLSK5
+    50=key LLSK6
+    51=key RLSK1
+    52=key RLSK2
+    53=key RLSK3
+    54=key RLSK4
+    55=key RLSK5
+    56=key RLSK6
+
+    57=key PREV
+    58=key NEXT
+    59=key UP
+    60=key DOWN
+
+    61=key BTN1 (A-Style: DIR)
+    62=key BTN2 (A-Style: PROG)
+    63=key BTN3 (A-Style: PERF)
+    64=key BTN4 (A-Style: INIT)
+    65=key BTN5 (A-Style: DATA)
+    66=key BTN6 (A-Style: N/A)
+    67=key BTN7 (A-Style: F-PLAN)
+    68=key BTN8 (A-Style: RAD/NAV)
+    69=key BTN9 (A-Style: FUEL PRED)
+
+    +70=toggle hide/show CDU
+    +71=toggle en/disable CDU keep on top
+    +72=make CDU active window
+
+    80=key BTN10 (A-Style; SEC F-FPLN)
+    81=key BTN11 (A-Style: ATC COMM)
+    82=key BTN12 (A-Style: MCDU/MENU)
+    83=key BTN13 (A-Style: AIRPORT)
+    84=key BTN14 (A-Style: N/A (paste))
+
+
+=============================================================================
+
+* Offset 0x3      FMC Control
+
+    Possible values:
+
+    +30=style A
+    +31=style B
+
+    +50=previous checklist item
+    +51=next checklist item
+
+
+=============================================================================
+
+* Offset 0x4      ECAM Control            
+
+    Possible values:
+
+    +70=toggle hide/show ECAM
+    +71=toggle en/disable ECAM keep on top
+    +72=make ECAM active window
+
+
+=============================================================================
+
+* Offset 0x5      FCU Control            
+
+    Possible values:
+
+    Note: "+ bug" means, that the AP value is set to the currently flown value.
+
+    +1=set NAV lock
+    +3=set HDG lock + bug
+    +4=set HDG lock
+    +7=activate VOR/LOC lock
+    +9=activate APP lock
+    +11=set ALT hold + bug
+    +12=set ALT hold
+    +15=set V/S lock + zero
+    +16=set V/S lock + bug
+
+    +20=FD on
+    +21=FD off
+    +22=FD toggle
+    +23=AP on
+    +24=AP off
+    +25=AP toggle
+    +26=A/THR arm
+    +27=A/THR engage
+    +28=A/THR engage speed
+    +29=A/THR engage mach
+    +30=A/THR engage N1
+    +31=A/THR toggle speed/mach
+    +32=A/THR speed mode
+    +33=A/THR mach mode
+    +34=A/THR off
+    +35=A/THR arm toggle
+
+    +40=set left altimeter STD mode on
+    +41=set left altimeter STD mode off
+    +42=set right altimeter STD mode on
+    +43=set right altimeter STD mode off
+
+    +50=FPV mode on
+    +51=FPV mode off
+    +52=FPV mode toggle
+
+    +60=FL change mode on
+    +61=FL change mode off
+    +62=FL change mode toggle
+
+    +70=toggle hide/show FCU
+    +71=toggle en/disable FCU keep on top
+    +72=make FCU active window
+
+
+To use these offsets do the following:
+
+* Open the FSUIPC dialog within the MS flightsim.
+* Go to the "Buttons + Switches" or "Key Presses" tab.
+* Set the key or button you want to program.
+* In the "Control sent when keys/buttons pressed" combo box choose
+    "Offset Byte Set".
+* Enter the offset you want to program, e.g. if you want to assign an input
+    for the left navaid arrow you would enter x6dd0 as the offset.
+* Enter the parameter according to the control you want to program, e.g. for
+    the left navaid arrow you would enter +50 as the parameter. Be sure
+    to *not* enter the parameter with a 0x prefix!!
+* Click the "Confirm" button.
+* Repeat those steps for all controls you want to program.
+
+
+=============================================================================
+
+The following values are written back into the flightsim to the specified
+FSUIPC offsets by vasFMC:
+
+* Offset 0x7A60
+
+    Bit
+    0   FD engaged
+    1   AP engaged
+    2   ATHR armed
+    3   ATHR engaged
+
+
+* Offset 0x7A61
+
+    Bit
+    0   ATHR speed mode
+    1   ATHR mach mode
+    2   ATHR N1 mode
+
+
+* Offset 0x7A62
+
+    Bit
+    0   AP HDG mode
+    1   AP LNAV mode
+    2   AP LOC mode
+
+
+* Offset 0x7A63
+
+    Bit
+    0   AP VS mode
+    1   AP FLCH mode
+    2   AP VNAV mode
+    3   AP ALT hold mode
+    4   AP APP mode
+    5   AP FPA mode
+
+* Offset 0x7A64 to 0x7A7F are allocated but yet unused.

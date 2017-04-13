@@ -1,0 +1,75 @@
+=========================================================================
+ CPFLIGHT vasFMC Integration Manual - (c) by Alex Wemmer <alex@wemmer.at>
+ http://www.vas-project.org
+=========================================================================
+
+vasFMC 2.x comes with direct support for CPFlight. To enable the CPFlight
+interface, go the MENU->SETTINGS page in the MCDU and switch on the
+CPFlight module. vasFMC will try open a connection to serial port COM1
+and to startup the CPFlight MCP. If you have a standard setup with the
+MCP at COM1 you can use the MCP with vasFMC right away.
+
+If you use another COM port or want to configure the MCP commands,
+quit vasFMC (also quit the flightsimulator when using the gauge version
+of vasFMC) and go to the "cfg" directory of the vasFMC installation, 
+you will find a cpflight.cfg file there.
+
+This file follows the vasFMC "key=value" format and supports the following
+configuration entries:
+
+  Key               Possible Values
+  ---               ---------------
+  port              The serial port the CPFlight MCP is connected to.
+                    COM1, COM2, etc.
+
+  vor1              Mapping of the VOR1 input, possible values:
+                    vor_left, vor_right, 
+                    qnh_left, qnh_right,
+                    mapmode_left, mapmode_right, 
+                    maprange_left, maprange_right
+
+  vor2              Mapping of the VOR2 input, possible values:
+                    vor_left, vor_right,
+                    qnh_left, qnh_right,
+                    mapmode_left, mapmode_right, 
+                    maprange_left, maprange_right
+
+Besides the keys listed above, the MCP keycodes as specified in the 
+CPFlight documentation (e.g. the code K025 stands for MCP HDG SEL) can
+be assigned to vasFMC functions as specified in the fsuipcs.offset.txt
+document, which is also located in the vasFMC "doc" directory.
+
+For example, if you want to assign the MCP key code "K025" to the 
+vasFMC FCU control "set HDG lock + bug", which would be FSUIPC offset 
+0x6dd5 with a value of +3 (as specified in the fsuipc.offset.txt doc),
+you can add the following line to the vasFMC cpflight.cfg file:
+
+K025=FCU:3
+
+That line means, that the value 3 will be written to the vasFMC FCU 
+FSUIPC offset whenever the HDG button on the CPFlight MCP is pressed.
+
+The following vasFMC FSUIPC offset names are supported by the 
+vasFMC CPFlight module:
+
+ND_LEFT         equals the vasFMC FSUIPC offset 0x6dd0
+PFD_LEFT        equals the vasFMC FSUIPC offset 0x6dd1
+CDU_LEFT        equals the vasFMC FSUIPC offset 0x6dd2
+FMC             equals the vasFMC FSUIPC offset 0x6dd3
+ECAM            equals the vasFMC FSUIPC offset 0x6dd4
+FCU             equals the vasFMC FSUIPC offset 0x6dd5
+ND_RIGHT        equals the vasFMC FSUIPC offset 0x6dd6
+PDF_RIGHT       equals the vasFMC FSUIPC offset 0x6dd7
+CDU_RIGHT       equals the vasFMC FSUIPC offset 0x6dd8
+
+Another example: If you want the MCP key code "K034", which stands 
+for "MCP CWS A", to toggle the metric altitude display of the 
+left vasFMC PFD, add the following line to the cpflight.cfg file:
+
+K034=PFD_LEFT:74
+
+The value 74 is derived from the fsuipc.offset.txt document.
+
+Attention: Make sure, that each key code only occurs once in the file!
+
+=========================================================================

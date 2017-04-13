@@ -1,0 +1,52 @@
+=============================================================================
+     CREDITS for vasFMC - (c) by Alex Wemmer <alex@wemmer.at>
+     http://www.vas-project.org
+=============================================================================
+
+I want to thank the following people (listed in no particular order) 
+for helping me with the VAS project:
+
+* All those who supported the VAS project with their donation
+* Rene Billiani (Splashscreen design)
+* Martin Böhme (MSFS Gauge)
+* Jörg Hermann (Mac support and usability advice)
+* Philipp Münzel (Linux support and new X-Plane plugin)
+* Klaus Hörcher (Flightgear support)
+* Uwe Buchholz (Fuel prediction, VNAV, performance calculations)
+* Peter Eckel for the generous donation of a svn server
+* Ricardo Carvalho (Graphics)
+* Pete Dowson (FSUIPC access)
+* Bernhard Harb (first X-Plane plugin idea and help)
+* Christoph Piel (Airbus insight)
+* Frank Helmschrott (Homepage and much more).
+* Maria & Emmanuel Lomba for their portuguese translation of the README.
+* Mario Mergelsberg for his german translation of the README.
+* Peter Orosz for his SID/STAR editor.
+* Michal Rok (access to www.vroute.net)
+* Mark Foti for his easyFBW sourcecode.
+* Francisco Urquia for his spanish translation of the README.
+* The VATSIM members and many other pilots for testing&feedback,
+    for example Michael Krause, Christoph Winkler, Andreas Fuchs, Phil Bauer, 
+    Mark Foti, Clemens Moritz, Gottfried Reeder, Rene Billiani, Norbert Pflug,
+    Bernhard Harb, Alex Zivanovic and many many others.
+* Jimmy Foong (sound files)
+* K. Mitchell (A320 freeware panel)
+* Guy Finney (vasFMC 2.x documentation)
+* Chris Spencer for porting simpleFMC 1.10 to Linux.
+* Many others I forgot to list here.
+
+
+During the long and daunting nights in the code camps the following countries
+unknowingly supported the development of vasFMC:
+    France - Cheese
+    Chile - Red wine
+    Scotland - Whisky
+    Germany - Liquid fruit, aka Schnaps
+
+While travelling between the development dungeons, the city council of
+Wiesbaden was generously donated EUR 15.00.
+
+No animal was harmed during the making of this software.
+
+Alex also wants to thank the .977 alternative channel crew for their 
+*great* music which accompanied me throught hours and hours of coding! :)

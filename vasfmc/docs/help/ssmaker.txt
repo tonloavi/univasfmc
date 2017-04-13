@@ -1,0 +1,168 @@
+====================================================
+	  SID/STAR MAKER FOR VAS FMC
+====================================================
+		       v1.0a
+
+
+   ============
+1) Introduction
+   ============
+   
+   This is a very easy tool to convert the FSNavigator Terminal Procedures 
+   (SID/STAR) into the vasFMC format. NOW you can use this very cool program
+   with approximately 1000 terminal procedures. You can also modify or create
+   new procedures!
+   
+   ATTENTION!
+   
+   The output file is very similar to the Flight1 ATR72-500 format but this is not
+   contain some parameters which are needed to ATR72 FMC! The converted files are
+   useless with ATR72.
+
+   >>> You can use this program AT YOUR OWN RISK!
+                                ~~~~~~~~~~~~~~~~~
+
+
+   ============
+2) Requirements
+   ============
+
+   SSMaker uses the Visual Basic 6 Runtime Environment. You have to download 
+   this library from "http://www.5star-shareware.com/Windows/Utilities/Libraries/vb6.html"
+   If any other *.DLL or *.OCX files are missing download them from the internet, use
+   Google :) All of them are free. If you downloaded a file, copy it to "...\windows\system32"
+   folder. After that click: START>Run and type:  regsvr32 filename.ocx or regsvr32 filename.dll
+   Of course the file name is the name of your file! This will register the file for
+   Windows.
+
+   SSMaker uses the FSNavigator program as the sources of SID/STAR files.
+   You need for FSNavigator to download the SID/STAR files from their server. You can
+   download the trial version from "www.fsnavigator.com" but you don't need for FSNavigator
+   to create your own terminal procedures.                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   =====
+3) USAGE
+   =====
+
+   Copy SSMaker.exe to your "..\vasFMC\navdata" directory.
+   Copy all FSNavigator SID/STAR files from "..\Flight Simulator 9\Modules\FSNavigator\SidStar"
+   folder to the same folder with SSMaker.exe (to the vasFMC\navdata directory). DO NOT
+   PUT THEM TO THE "SID" AND "STAR" FOLDER INSIDE THE "..\vasFMC\navdata" DIRECTORY!
+
+   Converter
+   ~~~~~~~~~
+
+   With the converter mode you can create vasFMC SID and STAR files from the FSNavigator files and
+   the program automatically put them to the "..\vasfmc\navdata\sid" and "..\vasfmc\navdata\star" folder.
+
+   Now you are ready to use your new procedures!
+
+   A little help with directory structure:
+ 
+   - Program Files
+   	- vasFmc
+		- cfg
+		- docs
+		- icon
+		- navdata   / (You have to copy here the SSMaker.exe and the FSNavigator SIDs/STARs)
+			- sid   / (The converter automatically copies here the converted files)
+			- star   / (The converter automatically copies here the converted files)
+		- pics
+
+
+   Create or Modify New Terminal Procedures
+   ========================================
+
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   					        !!!! WARNING !!!
+ 				        	----------------
+           >>>All changes are IMMIDIATELY take effect and they are ONLY undo by manual edit!<<<
+      (for example if you change the name of a SID this will immidiately apply in the original file)
+             I SUGGEST TO YOU MAKE A BACKUP FROM ALL TERMINAL PROCEDURE FILE BEFORE EDITING
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   There are five list in the main window:
+
+	1: List of the airports
+	2: List of the aviable SIDs of the selected airport
+	3: List of the aviable STARs of the selected airport
+        4: The legs of the selected SID or STAR
+	5: Waypoint finder (uses installed AIRAC database)
+
+   !Modify
+
+   To modify any data select a SID for example and use the right mouse button to show
+   the aviable options. You can apply this to modify any data in any field.
+
+   !Create
+
+   To create an absolute new airport with new procedures use the right mouse button in the Airport list.
+
+
+   QUESTIONS
+   =========
+
+   # Where can i get waypoint coordinates?
+        
+	1: There is an integrated waypoint finder in the SSMaker which help you
+	   to find the correct coordinates of a waypoint and make the procedure creation
+	   easier. This uses the installed AIRAC database WAYPOINTS file (waypoints.txt and navaids.txt).
+	
+	2: You can calculate Place/Bearing/Distance waypoints. Use right click in the Waypoint Finder List
+	   when you selected an item.	
+
+	3: Some of the airport charts contain the waypoint coordinates.
+        
+	4: You can download the PMDG or PSS or any other Terminal Procedure files
+	   from "www.navdata.at" for free and if you open these files with NOTEPAD
+	   or WORDPAD you can catch the waypoint coordinates you want.
+
+	VasFMC only supports the WAYPOINT TO WAYPOINT Terminal procedures. It can't fly
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	inbound or outbound radial to/from a FIX, etc.
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+   # Why didn't you make a 'PMDG to vasFMC' or 'PSS to vasFMC' SID/STAR converter? They
+     contain more and more up to date terminal procedures.
+
+     They uses very complicated SID/STAR format (in practice an own "script languge").
+     FSNavigator uses a very simple format. The only problem that some of SIDs and STARs are
+     out of date. This was the reason wherefore i made the SID/STAR maker not just the
+     converter.
+
+
+   !EXAMPLE!
+   =========
+
+   This is a small example tutorial how can you add SIMEG 5 ALFA Departure route to Copenhagen
+   Airport.
+   
+   - Open the SSMaker and select "Create Terminal Procedures to vasFMC"
+   - Type "EKCH" in Quick Search textbox above the airports list.
+   - Click with the Right Mouse Button in the SIDs LIST and select "Add new SID" option.
+   - Enter "SIMEG5A" to the name field. (I used the airport SID Charts to get the name)
+   - Enter "04L" to the Runway field. (I used the airport SID Charts to get the correct runway)
+   - Click on the "OK" button. Now the program takes "SIMEG5A" to the bottom of the SIDs list.
+   - Find it and click on it. As you can see the LEGS list is empty. Lets add the waypoints.
+   - You have different choices to get the waypoint coordinates (see above).
+   - Now see the EKCH SID RNAV SID chart for runway 04L. Can be downloaded from:
+     "http://www.slv.dk/Dokumenter/dscgi/ds.py/View/Collection-344"
+   - As you can see the first waypoint for SIMEG5A is "CH361". Type "CH361" to the WAYPOINT FINDER
+     Search Box in the SSMaker and press ENTER. Wait for the results.
+   - If everything went ok, you can see "CH361|5574540|12854440|" in the results list. Now
+     double click on it. Now it is added to the LEGS list.
+   - Find the second waypoint (CH362 - see the CHARTS) enter to the Waypoint finder etc...
+   - If you are ready just exit.
+
+   =====
+4) About
+   =====
+
+   This tool is created by Peter Orosz (alert1@citromail.hu)
+
+
+   08.04.2006 - version 1.0a (test)   
+   13.02.2006 - version 1.0 (test)
+

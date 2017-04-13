@@ -1,0 +1,574 @@
+=============================================================================
+     CHANGELOG for vasFMC - (c) by Alex Wemmer <alex@wemmer.at>
+     http://www.vas-project.org
+=============================================================================
+
+
+V2.0a9 - 19.04.2009
+-------------------
+* X-Plane 9.x fully supported on Mac OS X, Linux and Windows
+* Added support for Linux 32/64 and Mac OS X
+* Fixed some issues which could lead to crashes.
+* Added B-style ECAM/EICAS
+* Fixed ECAM TOGA N1 value display.
+* Added Level-D terminal procedure support. (Note: Navigraph has now added the
+    LEVEL-D procedures to the vasFMC AIRAC.)
+* Added "Heading to Altitude" waypoint support.
+* Removed turn circle display for A-style and made small changes to B-style.
+* Added Fly By Wire functionality derived from easyFBW (see MCDU MENU)
+    Note: The FBW is tuned for the Project Airbus A318 and A320 and may not work
+    correctly with other models.
+    Note2: The FBW will have problems when the frames drop a certain limit, the
+    more frames per second you have, the better the FBW will behave.
+* Fixed many many minor issues and made many small changes and additions.
+* Added support for FCU TRK/FPA mode.
+* Implemented proper A-style flaps handling for "1", "1+F" and "2" according to
+    airspeed.
+* Added pushback functionality to MCDU (see MENU -> PUSHBACK).
+* Added callouts for outermarker, 10000ft and A-style flaps 1, 2 and 3.
+* Added left/right PFD, ND and MCDU support to standalone version, note the
+    additional FSUIPC offsets.
+    Note: You will need a fast PC to display both left- and right-hand display.
+    Note2: You can switch between the FCU "left only" and "full" mode via the
+    MCDU MENU->SETTINGS page.
+* Added TERR button to FCU for geo data (coastlines) and removed the setting
+    from the MCDU SETTINGS MENU.
+* Moved items from the context menus to the MCDU MENU pages.
+* Added FONT page to MCDU MENU->SETTINGS, the font sizes can now be controlled
+    there.
+* Added customizable aircraft config files which can be loaded via the
+    MCDU MENU-> FMGC page.
+    Note: The aircraft configs are located in the "aircraft_data" subdirectory.
+* Added direct support for CPFlight MCP with configurable commands (see MCDU
+    MENU->INTERFACES and cpflight.txt).
+* Added lots of new vasFMC FSUIPC offsets, please note that some offsets have
+    changed!
+* Implemented flight level change autopilot mode with speed command (alias OP
+    CLB).
+* Implemented FD takeoff mode (SRS), when switching on the flightdirector on
+    ground, the takeoff mode is armed. Note: When the takeoff mode is armed,
+    pressing HDG or NAV arms the lateral mode to  be used above the
+    acceleration altitude.
+* Added inital and maximum climb thrust to be entered on the MCDU PERF page.
+    Note: The climb thrust will reach the maximum value at 30000ft.
+* Made some performance enhancements regarding the route calculations
+    (projection, etc.)
+* Added opencockpits.com compatible IOCP Server which enables vasFMC to receive
+    commands from IOCP clients (see MCDU MENU->INTERFACES and iocp.txt).
+* Added FMOD lib (http://www.fmod.org) for the FMC sounds. The sound output
+    problems should be history now.
+    FMOD Sound System, copyright © Firelight Technologies Pty, Ltd., 1994-2007.
+* Added vasFMC connection mode (single, master and slave), see MCDU
+    MENU->INTERFACES page. A vasFMC instance set to slave mode can be connected
+    to another vasFMC instance set to master mode.
+* Did a massive code cleanup and implemented refresh load balancing to stabalize
+    framerates.
+* Removed the context menus and moved setup functions to MCDU MENU pages
+    DISPLAY 1 & 2.
+* Added TCAS standby mode, the modes now are: OFF, STANDBY, ON
+* Enhanced flight director and speed trend smoothing.
+* Added basic takeoff and landing checklists to A-style ECAM.
+* The TOD (top of descent) calculation now takes the next waypoint with a "at"
+    or "at or below" altitude restriction into account.
+* Move distance to TOD display to CRZ PERF page.
+* After takeoff, the flight director will now change to "RWY TRK" mode, which
+    aims to keep the aircraft's track aligned with the runway.
+* Added Airbus throttle mode which is disabled by default and can be enabled on
+    the MCDU MENU -> SETTING page. (The vasFMC thrust mode is mandatory.)
+    When enabled, the joystick thrust lever will behave like a real airbus with
+    CL, FLX/MCT and TOGA detents. The joystick throttle lever will always
+    directly command the requested N1, even if the A/THR is off.
+* Added more checks when inserting SIDs, STARs, etc. to avoid unwanted double
+    routings.
+* Added click sounds and callouts for Airbus throttle lever detents and thrust
+    modes.
+* Added basic A-style approach phase to the MCDU PERF pages. For now only the
+    ILS will be tuned if the arrival runway has an ILS and the speed will be set
+    to green dot speed.
+* Added A-style "LAND", "FLARE" and "ROLLOUT" and "LOC/GS capture" FMA modes.
+* Implemented "heading to intercept" waypoint support.
+* Added flight mode tracker to track the flight phases. Various FMC modules and
+    modes now depend on the current phase of flight.
+* Added OOOI (out/off/on/in) times to MCDU MENU -> ACARS -> OOOI
+* Changed CDU font to Lucida Sans Typewriter.
+* The INIT B page is now only accessible when on ground and engines not running.
+* The INIT A page is now only accessible in PREFLIGHT and TAXI flight phases.
+* Inflight the GW and FOB values can now be seen on the new rudimentary FUEL
+    PREF page.
+* Changed lots of autopilot and autothrust details.
+* Added separate acceleration and thrust reduction altitudes now on the PERF
+    TAKEOFF page.
+* Added transition level to PERF APPROACH page. The altimeter setting will blink
+    when descending below the TL with altimeter set to STD.
+* Added flaps/trim setting to PERF TAKEOFF page.  When entering a trim value,
+    the trim will be set to the aircraft when on ground.
+* When in PRE FLIGHT or TAXIING flight phase, the autopilot modes (announced by
+    the FMA) will be empty. When the flight phase changes to TAKEOFF, the
+    autopilot modes will be set automatically, if the flight director was turned
+    on before.
+* The NAV mode now engages when passing 30ft radar altitude on departure.
+* The AP can now be engaged at 100ft radar altitude on departure.
+* A flightplan can now only be loaded (from file, VROUTE or via ICAO route
+    entry) in PREFLIGHT and TAXI flight phases.
+* Made A-style flaps handling (e.g. automatic retraction from 1+F to 1 at
+    210kts)  optional via the MCDU MENU -> SETTINGS page.
+* Fixed thrust reduction / acceleration altitudes to really be altitude rather
+    than height values. Both altitude values will be set to 1000ft above field
+    level whenever the departure airport changes.
+* Added first version of new MCDU graphic by Ricardo Carvalho.
+* The thrust reduction/acceleration altitudes will now be automatically set to
+    current altitude + 1000 when on ground and the thr red/acc altitudes are
+    lower than 500ft.
+* The TOD callout will now only be done when currently on cruise FL.
+* Added separate throttle lever mode to MCDU MENU -> SETTINGS. Enable this if
+    you have separate throttle joystick inputs.
+* Altitude restriction must now always be specified in feet, not FL.
+* Fixed bug causing crashes with some planes when flaps set to full in A-style.
+* Added FCU left mouse button input areas for NAV mode/range for die-hard Mac
+    users.
+* Added 100ft/1000ft altitude set mode to FCU + new clickspots.
+* Added status values which are written to FSUIPC offsets for home cockpit
+    builders.  See fsuipc.offsets.txt (scroll to the bottom of the file) for
+    details.
+* Added "seat belt" and "no smoking" announcements to ECAM for FS-X.
+* Reorganized MCDU -> MENU -> SETTING -> DISPLAY 1/2 pages.
+* Added direct on/off setter FSUIPC offsets for AIRPORT, VOR, NDB, GEO,
+    CONSTRAINT display. See fsuipc.offsets.txt for details.
+* The missed approach route will now only be displayed when at least one
+    waypoint of the missed approach route is visible on the F-PLAN page.
+* Disabled PLAN mode for the right side MCDU/FCU, this will be fixed in the
+    future.
+* The VROUTE AIRAC restriction flag setting is now saved to the config.
+* Added new default AIRAC 0609 including transitions. Many thanks to the
+    navigraph team for their great support!
+* Added fully configurable checklists (text + voice), the checklist to be loaded
+    is specified in the aircraft configuration.
+    The checklists can be found under MCDU MENU -> CHECKLIST.
+* Added sound channels to the FMC processed sounds, the current channels are:
+    COMPUTER, MECHANICAL, OTHER PILOT. Whether to use sound channels or 
+    not can be set on the MCDE MENU -> SETTINGS page.
+    When enabled, sounds from different channels can be played simultaneously,
+    for example a co-pilot flap callout together whith a computer generated
+    radar altitude callout.
+* Added IDENT button to MCDU MENU -> SQUAWKBOX page.
+* Changed key assignments, please take a look at the keys helpfile.
+* Implemented range dependent and now smoothed indicator noise for VOR, NDB
+    and ILS displays.
+
+
+V2.0a8 - never released, only pre-release versions
+--------------------------------------------------
+
+
+V2.0a7 - 13.07.2008
+-------------------
+* Added energy circle turn display to ND when AP is off and ND range is smaller
+    than 50nm.
+* Fixed CDU background color when battery is off and CDU is in display only
+    mode.
+* Fixed ADF frequency bug for frequencies with a fractional portion.
+* Now each window knows if it was visible the last time vasFMC was shut down and
+    will restore itself accordingly. If you start up vasFMC for the first time,
+    only the console window will show up!
+* Saved routes can now be deleted from disk via the the DATA -> LOAD ROUTE page.
+* Redesigned the ACARAS WEATHER page for enhanced usability.
+* The "LOW FUEL" ECAM message will appear when the amount of fuel on board is
+    smaller than 10% of the maximum fuel load. The "LAND ASAP" message will
+    appear when lower than 5%.
+* When engaging the vasFMC speed/mach hold AT, the AT speed selector will now be
+    set to the current speed/mach.
+* Full ICAO routes can now be entered manually on the "MENU->ACARS->ICAO RTE"
+    page as it was possible with vasFMC 1.x.
+* Added additional double waypoint checks.
+* Added FSUIPC offsets for setting the active vasFMC window.
+* Added FCU panel in A-style.
+* The mouse cursor will now change it's shape in the CDU and FCU if an action is
+    available at that point (standalone version).
+* Now when established on a localizer, vasFMC sets the HDG bug to the LOC course
+    as long as vasFMc is coupled and we are heading towards the ILS.
+* Integrated the K.Mitchell Airbus panel into vasFMC.
+* Made lots of adaptations for the MS FS2004 gauge version of vasFMC.
+* Moved some FMC settings from the FMC console to the MCDU MENU -> SETTINGS
+    page.
+* Added option to the MCDU MENU -> SETTING page to choose which autothrust
+    controller should be used, either the build in flightsim controller or the
+    vasFMC autothrust.
+* Added option to the MCDU MENU -> SETTING page to display the FCU input areas.
+* Added further ECAM messages (doors, ignition, etc.)
+* Changed the FMC autothrust controls and added MACH hold mode, see also changed
+    FSUIPC offsets.
+* Only airports with runways longer than 2000m will be shown in the ND now.
+* Moved the GEO data display on/off switch to the MCEU MENU -> SETTINGS page.
+* Added FMA change rectangles to A-style.
+* The red stall speed tape will now only be shown when airborne.
+* The waypoint constraints in the A-style will now only by shown when CSTR is
+    pressed on the FCU.
+* Reworked A-style PFD layout.
+* The vasFMC setup will not longer overwrite existing navdata when installed
+    over an existing vasFMC installation.
+* Added PNF (pilot not flying) callouts.
+* Added PERF pages to MCDU with some basic functions.
+* Moved the N1 hold value from the MCDU PROG page to the MCDU PERF/TAKEOFF
+    page.
+* The A-style altimeter setting will now blink when above the transition
+    altitude after takeoff and not set to STD. It will also blink if set to STD
+    and if you are below 2500ft radar alt.
+* The request for routes from VROUTE can be restricted to only request routes
+    for the installed AIRAC.  Be aware that VROUTE only supports AIRAC 0608, the
+    newest AIRAC and the 2nd newest AIRAC.
+* Added reverser display to ECAM.
+* Added direct keyboard input hotspot to the gauge version MCDU display, click
+    with the left mouse button.
+* Added HTML documentation from Guy Finney.
+
+
+V2.0a6 - 07.03.2008
+-------------------
+* Fixed DME distance display bug when flying from outside into the range of a
+    VOR station.
+* Refactored the X-Plane module to work with vasFMC 2.0. This module is *not*
+    compatible with the module of vasFMC 1.x. vasFMC 2.x now has a very basic
+    X-Plane support - many features available to MSFS will not work yet for
+    X-Plane. The PFD and the ECAM will not work, the MCDU and the ND should do
+    their basic navigation jobs.
+* Added stall speed display (clean + full flaps) to PFD according to values of
+    the aircraft.cfg (MSFS). Many thanks to Peter Dowson who implemented those
+    values on request lightning fast.
+* Added minimum drag speed display to PFD according to MSFS calulated values.
+* Made small changes, fixes and additions to PFD items.
+* Fixed distance calculation for the leg between the last two waypoints.
+* Added slip indicator to PFD.
+* Limited speed tape to speeds above 30kts.
+* Fixed bug when entering a departure without a destination airport in the INIT
+    page.
+* Fixed bug in A-style of the cross track distance overlapping with the range
+    value.
+* Added ILS DME readout for NAV2 to the ND.
+* Added speed bug to PFD showing the AP IAS setting on the speedband when AP is
+    set to MACH hold.
+* Added optional inches of mercury pressure display to PFD (see context menu).
+* Added predefined vasFMC FSUIPC controls, take a look into the
+    fsuipc.offsets.txt document in the vasFMC docs directory. Many thanks to
+    Peter Dowson who implemented this feature on request lightning fast!
+* Fixed radar altitude QNH bug, now the radar altitude really shows the height
+    above ground.
+* Fixed ground speed issue below 40kts.
+* Added metric altitude display to PFD.
+* Added A-style ADF2 pointer.
+* Added custom N1 thrust hold and IAS autothrottle.
+* Added upper ECAM in A-style.
+* Fixed font size switch problem.
+* Added many new FSUIPC controls (see fsuipc.offsets.txt)
+* Added "battery off" and "avionics off" handling which will now effect the FMC
+    displays.
+* The End-of-Climb/Descent arrow in A-style will now be drawn onto the trackline
+    when the FMC is not coupled to the flightsim.
+* Readded date and time synchronize feature.
+* Added callouts and sounds (radar alt, overspeed, stall, etc.).  Many thanks to
+    Jimmy Foong to give us permission to use his sounds.
+* The quit dialog may be turned off via the FMC console option menu.
+* Fixed TCAS symbol bug which disappeared sometimes.
+* Now when entering a "direct to" waypoint which is not contained in the route, 
+    the waypoints in the route between the current position and the new "direct
+    to" waypoint will be removed.
+* Added Squawkbox transponder handling to the MENU page. When switched to
+    automatic mode, the transponder will automatically be engaged when airborne
+    and switched off when on ground.
+* The configured CDU scrollmode has now an effect onto PGUP/PGDN keypresses.
+* Made style switching globally switchable via the FMC console.
+
+
+V2.0a5 - 10.12.2007
+-------------------
+* Enhanced smoothing of position, heading, VOR/ADF bearing and other values.
+* Changed FSUIPC polling code to reduce CPU load.
+* Fixed MCDU "display only mode" scratchpad bug.
+* Fixed bugs of speed & altitude restrictions on the MCDU F-PLN page.
+* Fixed crash on ACARS/METAR page, enhanced METAR request and display.
+* Changed cruise level input in INIT page, the temperature is not mandatory
+    anymore.
+* Fixed a bug which caused the airplane to drift off course on long legs.
+* Added online FP loading via www.vroute.net to ACARS page, many thanks to
+    Michal Rok to be so helpful!
+* Readded B-style ND with all new A-style features.
+* Implemented A-style and B-style PFD.
+* Enhanced the track intercept code for cruise speeds, excessive overshoots
+    should not occour anymore.
+* Changed and enhanced FMC control via FSUIPC offsets (see fsuipc.offsets.txt)
+* Pressing 'Q' in either the PFD or ND now adjusts the respective window's
+    height to equal its width.
+
+
+V2.0a4 - 02.11.2007
+-------------------
+* Added shorelines to navdisplay.
+* Fixed overfly waypoint bug, now the plane will go direct to the next waypoint
+    after an overfly point.
+* Fixed TCAS bug.
+* Made performance improvements.
+* Added speed and altitude restrictions to MCDU and ND, however there is no VNAV
+    capability.
+* Added input feature to enter airport+runway waypoints, for example: EDDM26R
+* Added ACARS page with METAR, S-TAF and TAF request feature.
+* Added top of descent and descent rate proposal to MCDU progress page.
+* Routes can now be loaded via the CO RTE field on the INIT page.
+* Added FSUIPC offset which can be used to control the FMC from within the MSFS
+    (see fsuipc.offsets.txt)
+* Surrounding traffic will now be drawn as outlined diamonds if TCAS is turned
+    off. No proximity checks will be done.
+* Added context menu to MCDU.
+* The mouse wheel scroll directions may now be configured individually for the
+    ND and the MCDU.
+* Changed displayed waypoint times to absolute times regarding to the
+    flightsimulator UTC time.
+* Added help menu to FMC console.
+* Added declination database - PBD waypoints may now be entered with magentic
+    bearings.
+* Added "display only mode" to MCDU for home cockpit builders.
+* Made MCDU font size adjustable.
+* Added smoothing to various FSUIPC parameters for better display response.
+
+
+V2.0a3 - 20.10.2007
+-------------------
+* Complete code redesign and refactoring.
+* Enhanced track intercepting code.
+* Made many internal parameters configurable (look into the files in the "cfg"
+    directory).
+* Split the configuration into several files.
+* Enhanced the navdata database search speed.
+* The navdisplay now uses a Great Circle projection with enhanced recalculation
+    to display its data.
+* Added surrounding airport to navdisplay.
+* Added departure/arrival airport runway display with dashed 10nm extended
+    centerlines.
+* Added ADF/VOR pointer and information block to navdisplay.
+* Added context menu to navdisplay.
+* The route will now be drawn dashed if the FMC is not coupled to the flightsim.
+* Added AP couple to flightsim GPS switch feature.
+* Added holding loop display.
+* Added TOC/TOD/EOD arrows to the route display.
+* The Missed approach legs will be displayed in blue until activated.
+* Added programable MCDU in A-style.
+* Added console window with logging.
+* Implemented MCDU background graphic.
+* Added MCDU keep-on-top feature.
+* The MCDU F-PLAN page will now scroll to the right waypoint after inserting a
+    SID, STAR or AIRWAY.
+* Added FP loading & saving to MCDU. FPs from vasFMC 1.x are compatible.
+* Added tuning by navaid name to RADNAV MCDU page.
+* Added surrounding NDB and VOR to navdisplay.
+* Added secondary flightplan to MCDU.
+* Added VOR/ILS/NAV rose mode to navdisplay.
+* Added PLAN mode to navdisplay. (Skip through waypoints with the MCDU F-PLN
+    page)
+* Enhanced DIR-TO MCDU page with up-to-date design and temporary route display
+    before select.
+* Enhanced SID & STAR select pages with temporary route display before select.
+* Enhanced DIR-TO which now calculates a point ahead for a smooth intercept.
+* Enhancment and speedup of FSUIPC access.
+* Changed mouse move&size feature of ND and MCDU.
+    Left mouse button +SHIFT = move / +CTRL = resize.
+* Added mouse wheel up/down scrolling to MCDU.
+* Made status of primary route persistant so it will be restored on startup.
+* Added noise to ADF/VOR bearing pointers.
+* Added MCDU PROG and MENU page with NAVDATA status.
+
+
+V1.11 - never released
+----------------------
+* Fixed some minor bugs.
+* The size of the main window will now be restored.
+* Added FSUIPC variables for other developers (see README).
+* Fixed crash when deleting waypoints in map mode.
+
+
+V1.10 - 14.06.2006
+------------------
+* Ported from Qt3 to Qt4.
+* Renamed from simpleFMC to vasFMC ("vas" stands for "virtual aviation suite")
+* Navdisplay is now fully anti-aliased.
+* Waypoint list and navdisplay range can now be scrolled/changed with the mouse
+    wheel.
+* When performing a "direct-to" to a waypoint with a holding, the holding will
+    not longer be removed if it's not active. (A holding is active as soon the
+    entry is performed.)
+* Changed doubleclick onto waypoint to show the edit dialog (former: info
+    dialog).
+* Accelerated navdata search with better index generation.
+* Added colors to waypoint list for waypoints with holdings.
+* Changed standard path for flightplan saving/loading to a subdirectory of the
+    vasFMC installation (normally: c:\program files\simplefmc\fps).
+* Added AI/Multiplayer traffic display with simple TCAS.
+* Added switch between TRK/HDG display to navigation window.
+* Added ranges 30, 60 and 120 to navigation display.
+* Fixed some holding bugs which occured under certain conditions.
+* Further code enhancements to speed up calculations.
+* Added about dialog and option dialog.
+* Added FS to PC clock time sync option.
+* The navwindow now remains visible when the main simpleFMC window is minimized.
+* Now the yellow holding circles will also be drawn when in map mode.
+* Added german README.
+* Navdisplay redesign (rewrite in OpenGL, switchable between different styles).
+* The waypoints in the waypoint choose dialog are now sorted by distance.
+* Added optional range rings to navdisplay.
+* Added OAT/TAT/density altitude display.
+* The mainwindow can now be kept on top.
+* Added own config file for navdata index data.
+* When going direct-to a waypoint, the current position will be taken for
+    reference to maintain the track to the wanted waypoint.
+* Many minor changes and features and many many bugfixes.
+* Added airway information to waypoints in waypointlist.
+* Added destination airport and runway information frame.
+* Fixed great circle calculation bug.
+* Fixed navdata index generation bug.
+* Enhancement of course interception and tracking algorithm.
+* Added fontsize to option dialog.
+* The FMC now remebers the path of the last flightplan loading/saving operation.
+* Enhanced takeoff detection and deletion of waypoints behind the airplane.
+* The NAV1 frequency & course can now be set from the selected landing runway.
+* Fixed OpenGL bug, causing the FMC to consume nearly all CPU time.
+* Fixed FSUIPC access bug, causing WIDEFS to consume nearly all CPU time.
+* Fixed range bug when switching to map mode and back to normal mode.
+* Added "parent" field to saved flightplans.
+* Enhanced SID/STAR runway filtering.
+
+
+V1.9a - 15.02.2006
+------------------
+* Fixed holding dialog.
+* Fixed holding entry calculation for some special cases.
+
+
+V1.9 - 15.02.2006
+-----------------
+* Added holdings.
+* Added SID/STAR Editor and converter for FSNavigator (thanks to Peter Orosz).
+* Changed nav display to display magnetic heading.
+* Added autopilot heading line to nav display (displayed when not coupled).
+* Added hotkey to de/couple simpleFMC from/to the flightsimulator.
+* Now the tracks between waypoints will be intercepted and flown.
+* Enhanced internal data structures to fasten up calculations.
+* Changed default display update rate to 4 times per second.
+* Fixed waypoint info scanning which was slow sometimes.
+* Fixed altitude reach circle when descending and below AP altitude (and vice
+    versa).
+* Fixed navigation display bug regarding to magnetic variation correction.
+* Many minor fixes and additions.
+
+
+V1.8 - 08.01.2006
+-----------------
+* Added support for runways.
+* Added display of extra information of waypoints (runway, frequency, etc.).
+* Various small user interface enhancements (waypoint choose dialog, etc.).
+* Added waypoint info dialog (double click onto a waypoint list entry).
+* Fixed connection bug when simpleFMC was started before MS Flightsim.
+* Fixed various X-Plane bugs (xplane scenery loading outage, wrong units, etc.)
+* Added SID/STAR support (consult the README for details !!)
+* Added overfly waypoint flag.
+* Added splash screen (thanks to Rene Billiani).
+* Changed navdisplay control (no border, move with mouse click into window,
+    etc.).
+* Added overwrite warning dialog for flightplan saving.
+* Added waypoint edit dialog (runway change, overfly, etc.)
+
+
+V1.7 - 24.12.2005
+-----------------
+* Fixed input line control character behavior.
+* Added support for XPlane (Take a look into the README for details !!).
+* Added AIRAC 0513.
+
+
+V1.6 - 13.11.2005
+-----------------
+* Added Spanish README (based on version 1.5)
+* Fixed negative track bug.
+* Fixed deletion of first waypoint when not moving (on ground) and too near.
+* Added map mode to navigation display.
+* Added waypoint shifting.  Now the selected waypoint can be shifted up and down
+    inside the list of waypoints.
+* Added tooltips.
+* Enhanced flightsim connection detection. Now when not connected, the first
+    waypoint is taken as the current location.
+* Added persistant config (Window positions, ...)
+* Added "keep on top" option for the navigation display.
+* Much faster startup time (Index of navdata is stored in the config).
+* Configurable display update rate.
+* Added name of AIRAC cycle used to the simpleFMC window title.
+* Changed directory structure.
+* Added navaids from AIRAC. Now not only but also all normal navigational aids
+    (NDBs, VORs) can be used.
+* Added full facility type and name to waypoint choose dialog entries. (e.g. GRZ
+    = VOR Graz)
+* Added AIRAC 0511.
+* Changed input format for LAT/LON waypoints.
+
+
+V1.5 - 15.10.2005
+-----------------
+* Fixed the route display bug when the navdisplay was opened after the route was
+    inserted.
+* Added support for airport entry. Now aiports can be entered like normal
+    waypoints.
+* The descent distance estimate now takes the destination airport altitude into
+    account, if the last waypoint is an aiport.
+* Changed altitude reach circle from +/- 90° to +/- 50° from the centerline.
+* Added PBD waypoint (thanks to Mark Foti!) (for example: "GRZ/180/10" denotes
+    10nm south of the Graz VOR) ATTENTION: You must enter the true bearings (not
+    magnetic)! I hope to find a possibility to get the variation from any point
+    on earth somehow from the flightsim...
+* Added support to enter whole ICAO style flightplans.
+    A FP from EDDM to EDLP can be entered like this at once:
+    EDDM MIQ Y102 ALB UM726 ANELA UL604 DEMAB L604 FUL G5 LAU Z190 WRB EDLP
+
+
+V1.4 - 01.10.2005
+-----------------
+* Navdisplay rewrite with faster paint methods.
+* Navdisplay is now resizeable.
+* Navdisplay compass shows track and explicit magnetic heading.
+* Wind arrow is now surrounded by a circle.
+* Altitude reach circle display.
+* LAT/LON waypoints. (NAT tracks can now be flown)
+* Fixed Heading Bug related to FS2002.
+* New AIARAC 0510 added.
+* Extended the navdisplay range to 640nm.
+
+
+V1.3 - 21.08.2005
+-----------------
+* Exit confirmation dialog
+* Code refactoring
+* Smoothed waypoint display list
+* Corrected wind correction angle calculation.
+* Added load/save flightplan support.
+* simpleFMC now also starts, if the flight simulator is not running.
+* Added lateral navigation display.
+* Added descent distance estimate and 3° descent rate.
+* Added additional DTG/TTG display.
+* Added "direct to" confirmation dialog.
+
+
+V1.2 - 05.08.2005
+-----------------
+* Fixed waypoint inserting bug when waypoints were too close.
+* Complete rewrite of the FMC basis to facilitate future enhancements.
+* Added "direct to" function.
+* Splitted DTG (distance to go) field into overall and leg value.
+* Added TTG (time to go) - overall and leg value.
+* Added possibility to enter airways.
+* Added new AIRAC.
+* The application is now resizeable.
+
+
+V1.1 - 01.08.2005
+-----------------
+* Added FSUIPC application key. Now simpleFMC can also be used  with an
+    unregistered version of FSUIPC. 
+
+
+V1.0 - 27.07.2005
+-----------------
+* First release.

@@ -1,0 +1,91 @@
+=======================================================================
+     FP FORMAT README for vasFMC  - (c) by Alex Wemmer <alex@wemmer.at>
+     http://www.vas-project.org
+=======================================================================
+
+This README contains a description of the vasFMC 2.x flightplan format.
+
+ATTENTION: As vasFMC is currently alpha software, this format may change!
+
+Overal format
+-------------
+Flightplans are stored as ASCII text files with the extension ".fmc".
+The filename of a flightplan shall be constructed by the ICAO IDs of
+the departure and arrival airports and a number with 3 digits.
+Example: LOWGLOWW001.fmc
+
+One Waypoint per Line
+---------------------
+Each line represents one waypoint, the waypoint data are separated by 
+pipe characters "|". 
+
+The format of each line is:
+   ID|LAT|LON|SPD&ALT RESTRICTION|PARENT|FLAG|ACTIVERWY|OTHER
+
+The ID, LAT and LON fields are mandatory, all other fields are optional.
+Optional fields may be empty and must be specified like in the following
+example, where the 4th field is empty: ID|LAT|LON||XYZ
+   
+Field: ID
+---------
+Contains the waypoint ICAO ID.
+Example: LOWG
+If the ID starts or ends with an asterisk character (e.g. *GRZ or GRZ*),
+the waypoint is treated as an overfly waypoint.
+
+Fields: LAT|LON
+-------------------
+Contain the latitude and longitude values of the waypoint.
+Example: 46.9930560000|15.4391670000
+
+Field: SPD&ALT RESTRICTION
+--------------------------
+Contains speed and/or altitude restrictions. The speed value (knots) and the 
+altitude value (feet) are separated by a slash character.
+
+Examples:
+	Speed only restriction:			250/
+	Altitude only restriction:		12000
+	Speed and altitude restriction:	250/12000
+
+Field: PARENT
+-------------
+Contains the parent of the waypoint, e.g. an airway, SID or STAR.
+Example: MILGO1G
+
+Field: FLAG
+-----------
+Contains information about special waypoints.
+Possible values: ADEP,SID,T/C,E/D,T/D,STAR,TRANS,ADES,MISSED,DCT,DISC
+Only one flag value may be set for each waypoint!
+
+Field: ACTIVERWY
+----------------
+If the waypoint is an airport (ADEP or ADES flag set), this field
+may contain the active runway to be used for that airport.
+Example: 17C
+
+Field: OTHER
+------------
+This item may only be set for the first waypoint of the flightplan!
+Contains further flightplan related items which are separated by 
+semicolons. Each item has a "key=value" format.
+
+The possible keys area:
+  	cfl		    cruise flightlevel
+  	ctemp		OAT at cruise flightlevel in degree centigrade
+	croute		company route name (FP filename)
+	fnr			flight number (callsign)
+	cindex		cost index
+	tropo		tropopause in feet
+	actwpt		index of the currenty active waypoint
+	adep		ICAO ID of the departure airport
+	ades		ICAO ID of the destination airport
+    accel_alt   acceleration altitude
+    thrust_red_alt thrust reduction altitude
+	
+Example: 
+
+cfl=110;ctemp=-15;croute=LOWGLOWW001;fnr=AUA2FG;cindex=20;tropo=36092;actwpt=0
+	
+======================================================================

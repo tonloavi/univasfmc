@@ -1,0 +1,45 @@
+AlexW TODOs
+-----------
+
+* implement separate throttle lever input mode -> separate N1 controllers in AB A/THR mode
+* make PLAN mode on right ND possible (see fmc_navdisplay_glwidget.cpp)
+* 3 vs. 2 engine crash - how to reproduce??
+* gear lock > max gear speed
+* ALT hangs
+* descend wind
+* WXR radar
+* height model (SRTM?)
+* wpt switch -> check current track against leg track
+* forward internal FS controls to master FMC
+* wpt selector class to inhibit CDU page change on route change
+* wpt change -> signal -> route change
+* rotate function per display (PFD, ND, ECAM, etc.)
+* callouts (speed checked -> flaps, on app: speed vapp -5/+10, sinkrate <
+-1000, bank >7°, pitch < -2.5° > 10°, loc/glide: 1 dot < 500ft AGL, 0.5 dot
+loc, 1 dot GS < 300ft, no spoiler, etc.)
+* filter transitions based on star
+* B style PFD -> selected VS, O/M/I markers, EICAS: speed band <-<-, move n2 display
+down, move flaps display up, move engine display left, "n1" pfd fma
+* TRK mode
+* QFE mode
+* B-Style CDU implementieren.
+* Vertical profile calculation.
+* GNS530 GPS
+* VFR reporting points database.
+* temporary and alternate route handling in CDU.
+* TCAS sounds
+* procedure waypoint type support
+* fix F-PLAN scroll on waypoint switch bug.
+* implement V-NAV pages for MCDU.
+* recalc relative waypoints (e.g. hdg2alt) when changing a previous waypoint (e.g. departure runway change, etc.)
+* read/write ND mode/range from FSX
+* lower ECAM
+* add optional automatic metar request when within 100nm of the destination -> acars call
+* ... more to come ...
+
+
+FMGC integration
+================
+TAKEOFF PAGE
+* DTR TO/FLX TO (Dxx,Fxx) RLSK4
+* INIT B fuel stuff

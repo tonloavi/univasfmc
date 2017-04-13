@@ -1,0 +1,29 @@
+=============================================================================
+     NAVDATA README for vasFMC - (c) by Alex Wemmer <alex@wemmer.at>
+     http://www.vas-project.org
+=============================================================================
+
+Current navigation data (AIRAC data) can be purchased at www.navigraph.com.
+
+
+* Standalone installation - Windows
+
+    Install the navigation data into the vasFMC installation directory.
+    (e.g. c:\program files\vasFMC).
+
+
+* Standalone installation - all other platforms
+
+    Get the native navigation data download and unzip it into the vasFMC
+    installation directory.
+
+
+* Gauge installation - Windows only
+
+    Install the navigation data into the vasFMC subdirectory of the
+    flightsimulator (e.g. c:\fs9\vasFMC).
+
+
+* All platforms
+
+    The the navigation data files must reside in the navdata subdirectory.

@@ -1,0 +1,55 @@
+=========================================================================
+ IOCPO vasFMC Integration Manual - (c) by Alex Wemmer <alex@wemmer.at>
+ http://www.vas-project.org
+=========================================================================
+
+vasFMC 2.x comes with direct support for the opencockpit.com IOCP 
+protocol. The enable the IOCP server, go the MENU->SETTINGS page in the 
+MCDU and switch on the IOCP server. vasFMC will open the IOCP TCP server
+on port 8092 and is ready to receive IOCP commands. If you want vasFMC
+to listen to another port, you can change this in the iocp.cfg 
+configuration file located in the "cfg" directory of vasFMC.
+
+Furthermore, the IOCP command to vasFMC action assignment is fully 
+configurable via the iocp.cfg configuration file. The file follows the 
+vasFMC "key=value" format and supports the following configuration entries:
+
+  Key               Possible Values
+  ---               ---------------
+  tcp_por           The TCP/IP port the vasFMC IOCPC server listens to.
+
+Besides the keys listed above, IOCP commands can be assigned to vasFMC 
+actions as specified in the fsuipcs.offset.txt document, 
+which is also located in the vasFMC "doc" directory.
+
+For example, if you want to assign the IOCP key 5 with value 17 to the 
+vasFMC action "display the F-PLAN page on the left CDU", which would 
+be FSUIPC offset 0x6dd2 with a value of +67 (as specified in the 
+fsuipc.offset.txt doc), you can add the following line to the vasFMC 
+iocp.cfg file:
+
+5_17=CDU_LEFT:67
+
+That line means, that the value 67 will be written to the vasFMC left CDU 
+FSUIPC offset whenever this IOCP command is received.
+
+The following vasFMC FSUIPC offset names are supported by the 
+vasFMC IOCP module:
+
+ND_LEFT         equals the vasFMC FSUIPC offset 0x6dd0
+PFD_LEFT        equals the vasFMC FSUIPC offset 0x6dd1
+CDU_LEFT        equals the vasFMC FSUIPC offset 0x6dd2
+FMC             equals the vasFMC FSUIPC offset 0x6dd3
+ECAM            equals the vasFMC FSUIPC offset 0x6dd4
+FCU             equals the vasFMC FSUIPC offset 0x6dd5
+ND_RIGHT        equals the vasFMC FSUIPC offset 0x6dd6
+PDF_RIGHT       equals the vasFMC FSUIPC offset 0x6dd7
+CDU_RIGHT       equals the vasFMC FSUIPC offset 0x6dd8
+
+Attention: Make sure, that each "key_value" code only occurs once in the file!
+
+Unkown IOCP commands received by vasFMC are logged to the vasFMC
+logfile. These outputs can be used to adapt the vasFMC IOCP configuration
+to your setup.
+
+=========================================================================

@@ -1,0 +1,1288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+
+
+
+  
+  
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>vasFMC User's Guide</title>
+  <link href="vasfmc2.css" rel="stylesheet" type="text/css" />
+<!--[if IE 5]>
+<style type="text/css"> 
+/* place css box model fixes for IE 5* in this conditional comment */
+.twoColFixLtHdr #sidebar1 { width: 230px; }
+</style>
+<![endif]--><!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColFixLtHdr #sidebar1 { padding-top: 30px; }
+.twoColFixLtHdr #mainContent { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]-->
+</head>
+
+
+<body class="twoColFixLtHdr">
+
+
+
+
+
+
+<div id="container">
+  
+<div id="header">
+    
+<h1 align="center"><a href="http://vas-project.org"><img src="vasfmc-banner.png" alt="vasFMC Banner" longdesc="http://vasFMC - As REAL as it gets" height="94" width="640" /></a></h1>
+
+
+
+
+
+  <!-- end #header --></div>
+
+
+
+
+
+  
+<div id="sidebar1">
+    
+<h1>Contents</h1>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li><a href="index.htm">Overview</a></li>
+
+
+
+
+
+      <li><a href="quickstart.htm">First Flight</a></li>
+  <li><a href="advanced.htm">Advanced Flight</a></li>
+
+
+
+
+
+      <li><a href="MCDURef.htm">MCDU - Flight Planning</a></li>
+
+
+
+
+
+      <li><a href="MFCURef.htm">FCU - Autopilot</a></li>
+
+
+
+
+
+      <li><a href="NDRef.htm">Nav Display</a>
+      
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+        <li><a href="#NDVORMode">VOR Mode</a></li>
+
+
+
+
+
+        <li><a href="#NDNavMode">Nav Mode</a></li>
+
+
+
+
+
+        <li><a href="#NDArcMode">Arc Mode</a></li>
+
+
+
+
+
+        <li><a href="#NDPlanMode">Plan Mode</a></li>
+
+
+
+
+
+        <li><a href="#NDILSMode">ILS Mode</a></li>
+
+
+
+
+
+        <li><a href="#NDClimbDescent">Climb &amp; Descent</a></li>
+
+
+
+
+
+        
+
+
+
+        
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+      </li>
+
+
+
+
+
+      <li>Primary Flight Display</li>
+
+
+
+
+
+      <li>ECAM</li>
+
+
+
+
+
+      <li>Tips</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+  <!-- end #sidebar1 --></div>
+
+
+
+
+
+  
+<div id="mainContent">
+    
+<h1>Navigation Display</h1>
+
+
+
+
+
+    
+<p>The Nav Display (ND) serves several purposes, but its primary use is
+to show you where you're going (i.e. what route you've chosen to fly).
+The display can operate in five different modes (ILS, VOR, Nav, Arc and
+Plan), and each mode has two styles (A and B). The style you select is
+entirely a matter of personal preference, and both are shown below.</p>
+
+
+
+
+
+    
+<p>The screenshots below are all taken from a paused simulator session
+departing KDFW so they all depict exactly the same situation, which is:</p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Ground speed: 227 kts.</li>
+
+
+
+
+
+      <li>True airspeed: 232 kts.</li>
+
+
+
+
+
+      <li>Current heading: 203 degrees.</li>
+
+
+
+
+
+      <li>Heading bug: 195 degrees (coupled to FMC).</li>
+
+
+
+
+
+      <li>Wind direction/speed: 215 degrees at 5 kts (slight headwind).</li>
+
+
+
+
+
+      <li>VOR1 tuned to 116.60 (a VOR that is not in range).</li>
+
+
+
+
+
+      <li>VOR2 tuned to the FUZ VOR, which is 7.4 nm away.</li>
+
+
+
+
+
+      <li>Next waypoint: BPARK  3.8 nm at 198 degrees, ETA of 2142 UTC.</li>
+
+
+
+
+
+      <li>VORs, NDBs and nearby aircraft traffic (TFC) are displayed.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p>The ND mode can be chosen in  different ways:<br />
+
+</p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      
+
+
+
+      <li>Put the keyboard focus on the ND window and use the&nbsp;Alt-M and Shift-Alt-M keys to cycle through the modes.</li>
+
+
+
+
+
+      <li>Select a mode from the <a href="MFCURef.htm#FCUND">FCU</a>.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p>With most of the ND modes you can choose the range to be displayed:</p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Scroll the mousewheel in the ND window.</li>
+
+
+
+
+
+      <li>Select a range from the <a href="MFCURef.htm#FCUND">FCU</a>.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<h2><a name="NDVORMode" id="NDVORMode"></a>VOR Mode</h2>
+
+
+
+
+
+    
+This mode simply functions as a conventional VOR compass rose which
+can display two frequencies. Either frequency can be a VOR/DME or ADF/NDB.<br />
+
+The VOR/NDB pointers will move randomly because of noise and radio
+interferences, the amount of movement depends on the distance to the
+station.<br />
+
+
+
+
+
+    
+<table bgcolor="#cccccc" border="1">
+
+
+
+
+
+      <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+
+        <th>VOR Style A</th>
+
+
+
+
+
+        <th>VOR Style B</th>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <td><img src="ND-A-VOR.jpg" alt="ND-A-VOR" height="357" width="338" /></td>
+
+
+
+
+
+        <td><img src="ND-B-VOR.jpg" alt="ND-B-VOR" height="357" width="338" /></td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+    
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+    
+<h2><a name="NDNavMode" id="NDNavMode"></a>Nav Mode</h2>
+
+
+
+
+
+    
+<p>Nav mode shows you where you're going. The route programmed into the
+MCDU is displayed along with the waypoints on it. The route will be
+shown as a solid line when the AP is in lateral NAV mode
+and as a dashed line when the AP is in HDG mode.</p>
+
+
+
+
+
+    
+<p>If you change the route while airborne, the proposed new route will
+be shown as a dashed line until you confirm it as the new route in the
+MCDU.</p>
+
+
+
+
+
+    
+<p>If you use the Direct-To function of the MCDU, the current position will be shown as "T-P".</p>
+
+
+
+
+
+    
+<table bgcolor="#cccccc" border="1">
+
+
+
+
+
+      <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+
+        <th>Nav Style A</th>
+
+
+
+
+
+        <th>Nav Style B</th>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <td><img src="ND-A-Nav.jpg" alt="ND-A-Nav" height="357" width="338" /></td>
+
+
+
+
+
+        <td><img src="ND-B-Nav.jpg" alt="ND-B-Nav" height="357" width="338" /></td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+    
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+    
+<h2><a name="NDArcMode" id="NDArcMode"></a>Arc Mode</h2>
+
+
+
+
+
+    
+<p>This mode is essentially the same as Nav mode, but displayed as a partial compass arc instead of the entire compass rose. </p>
+
+
+
+
+
+    
+<table bgcolor="#cccccc" border="1">
+
+
+
+
+
+      <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+
+        <th>Arc Style A</th>
+
+
+
+
+
+        <th>Arc Style B</th>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <th>&nbsp;</th>
+
+
+
+
+
+        <td>In this style you can change whether the current<br />
+
+heading (HDG) or the current track (TRK) is shown<br />
+
+at the top. <br />
+
+Toggle the
+display with the "W" key (uppercase).</td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <td><img src="ND-A-Arc.jpg" alt="ND-A-Arc" height="357" width="338" /></td>
+
+
+
+
+
+        <td><img src="ND-B-Arc.jpg" alt="ND-B-Arc" height="357" width="338" /></td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+    
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+    
+<h2><a name="NDPlanMode" id="NDPlanMode"></a>Plan Mode</h2>
+
+
+
+
+
+    
+<p>Plan mode shows the current route with North pointing to the top.
+Both Nav and Arc modes show the current heading at the top. This is
+especially useful when choosing a SID or STAR as it enables you to see
+the general direction of the SID/STAR.</p>
+
+
+
+
+
+    
+<table bgcolor="#cccccc" border="1">
+
+
+
+
+
+      <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+
+        <th>Plan Style A</th>
+
+
+
+
+
+        <th>Plan Style B</th>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <td><img src="ND-A-Plan.jpg" alt="ND-A-Plan" height="357" width="338" /></td>
+
+
+
+
+
+        <td><img src="ND-B-Plan.jpg" alt="ND-B-Plan" height="357" width="338" /></td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+    
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+    
+<h2><a name="NDILSMode" id="NDILSMode"></a>ILS Mode</h2>
+
+
+
+
+
+    
+<p>Similar to the VOR mode, ILS mode functions as a normal ILS gauge.
+The screenshots below are of necessity from a different situation than
+those above.</p>
+
+
+
+
+
+    
+<table bgcolor="#cccccc" border="1">
+
+
+
+
+
+      <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+
+        <th>ILS Style A</th>
+
+
+
+
+
+        <th>ILS Style B</th>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <td><img src="ND-ILS-A.jpg" alt="ILS-A" height="357" width="338" /></td>
+
+
+
+
+
+        <td><img src="ND-ILS-B.jpg" alt="ILS-B" height="357" width="338" /></td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+    
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+    
+<h1>&nbsp;</h1>
+
+
+
+
+
+    
+<h1><a name="NDClimbDescent" id="NDClimbDescent"></a>Climb &amp; Descent</h1>
+
+
+
+
+
+    
+<p>One of the more useful features of the ND is showing you where
+you'll reach a certain altitude at the current V/S and ground speed.
+This is crucial for observing altitude crossing restrictions. The
+various altitude reach indicators are shown in the Arc mode.</p>
+
+
+
+
+
+    
+<h2>Top of Climb (TOC)</h2>
+
+
+
+
+
+    
+<p> The TOC point in the screenshots below is just before the IMPOR
+waypoint.</p>
+
+
+
+
+
+    
+<table bgcolor="#cccccc" border="1">
+
+
+
+
+
+      <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+
+        <th>TOC Style A</th>
+
+
+
+
+
+        <th>TOC Style B</th>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <td>TOC is shown with a bent arrow pointing to the <br />
+
+current
+route. The tail of the arrow points down <br />
+
+to distinguish it from the BOD
+arrow.</td>
+
+
+
+
+
+        <td>TOC is shown as an arc.</td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <td><img src="ND-Climb-A.jpg" alt="Climb-A" height="357" width="338" /></td>
+
+
+
+
+
+        <td><img src="ND-Climb-B.jpg" alt="Climb-B" height="357" width="338" /></td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+    
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+    
+<h2>Top of Descent (TOD)</h2>
+
+
+
+
+
+    
+<p>TOD in the screenshots below is about 15 nm ahead of the JAWBN
+waypoint. Note that the STAR requires a speed of 280 KIAS and a minimum
+of 16,000 ft MSL. These restrictions are shown when CSTR is enabled on
+the FCU.</p>
+
+
+
+
+
+    
+<p>The distance to TOD is based on the current altitude and destination
+airport elevation using a 3&deg; angle of descent.
+vasFMC&nbsp;considers "at" and "at or below" altitude restructions
+for&nbsp;TOD calculation.</p>
+
+<table bgcolor="#cccccc" border="1">
+
+
+
+
+
+      <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+
+        <th>TOD Style A</th>
+
+
+
+
+
+        <th>TOD Style B</th>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <td>TOD is shown as a bent arrow pointing away <br />
+
+from the current route.</td>
+
+
+
+
+
+        <td>TOD is shown as a small circle on the route <br />
+
+with "T/D" beside it.</td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <td><img src="ND-Restr-A.jpg" alt="TOD-A" height="357" width="338" /></td>
+
+
+
+
+
+        <td><img src="ND-Restr-B.jpg" alt="TOD-B" height="357" width="338" /></td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+    
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+    
+<h2>Bottom of Descent (BOD)</h2>
+
+
+
+
+
+    
+<p>BOD in the screenshots below is between JAWBN and DIGGN. As with
+TOC, the BOD indicators are shown whether or not the FMC is coupled.</p>
+
+
+
+
+
+    
+<table bgcolor="#cccccc" border="1">
+
+
+
+
+
+      <tbody>
+
+
+
+
+    <tr>
+
+
+
+
+
+        <th>BOD Style A</th>
+
+
+
+
+
+        <th>BOD Style B</th>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <td>BOD is shown as a bent arrow pointing to the <br />
+
+current
+route. The tail of the arrow points up <br />
+
+to distinguish it from the TOC
+arrow.</td>
+
+
+
+
+
+        <td>BOD is shown as an arc. The arc is always <br />
+
+present since
+the target altitude does not <br />
+
+depend on the route (i.e. you are still
+descending <br />
+
+even if you're off course).</td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+      <tr>
+
+
+
+
+
+        <td><img src="ND-Desc-A.jpg" alt="Desc-A" height="357" width="338" /></td>
+
+
+
+
+
+        <td><img src="ND-Desc-B.jpg" alt="Desc-B" height="357" width="338" /></td>
+
+
+
+
+
+      </tr>
+
+
+
+
+
+    
+  
+  
+  
+  
+  </tbody>
+</table>
+
+<br />
+
+<p>&nbsp;</p>
+
+
+
+
+
+  </div>
+
+
+
+
+
+  
+<div id="footer">
+    
+<p>&copy; Copyright 2008 by Guy Finney and Alex Wemmer. All Rights Reserved.</p>
+
+
+
+
+
+  <!-- end #footer --></div>
+
+
+
+
+
+<!-- end #container --></div>
+
+
+
+
+
+</body>
+</html>

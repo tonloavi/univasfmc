@@ -1,0 +1,1821 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>vasFMC User's Guide</title>
+  <link href="vasfmc2.css" rel="stylesheet" type="text/css" />
+<!--[if IE 5]>
+<style type="text/css"> 
+/* place css box model fixes for IE 5* in this conditional comment */
+.twoColFixLtHdr #sidebar1 { width: 230px; }
+</style>
+<![endif]--><!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColFixLtHdr #sidebar1 { padding-top: 30px; }
+.twoColFixLtHdr #mainContent { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]-->
+</head>
+
+
+<body class="twoColFixLtHdr">
+
+
+
+
+
+
+
+
+
+<div id="container">
+  
+<div id="header">
+    
+<h1 align="center"><a href="http://vas-project.org"><img src="vasfmc-banner.png" alt="vasFMC Banner" longdesc="http://vasFMC - As REAL as it gets" height="94" width="640" /></a></h1>
+
+
+
+
+
+
+
+
+  <!-- end #header --></div>
+
+
+
+
+
+
+
+
+  
+<div id="sidebar1">
+    
+<h1>Contents</h1>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      
+      <li><a href="index.htm">Overview<br />
+
+
+
+
+
+
+
+    </a></li>
+
+
+
+
+
+
+
+
+      <li><a href="quickstart.htm">First Flight</a></li>
+
+
+
+
+  <li><a href="file:///C:/devel/vas/vasfmc/docs/html/advanced.htm">Advanced Flight</a></li>
+
+
+
+
+
+  <li><a href="MCDURef.htm">MCDU - Flight Planning</a></li>
+
+
+
+
+
+
+
+
+      <li><a href="MFCURef.htm">FCU - Autopilot</a></li>
+
+
+
+
+
+
+
+
+      <li><a href="NDRef.htm">Nav Display</a></li>
+
+
+
+
+
+
+
+
+      <li>Primary Flight Display</li>
+
+
+
+
+
+
+
+
+      <li>ECAM</li>
+
+
+
+
+
+
+
+
+      <li>Tips</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+  <!-- end #sidebar1 --></div>
+
+
+
+
+
+
+
+
+  
+<div id="mainContent">
+    
+<h1>Advanced Flight</h1>
+
+
+
+
+
+
+
+
+    
+<p>This chapter describes some of the advanced features of vasFMC,
+parts of this chapter are based on Airbus procedures and features.</p>
+
+
+
+
+
+<p>Important: Make sure you successfully accomplished the first flight chapter before fiddling around with the advanced features.</p>
+
+
+
+
+
+<h2>Prerequisites</h2>
+
+
+
+
+
+This chapter relies on the following prerequisites:<br />
+
+
+
+
+
+<br />
+
+
+
+
+
+<ul>
+
+
+
+
+
+  <li>You are using the vasFMC A-Style.</li>
+
+
+
+
+
+  <li>You have a hardware throttle lever (as part of a joystick or a separate one).</li>
+
+
+
+
+
+  <li>The following settings on MCDU MENU&nbsp;SETTINGS page are active:</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li>SOUNDS is set to ON.</li>
+
+
+
+
+
+    <li>A/THR MODE is set to VASFMC.</li>
+
+
+
+
+
+    <li>AIRBUS A/THR is set to YES.</li>
+
+
+
+
+
+    <li>Set the other options according to your needs.</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+</ul>
+
+
+
+
+
+<br />
+
+
+
+
+
+I also recomend to use vasFMC in combination with the MS FS Project Airbus models as these were used during the development.
+<h2>Airbus A/THR Mode</h2>
+
+
+
+
+
+If the&nbsp;Airbus autothrottle mode is active, your throttle will behave differently to what you are used to.<br />
+
+
+
+
+
+<br />
+
+
+
+
+
+<span style="font-weight: bold;">First</span>, the range of your throttle lever is divided by several detents:<br />
+
+
+
+
+
+<br />
+
+
+
+
+
+<ul>
+
+
+
+
+
+  <li>IDLE<br />
+
+
+
+
+
+When your throttle lever is fully back (&lt; 2%), it is in the IDLE detent.<br />
+
+
+
+
+
+  </li>
+
+
+
+
+
+  <li>CL (climb)<br />
+
+
+
+
+
+This detent is reached as soon as&nbsp;your throttle lever is advanced to&nbsp;81% or beyond. <br />
+
+
+
+
+
+Note: This detent is used most of the time when airborne.</li>
+
+
+
+
+
+  <li>FLX/MCT (flex / max. continous)<br />
+
+
+
+
+
+This detent is reached as soon as&nbsp;your throttle lever is advanced to 92% or beyond.</li>
+
+
+
+
+
+  <li>TOGA<br />
+
+
+
+
+
+This&nbsp;detent is reached as soon as&nbsp;your throttle lever is advanced to 99% or beyond.</li>
+
+
+
+
+
+</ul>
+
+
+
+
+
+<br />
+
+
+
+
+
+Note: The percentages mentioned above may be configured in the
+autothrottle.cfg file located in the vasFMC configuration directory.
+Make sure the flightsim and vasFMC are <span style="font-weight: bold;">not</span> running while changing the values!<br />
+
+
+
+
+
+<br />
+
+
+
+
+
+<span style="font-weight: bold;">Second</span>, your throttle lever is
+not directly connected to your engines anymore. In the Airbus mode the
+throttle lever commands a N1 value, thus every position of your lever
+is equal to a calulated N1 value.&nbsp;<br />
+
+
+
+
+
+<br />
+
+
+
+
+
+<ul>
+
+
+
+
+
+  <li>At the IDLE detent the lever commands idle thrust (the lowest thrust possible).</li>
+
+
+
+
+
+  <li>At the CL detent the lever commands climb thrust which depends on the climb thrust setting made on the MCDU PERF CLIMB page.</li>
+
+
+
+
+
+  <li>At the FLX/MCT detent the lever commands FLEX thrust (max. cont.
+is not implemented yet). The FLEX thrust depends on the setting made on
+the MCDU PERF TAKEOFF page.</li>
+
+
+
+
+
+  <li>At the TOGA detent the lever commands max. possible thrust.</li>
+
+
+
+
+
+  <li>In between the IDLE and the CL detent the lever commands an adequate N1 value between idle and climb thrust.</li>
+
+
+
+
+
+</ul>
+
+
+
+
+
+<br />
+
+
+
+
+
+<span style="font-weight: bold;">Third</span>, the following facts hold:<br />
+
+
+
+
+
+<br />
+
+
+
+
+
+<ul>
+
+
+
+
+
+  <li>The commanded N1 value is shown on the upper ECAM display by white bugs at the N1 display.</li>
+
+
+
+
+
+  <li>When moving the throttle lever into a detent (except for the IDLE
+detent) you will hear a click sound for each detent passed followed by
+a&nbsp;callout announcing the current thrust setting.</li>
+
+
+
+
+
+  <li>When advancing&nbsp;the throttle lever to or beyond the FLX/MCT
+detent, the A/THR will automatically engage and will remain so even if
+you move the throttle lever back to the range between the CL and the
+IDLE detent.</li>
+
+
+
+
+
+  <li>To disengage the A/THR either move your throttle lever into the
+IDLE detent (this only works on the ground) or move your throttle lever
+between the CL and the IDLE detent and press the A/THR button on the
+FCU.</li>
+
+
+
+
+
+  <li>Once the A/THR is&nbsp;engaged it can not be disangaged as long as&nbsp;the throttle lever&nbsp;is at or beyond the CL detent.</li>
+
+
+
+
+
+  <li>You will hear a single chime sound and the text is shown "A/THR
+OFF" on the upper ECAM for 10 seconds if the A/THR is disengaged.<br />
+
+
+
+
+
+  </li>
+
+
+
+
+
+</ul>
+
+
+
+
+
+<br />
+
+
+
+
+
+<span style="font-weight: bold;">Fourth</span>, the following PFD thrust announcements (located on the top left of the PFD) exist:<br />
+
+
+
+
+
+<br />
+
+
+
+
+
+<ul>
+
+
+
+
+
+  <li>"Empty"<br />
+
+
+
+
+
+No A/THR mode is active.</li>
+
+
+
+
+
+  <li>SPEED<br />
+
+
+
+
+
+The speed (IAS) hold mode is active.</li>
+
+
+
+
+
+  <li>MACH<br />
+
+
+
+
+
+The mach hold mode is active.</li>
+
+
+
+
+
+  <li>MAN TOGA<br />
+
+
+
+
+
+The A/THR is set to max. thrust.</li>
+
+
+
+
+
+  <li>MAN FLX<br />
+
+
+
+
+
+The A/THR is set to FLEX thrust.</li>
+
+
+
+
+
+  <li>THR MCT<br />
+
+
+
+
+
+The A/THR is set to max. continous thrust (not fully implemented yet).</li>
+
+
+
+
+
+  <li>THR CLB<br />
+The A/THR is set to climb thrust.</li>
+  <li>THR IDLE<br />
+
+
+
+
+
+The A/THR commands IDLE thrust.</li>
+
+
+
+
+
+  <li>THR LVR<br />
+
+
+
+
+
+When the A/THR is engaged and the throttle lever is located below the
+CL detent, the A/THR sets the thrust adequate to the throttle lever
+(thus the thrust will be below the climb thrust setting).</li>
+
+
+
+
+
+  <li>LVR CLB (flashes on the 3rd row of the thrust announcements).<br />
+
+
+
+
+
+When airborne and above the thrust reduction altitude (as set on the
+MCDU PERF TAKEOFF page) with the throttle lever not in the CL detent,
+the A/THR (if engaged) reminds the pilot to move the throttle
+lever&nbsp;to the CL detent. If the throttle lever is not moved to the
+CL detent after 10 seconds, a repetitive CHIME sound will be triggered.<br />
+
+
+
+
+
+    <br />
+
+
+
+
+
+  </li>
+
+
+
+
+
+</ul>
+
+
+
+
+
+<span style="font-weight: bold;">Fifth</span>, how to use the Airbus A/THR:<br />
+
+
+
+
+
+<br />
+
+
+
+
+
+<ul>
+
+
+
+
+
+  <li>On the ground while taxiing, the throttle lever shall not be moved beyond 40% N1. This should be enough for taxi.</li>
+
+
+
+
+
+  <li>At takeoff, advance the throttle lever to about 45% and watch the N1 display on the upper ECAM.</li>
+
+
+
+
+
+  <li>If the engines are responsive and stable, advance the throttle lever to either the FLX/MCT or the TOGA detent.</li>
+
+
+
+
+
+  <li>Check if the following&nbsp;thrust callout is correct according
+to your expected setting, if not move the throttle lever to the correct
+position.</li>
+
+
+
+
+
+  <li>When airborne and passing the thrust reduction altitude (as set
+on the MCDU PERF TAKEOFF page) move the throttle lever back to the CL
+detent.</li>
+
+
+
+
+
+  <li>From now on, the throttle lever remains in the CL detent until the A/THR is disengaged for landing.</li>
+
+
+
+
+
+  <li>When switching to manual thrust during the approach, move the
+throttle lever back until the white bugs at the upper ECAM N1 display
+reach the current N1 value. This is done to avoid a rapid thrust change
+on A/THR disengage.</li>
+
+
+
+
+
+  <li>When reaching the correct throttle lever position disengage the A/THR.</li>
+
+
+
+
+
+  <li>From now on you have manual control over the thrust.</li>
+
+
+
+
+
+  <li> Move the throttle lever to IDLE when approximately 20ft above the ground. You will hear a RETARD callout if not doing so.<br />
+
+
+
+
+
+  </li>
+
+
+
+
+
+</ul>
+
+
+
+
+
+<br />
+
+
+
+
+
+<h2>FSUIPC Control</h2>
+
+
+
+
+
+If you are using&nbsp;vasFMC with the MS Flightsimulator and own a
+registered version FSUIPC you can control vasFMC via various FSUIPC
+offsets. For details refer to the fsuipc.offsets.txt readme file
+located in the docs/help directory of your vasFMC installation. The
+file can also be viewed via the help menu of the vasFMC standalone
+version.
+<h2>Checklists</h2>
+
+
+
+
+
+vasFMC&nbsp;comes with fully configurable spoken checklists which are
+located inside the checklists directory of the vasFMC installation. The
+loaded checklists depends on the loaded aircraft data profile which can
+be selected on the MCDU MENU FMGC page.<br />
+
+
+
+
+
+Note: At the time being vasFMC only comes with an Airbus checklist. This may change in the future depending on user input.<br />
+
+
+
+
+
+<br />
+
+
+
+
+
+To view the checklist inside the FMC go the MCDU MENU CHECKLIST page,
+the&nbsp;bottom LSKs can be used to go forward and backward in the
+checklists. You may also use the hidden clickspot on the FCU (right
+below the SPD MACH button) to advance through the checklists.<br />
+
+
+
+
+
+<br />
+
+
+
+
+
+<h2>The&nbsp;Chronology of a vasFMC Flight - A Tutorial</h2>
+
+
+
+
+
+This chapter gives you a&nbsp;chronological tutorial of a flight
+using&nbsp;the advanced vasFMC features. This guide is not complete in
+respect to the actions performed during a flight and mainly focuses on
+the vasFMC features. It is&nbsp;assumed that&nbsp;you have loaded
+either the A320 or A318 aircraft data profile on the MCDU MENU FMGC
+page and that you are using the Airbus A/THR mode.<br />
+
+
+
+
+
+<br />
+
+
+
+
+
+<ul>
+
+
+
+
+
+  <li>Preflight</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li>Go to the MCDU MENU CHECKLIST page and work through the preparation checklist.</li>
+
+
+
+
+
+    <li>If possible load your flight plan from VROUTE via the MCDU MENU ACARS VROUTE page.</li>
+
+
+
+
+
+    <li>Check the weather of your departure and destination airport via the MCDU MENU ACARS WEATHER page.</li>
+
+
+
+
+
+    <li>Make sure no orange fields are left on the INIT page (except for the CO RTE field which may be left empty).</li>
+
+
+
+
+
+    <li>On the MCDU PERF TAKEOFF page do:</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+      <li>Set the V1, VR and V2 speeds.</li>
+
+
+
+
+
+      <li>Set the transition altitude.</li>
+
+
+
+
+
+      <li>Check that the thrust reduction/acceleration altitude values are correct.<br />
+
+
+
+
+
+They should be 1000ft above the field elevation per default.</li>
+
+
+
+
+
+      <li>Enter the takeoff flaps setting.</li>
+
+
+
+
+
+      <li>Enter the takeoff elevator trim, this will set the trim of your aircraft automatically.</li>
+
+
+
+
+
+      <li>Change the FLEX takeoff thrust if necessary.</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+    <li>On the MCDU PERF CLB page do:</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+      <li>Set the PRESEL SPD field to the IAS value to be used after reaching the acceleration altitude.<br />
+
+
+
+
+
+For some airports/SIDs you will have to change this to a value below 250kts depending on the SID restrictions.</li>
+
+
+
+
+
+      <li>Set the PRESEL MACH field to the requested climb mach value.</li>
+
+
+
+
+
+      <li>Change the climb N1 values if necessary.</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+    <li>On the MCDU PERF CRZ page do:</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+      <li>Set the PRESEL field to your requested cruise mach value.</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+    <li>On the MCDU PERF DES page do:</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+      <li>Set the PRESEL fields to your requested descent mach and IAS values.</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+    <li>On the MCDU F-PLN page do:</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+      <li>Select the requested departure runways and SID route.</li>
+
+
+
+
+
+      <li>Switch the ND to PLAN mode.</li>
+
+
+
+
+
+      <li>Check your routing by scrolling through the waypoints of the F-PLN page.</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+    <li>Check your fuel load.<br />
+
+
+
+
+
+    </li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+  <li>Taxi</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li>Check the taxi checklist items.</li>
+
+
+
+
+
+    <li>Make sure the flight director is switched on.</li>
+
+
+
+
+
+    <li>Check the armed FD modes on the PFD flight mode announciator (FMA), they should be OP CLB and NAV.<br />
+
+
+
+
+
+This means that after reaching the acceleration altitude the FD will
+enter the OP CLB (flight level change) vertical mode and after reaching
+30ft radar altitude&nbsp;the FD will enter the NAV (LNAV) lateral mode.</li>
+
+
+
+
+
+    <li>If you don't want to enter the NAV mode you may click with the
+right mouse button onto the HDG button on the FCU. This will arm the
+HDG hold mode, thus the FD will maintain the runway heading after
+takeoff.</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+  <li>Takeoff</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li>Check the takeoff checklist items.</li>
+
+
+
+
+
+    <li>Advance the throttle levers to either the FLEX or TOGA detent.</li>
+
+
+
+
+
+    <li>As soon as engines reach a N1 value greater than 85% or
+the aircraft reaches a speed greater than 90kts,&nbsp;the FD will
+engage with the vertical SRS (speed reference system) and lateral RWY
+mode, this is shown on the PFD FMA.</li>
+
+
+
+    <li>At 80kts, V1 and VR you will hear callouts according to the speeds entered on the MCDU.</li>
+
+
+
+
+
+    
+
+    <li>When airborne the vertical flight director bar guides you to keep the IAS between V2 and V2 + 15kts.<br />
+
+
+
+
+
+The lateral FD mode changes to RWY TRK and the lateral flight director bar guides you to keep the runway track.</li>
+
+
+
+
+
+    <li>When passing 30ft radar altitude the lateral FD mode changes to either NAV or HDG, depending on your previous selection.</li>
+
+
+
+
+
+    <li>When passing the acceleration altitude the IAS value on the FCU
+changes to the value entered on the MCDU PERF CLB page and the FD
+vertical mode changes to OP CLB. This means that the thrust is kept
+steady and your climb rate depends on your speed. The flight director will guide you to keep the climb speed. </li>
+
+
+
+
+
+    <li>When passing the thrust reduction altitude (which in most cases
+is the same as the acceleration altitude) the A/THR system reminds you
+to pull the throttle lever back to the CL detent which you should do.</li>
+
+
+
+
+
+    <li>You may engage the AP at any time as soon as above 100ft radar altitude.</li>
+
+
+
+
+
+    <li>While accelerating to the climb speed make sure to retract the flaps accordingly.</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+  <li>Climb</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li>When passing the transition altitude switch the altimeters to STD.</li>
+
+
+
+
+
+    <li>When reaching 10000ft increase&nbsp;the AP speed value on the
+FCU, I personally use&nbsp;speeds between 280 and 300 kts for the
+Airbus.</li>
+
+
+
+
+
+    <li>The AP will automatically switch to the climb mach value entered on the MCDU PERF CLB page when reaching the appropriate speed.</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+  <li>Cruise</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li>When reaching the cruise flight level the AP changes to ALT
+hold mode and sets the cruising mach value entered on the MCDU PERF CRZ
+page.</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+  <li>Descent</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li>When ready for descent, select a lower altitude on the FCU and
+click onto the ALT button. This will change the AP vertical mode to OP
+DES (flight level change) meaning that the thrust will be reduced to
+idle and your descent rate depends on the IAS.</li>
+
+
+
+
+
+    <li>Set your arrival runway and approach procedures (STAR, TRANSITION) via the F-PLN page.</li>
+
+
+
+
+
+    <li>Check the weather of your&nbsp;destination airport via the MCDU MENU ACARS WEATHER page.</li>
+
+
+
+
+
+    <li>On the MCDU PERF APPR page do:</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+      <li>Enter the transition flight level.</li>
+
+
+
+
+
+      <li>Enter either the DH or the MDA for your approach.</li>
+
+
+
+
+
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+    <li>Before passing 10000ft set the AP speed value on the FCU to 250kts or less.</li>
+
+
+
+
+
+    <li>When passing the transition level switch the altimeters to the appropriate value.</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+  <li>Approach</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li>When near the airfield engage the approach phase on the MCDU
+PERF page. You will have to click onto the left bottom LSK twice to
+activate. This will set your speed to green dot speed (which is the
+best speed with flaps up to save fuel) and will tune the NAV1 unit to
+the ILS (if you have selected an ILS approach).</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+  <li>Landing</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li>When switching to manual thrust, pull the throttle back until
+the bugs on the N1 display overlap with the current N1 value. Then disengage
+the A/THR system via the FCU.</li>
+
+
+
+
+
+    <li>Check the landing checklist items.</li>
+
+
+
+
+
+    <li>The MCDU PERF APPR page gives you a hint about the approach
+speed to fly before touchdown (VAPP value). This value heavily depends
+on the aircraft used and the current weight and may not be accurate for
+your aircraft.</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+  <li>After landing</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li>Check the after landing checklist items.</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+  <li>Parking</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+    <li>Check the parking checklist items.</li>
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+</ul>
+
+
+
+
+
+<br />
+
+
+
+
+
+Congratulations, you have made to the end of this tutorial, i hope you enjoyed your flight. <br />
+
+
+
+
+
+<br />
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+  
+<div id="footer">
+    
+<p>&copy; Copyright 2009 by Alex Wemmer. All Rights Reserved.</p>
+
+
+
+
+
+
+
+
+  <!-- end #footer --></div>
+
+
+
+
+
+
+
+
+<!-- end #container --></div>
+
+
+
+
+
+
+
+
+</body>
+</html>

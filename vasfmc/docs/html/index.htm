@@ -1,0 +1,1347 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>vasFMC User's Guide</title>
+  <link href="vasfmc2.css" rel="stylesheet" type="text/css" />
+<!--[if IE 5]>
+<style type="text/css">
+/* place css box model fixes for IE 5* in this conditional comment */
+.twoColFixLtHdr #sidebar1 { width: 230px; }
+</style>
+<![endif]--><!--[if IE]>
+<style type="text/css">
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColFixLtHdr #sidebar1 { padding-top: 30px; }
+.twoColFixLtHdr #mainContent { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <style type="text/css">
+<!--
+.style1 {font-family: "Courier New", Courier, monospace}
+-->
+  </style>
+</head>
+
+
+<body class="twoColFixLtHdr">
+
+
+
+
+
+
+
+
+
+
+
+<div id="container">
+
+<div id="header">
+
+<h1 align="center"><a href="http://vas-project.org"><img src="vasfmc-banner.png" alt="vasFMC Banner" longdesc="http://vasFMC - As REAL as it gets" height="94" width="640" /></a></h1>
+
+
+
+
+
+
+
+
+
+
+  <!-- end #header --></div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar1">
+
+<h1>Contents</h1>
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+
+
+      <li><a href="index.htm">Overview</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+
+
+
+
+    <li><a href="#IndexNavdata">Navigation Data</a></li>
+
+
+
+
+
+
+
+
+
+
+
+        <li><a href="#Installation">Installation</a></li>
+
+
+
+
+
+
+
+
+
+
+        <li><a href="#RemoteSys">Remote Setup</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+
+
+
+
+
+      <li><a href="quickstart.htm">First Flight</a></li>
+  <li><a href="advanced.htm">Advanced Flight</a></li>
+
+
+
+
+
+
+
+
+
+
+      <li><a href="MCDURef.htm">MCDU - Flight Planning</a></li>
+
+
+
+
+
+
+
+
+
+
+      <li><a href="MFCURef.htm">FCU - Autopilot</a></li>
+
+
+
+
+
+
+
+
+
+
+      <li><a href="NDRef.htm">Nav Display</a></li>
+
+
+
+
+
+
+
+
+
+
+      <li>Primary Flight Display</li>
+
+
+
+
+
+
+
+
+
+
+      <li>ECAM</li>
+
+
+
+
+
+
+
+
+
+
+      <li>Tips</li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+
+  <!-- end #sidebar1 --></div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="mainContent">
+
+<h1>Program Versions</h1>
+
+
+
+
+
+
+
+
+
+
+
+<p> vasFMC version 2 is a completely new program from version 1, and should not be confused with it.</p>
+
+
+
+
+
+
+
+
+
+
+
+<p class="warning">This manual covers the "alpha 9" release of vasFMC
+version 2 (2.0a9). As the program is still in active development some
+functions will work differently from one test release to the next.
+Report bugs in the <a href="http://forum.vas-project.org" target="_blank">vasFMC forum</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+<h1><a name="Overview" id="Overview"></a>Overview</h1>
+
+
+
+
+
+
+
+
+
+
+
+<p class="BodyText">vas\vaslib\src\vasFMC version 2 is a free, open source Flight
+Management System (FMS) for Microsoft Flight Simulator (2002, 2004/FS9
+and FSX) and X-Plane based on the FMS used in many Airbus models. Some
+of its features are:</p>
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+
+
+
+
+      <li>Airbus and Boeing styles.</li>
+
+
+
+
+
+
+
+
+
+  <li>Special Airbus Throttle and Thrust handling, support for Airbus throttle detents.</li>
+
+
+
+
+
+
+
+
+
+  <li>Fly by wire system tuned for the Project Airbus (<a target="_blank" href="http://www.pairbus.com/">www.pairbus.com</a>) models.</li>
+
+
+
+
+
+
+
+
+
+  <li>Runs as a separate program or as a FS9 gauge, the gauge version comes with the Ken Mitchell Airbus panel.</li>
+
+
+
+
+
+
+
+
+
+  <li>Flight planning, including SID/STAR and named airways.</li>
+
+
+
+
+
+
+
+
+
+
+      <li>Data entry from either PC keyboard or MCDU virtual keys.</li>
+
+
+
+
+
+
+
+
+
+
+      <li>Autopilot heading (LNAV) control (similar to GPS nav mode
+in MSFS). Vertical navigation (VNAV) is not yet implemented but is
+planned in a future release.</li>
+
+
+
+
+
+
+
+
+
+
+      <li>Uses latest navaid/fix database from <a href="http://www.navigraph.com" target="_blank">Navigraph.com</a>.</li>
+
+
+
+
+
+
+
+
+
+
+      <li>Navigation display with selectable modes: flight plan path, ILS or VOR rose.</li>
+
+
+
+
+
+
+
+
+
+
+      <li>Top of climb (TOC), top of descent (TOD) and end of descent (EOD) estimation and display.</li>
+
+
+
+
+
+
+
+
+
+
+      <li>Primary flight display (PFD) showing attitude, IAS, pressure and radio altitude, vertical speed and autopilot status.</li>
+
+
+
+
+
+
+
+
+
+
+      <li>Two display styles for Nav Display and PFD.</li>
+
+
+
+
+
+
+
+
+
+
+      <li>Engine status display.</li>
+
+
+
+
+
+
+
+
+
+
+      <li>Navaid (VOR/NDB) tuning by either frequency or navaid name.</li>
+
+
+
+
+
+
+
+
+
+
+
+      <li>Date/time synchronization with the real world.<br />
+
+
+
+
+
+
+
+
+
+  </li>
+
+
+
+
+
+
+
+
+
+  <li>Communicating with the MS flight simulator through the free version of Peter Dowson's <a href="http://www.schiratti.com/dowson.html" target="_blank">FSUIPC</a> interface (not included).</li>
+
+
+
+
+
+
+
+
+
+  <li>Communicating with X-Plane through custom plugin with CAN Aerospace technology.</li>
+
+
+
+
+
+
+
+
+
+
+      <li>Supported by 3rd party flight planners like <a href="http://fsbuild.com/" target="_blank">FSBuild</a>.</li>
+
+  <li>Online weather and flightplan access.</li>
+
+  <li>More to come...</li>
+
+
+
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+
+<br />
+
+
+
+
+
+
+
+
+
+<br />
+
+
+
+
+
+
+
+
+
+The following picture shows an overview of the A-Style displays:<br />
+
+
+
+
+
+
+
+
+
+<br />
+
+
+
+
+
+
+
+
+
+<div style="text-align: center;"><img style="width: 1024px; height: 878px;" alt="A-Style Overview" src="overview_astyle.jpg" /></div>
+
+
+
+
+
+
+
+
+
+<p>The following picture shows an overview of the B-Style displays:</p>
+
+
+
+
+
+
+
+
+
+<p style="text-align: center;"><img style="width: 1024px; height: 877px;" alt="B-Style Overview" src="overview_bstyle.jpg" /></p>
+
+
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+
+
+
+
+<h1><a name="IndexNavdata" id="IndexNavdata"></a>Navigation Data</h1>
+
+
+
+
+
+
+
+
+
+
+
+<p>The navigation database used by vasFMC is directly supported by
+Navigraph which updates the data files for each monthly AIRAC cycle.
+Please <a target="_blank" href="http://www.navigraph.com/www/fmsdata.asp">see  Navigraph</a>
+for information on obtaining the data. The Navigraph installer will ask
+for the folder where you installed vasFMC and will install the files in
+the proper subfolder.</p>
+
+
+
+
+
+
+
+
+
+
+
+<p class="warning">Note that this data is not the same as that used by
+the built-in MSFS GPS. Real world navigation data changes over time,
+but the MSFS GPS data format is not supported by Navigraph. This is
+another good reason to use vasFMC instead of the built-in GPS.</p>
+
+
+
+
+
+
+
+
+
+
+
+<h1><a name="Installation" id="Installation"></a>Installation of the Windows Standalone Version</h1>
+
+
+
+
+
+
+
+
+
+<p>vasFMC
+comes packaged as a standard executable installer. As with any
+installer, just run the program and follow the prompts. The default
+installation directory is C:\Program Files\vasfmc2, but you can change
+this during the installation.</p>
+
+
+
+
+
+
+
+
+
+<p>vasFMC runs as a separate program independently from your flight
+simulator. To start vasFMC from your Windows start menu, select the
+vasFMC program group and the vasFMC item within it. If you use multiple
+monitors putting the vasFMC windows on a separate monitor is a
+convenient way of having them visible at all times. The window
+positions will be remembered from the previous placement and will
+always show up where you place them.</p>
+
+
+
+
+
+
+
+
+
+
+
+<p>vasFMC communicates with MSFS through the free version of the <a href="http://www.schiratti.com/dowson.html" target="_blank">FSUIPC</a>
+library. FSUIPC is not included with vasFMC, however it is widely
+available on flight simulator enthusiast sites as well as from its
+author at <a href="http://www.schiratti.com/dowson.html" target="_blank">www.schiratti.com/dowson.html</a>.&nbsp;Some features of vasFMC require a registered version of&nbsp;FSUIPC.</p>
+
+
+
+
+
+
+
+
+
+
+
+<h1>Installation of the&nbsp;MSFS&nbsp;2004 Gauge Version</h1>
+
+
+
+
+
+
+
+
+
+
+
+<p>vasFMC comes packaged as a standard executable installer. As with
+any installer, just run the program and follow the prompts. You must
+provide the root directory of your FS2004 to the installer!&nbsp;During
+the gauge installation a new folder will be created under
+your FS9 Aircraft folder: vasfmc_panel_a320. This contains the default
+vasFMC Airbus panel which uses the vasFMC gauges.&nbsp;Besides the
+vasFMC gauge version installer you can also find various
+Project Airbus model downloads on the VAS homepage, all of them must be
+installed into the FS2004 aircraft directory and are vasFMC-ready.</p>
+
+
+
+
+
+
+
+
+
+If you want to integrate vasFMC into any other aircraft panel you will have to adapt the aircraft.cfg file as follows:
+
+<blockquote>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <p class="style1">[fltsim]<br />
+
+
+
+
+
+
+
+
+
+
+        alias=vasfmc_panel_a320</p>
+
+
+
+
+
+
+
+
+
+
+    </blockquote>
+
+
+
+
+
+
+
+
+
+
+
+<p>This is how the gauges are used in vasfmc_panel_a320/panel.cfg:</p>
+
+
+
+
+
+
+
+
+
+
+
+<blockquote>
+
+
+
+
+
+  
+  
+  
+  
+  
+  <p class="style1">gauge14=vasfmcgau!pfd,     28,708, 342,342, builtin id10001 a_style<br />
+
+
+
+
+
+
+
+
+
+
+        gauge15=vasfmcgau!nd,     436,708, 342,342, builtin id10002 a_style<br />
+
+
+
+
+
+
+
+
+
+
+        gauge16=vasfmcgau!uecam, 1160,690, 316,316, builtin id10003 a_style<br />
+
+
+
+
+
+
+
+
+
+
+        gauge17=vasfmcgau!fcu,    601,433</p>
+
+
+
+
+
+
+
+
+
+
+    </blockquote>
+
+
+
+
+
+
+
+
+
+
+
+<p>The first two extra parameters ("<span class="style1">builtin id10001</span>")
+are necessary to let you left click on the gauge to make the gauge larger. The 3rd extra
+parameter controls the gauge style and can be either "<span class="style1">a_style</span>" or "<span class="style1">b_style</span>" (see the <a href="NDRef.htm">ND</a>
+and PFD chapters for the differences in the two styles). Please note that the styles must not be mixed. The panel.cfg
+file also has entries for Window04 through Window07 which can be used
+as guides in building your own panel.</p>
+
+
+
+
+
+
+
+
+
+vasFMC communicates with MSFS through the free version of the <a href="http://www.schiratti.com/dowson.html" target="_blank">FSUIPC</a>
+library. FSUIPC is not included with vasFMC, however it is widely
+available on flight simulator enthusiast sites as well as from its
+author at <a href="http://www.schiratti.com/dowson.html" target="_blank">www.schiratti.com/dowson.html</a>. Some features of vasFMC require a registered version of&nbsp;FSUIPC.
+
+<h1>Installation on Mac OSX</h1>
+
+
+
+
+
+<p>Unpack the contents of the .zip-file to any location of your liking. No further installation necessary. vasFMC starts by
+double-clicking vasfmc.app
+</p>
+
+
+
+
+
+
+<h1>Installation on Linux</h1>
+
+
+
+
+
+<p>Unpack the contents of the .zip-file to any location in your $home-directory. We do NOT encourage installation in /usr/bin
+and /usr/lib respectively, as this is not tested. vasFMC is completely self-contained in its folder, breaking up the structure
+may cause vasFMC to not find navigational data, aircraft performance data and so on. <br />
+
+
+
+
+
+Start vasFMC by starting the vasfmc.sh shell script from the terminal, not by starting the vasfmc binary itself.
+For convenience, you can create a desktop shortcut to the shellscript. <strong>IMPORTANT:</strong>
+When doing so, it is
+neccesary to set the vasfmc-folder as "working directory" in which
+vasfmc.sh starts, otherwise you will get an error because vasFMC
+cannot find navigational data, performance data, etc.
+</p>
+
+
+
+
+
+
+<h1>Setting up integration in X-Plane</h1>
+
+
+
+
+
+
+<p>vasFMC communicates with X-Plane via the xpfmcconn plugin that <strong>comes as a separate download</strong>.</p>
+
+
+
+
+
+<p>Install the plugin by unpacking the xpfmcconn directory to YOUR_X-PLANE_DIR/Resources/plugins/ <br />
+
+
+
+
+
+<strong>IMPORTANT:</strong> The plugin is a fat plugin, so the folder "xpfmcconn" with its contained files "lin.xpl", "mac.xpl" and
+"win.xpl" must reside inside the Resources/plugins/ folder. Never drop one file alone to Resources/plugins/ or the plugin
+will not work.</p>
+
+
+
+
+
+
+<p>The vasFMC X-Plane integration is driven by <a target="_blank" href="http://www.canaerospace.com/">CAN Aerospace</a> technology: &nbsp;  <img style="width: 158px; height: 94px;" alt="CAN Aerospace" src="driven.jpg" align="top" /><br />
+
+
+
+
+
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+<h1><a name="RemoteSys" id="RemoteSys"></a>Use on a Remote System for MS FlightSimulator</h1>
+
+
+
+
+
+
+
+
+
+
+
+<p>The standalone version of vasFMC can be run on a separate system by using <a target="_blank" href="http://www.schiratti.com/dowson.html">WideFS</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+<p class="warning">Be sure to start the simulator <em>before</em> starting vasFMC. Starting these in the wrong order can cause WideFS to consume 99% of the CPU.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Use on a Remote System for X-Plane</h1>
+
+
+
+
+
+<p>
+vasFMC and the X-Plane plugin communicate via a UDP multicast. This works on the very same machine or with multiple
+machines without changing IP addresses, <strong>provided your firewalls allow incoming UDP connections.</strong>
+To ensure that, open ports 50707 and 63703 for UDP traffic on the firewalls of <strong>both</strong> machines.
+</p>
+
+
+
+
+
+<div class="warning"><em><strong>If network connection does not work:</strong></em><br />
+
+
+
+
+
+<p>
+The support of UDP multicast is highly dependent on the network hardware you use. Stoneage network equipment may not be able
+to distribute multicasts. In that case, it is strongly recommended to upgrade your network infrastructure.
+As a workaround you can use the traditional way of inserting normal IP addresses.</p>
+
+
+<p>To do this, locate the file "fsaccess_xplane.cfg" in the cfg folder of your vasFMC installation. Edit the line<br />
+
+
+
+
+
+</p>
+
+
+
+
+<pre style="display: inline;">hostaddress=239.40.41.42</pre>
+
+
+
+
+<br />
+
+
+
+
+
+To read<br />
+
+
+
+
+
+<pre style="display: inline;">hostadress=The IP address of the computer running X-Plane<br /></pre>
+
+
+
+
+<br />
+
+
+
+
+
+
+In X-Plane, locate the file "xpfmcconn.cfg" in YOUR_X-PLANE_DIR/Resources/plugins/xpfmcconn and change the line<br />
+
+
+<br />
+
+
+
+
+
+<pre style="display: inline;">hostaddress=239.40.41.42</pre>
+
+
+
+
+<br />
+
+
+
+
+
+To read<br />
+
+
+
+
+
+<pre style="display: inline;">hostadress=The IP address of the computer running vasFMC</pre>
+
+
+
+
+
+<br class="warning" />
+
+
+
+
+
+
+</div>
+
+
+
+
+
+<p class="warning">
+<em><strong>Note for Wireless LANs (WiFi):</strong></em><br />
+
+
+
+
+The speed and reliability of multicast is dependent on the network stack implementation of your chipset.
+Transfer rates on the same machine differ extremely running Linux or Windows.
+Also some wireless access points and routers have problems handling dense UDP multicast traffic.<br />
+In case of low transfer rates the vasFMC displays will react slowly and with stuttering and jumping.
+For optimum results, we strongly recommend the use of a wired ethernet connection between the machines running vasFMC and X-Plane.<br />
+
+
+</p>
+
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><br />
+
+
+
+
+
+
+
+
+
+</p>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div id="footer">
+
+<p>&copy; Copyright 2008 by Guy Finney and Alex Wemmer. All Rights Reserved.</p>
+
+
+
+
+
+
+
+
+
+
+  <!-- end #footer --></div>
+
+
+
+
+
+
+
+
+
+
+<!-- end #container --></div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

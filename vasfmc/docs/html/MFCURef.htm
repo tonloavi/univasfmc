@@ -1,0 +1,1204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>vasFMC User's Guide</title>
+  <link href="vasfmc2.css" rel="stylesheet" type="text/css" />
+<!--[if IE 5]>
+<style type="text/css"> 
+/* place css box model fixes for IE 5* in this conditional comment */
+.twoColFixLtHdr #sidebar1 { width: 230px; }
+</style>
+<![endif]--><!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColFixLtHdr #sidebar1 { padding-top: 30px; }
+.twoColFixLtHdr #mainContent { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]-->
+</head>
+
+
+<body class="twoColFixLtHdr">
+
+
+
+
+
+
+
+<div id="container">
+  
+<div id="header">
+    
+<h1 align="center"><a href="http://vas-project.org"><img src="vasfmc-banner.png" alt="vasFMC Banner" longdesc="http://vasFMC - As REAL as it gets" height="94" width="640" /></a></h1>
+
+
+
+
+
+
+
+    <!-- end #header -->
+  </div>
+
+
+
+
+
+
+
+  
+<div id="sidebar1">
+    
+<h1>Contents</h1>
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+      
+      <li><a href="index.htm">Overview<br />
+
+
+
+
+
+
+    </a></li>
+
+
+
+
+
+
+
+      <li><a href="quickstart.htm">First Flight</a></li>
+
+  <li><a href="advanced.htm">Advanced Flight</a></li>
+
+
+
+
+
+
+
+      <li><a href="MCDURef.htm">MCDU - Flight Planning</a></li>
+
+
+
+
+
+
+
+      <li><a href="MFCURef.htm">FCU - Autopilot</a>
+      
+    
+    
+    
+    
+    
+    
+    <ul>
+
+
+
+
+
+
+
+        <li><a href="#FCUAltimeter">Altimeter</a></li>
+
+
+
+
+
+
+
+        <li><a href="#FCUND">ND &amp; PFD</a></li>
+
+
+
+
+
+
+
+        <li><a href="#FCUAT">Autothrottle (AT)</a></li>
+
+
+
+
+
+
+
+        <li><a href="#FCUAltitude">Altitude</a></li>
+
+
+
+
+
+
+
+        <li><a href="#FCULNAV">LNAV</a></li>
+
+
+
+
+
+
+
+        <li><a href="#FCUApproach">Approach</a></li>
+
+
+
+
+
+
+
+      
+    
+    
+    
+    
+    
+    
+    </ul>
+
+
+
+
+
+
+
+      </li>
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+      <li><a href="NDRef.htm">Nav Display</a></li>
+
+
+
+
+
+
+
+      <li>Primary Flight Display</li>
+
+
+
+
+
+
+
+      <li>ECAM</li>
+
+
+
+
+
+
+
+      <li>Tips</li>
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+    <!-- end #sidebar1 -->
+  </div>
+
+
+
+
+
+
+
+  
+<div id="mainContent">
+  
+<h1>FCU - Autopilot Window</h1>
+
+
+
+
+
+
+
+  
+<p>The Flight Control Unit (FCU) provides controls and indicators which
+affect both the aircraft's attitude and the other display windows (ND
+&amp; PFD). It is broken into two parts:</p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Electronic Flight Information System (EFIS) Control Panel.
+This affects what is shown in the Nav Display (ND) and Primary Flight
+Display (PFD) windows.</li>
+
+
+
+
+
+
+
+    <li>Autopilot/Autothrottle Control Panel. These controls implement familiar autopilot (AP) and autothrottle (AT) functions.</li>
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+  
+<p>The knobs on the panel have different behavior for the left mouse
+button (LMB) vs. the right mouse button (RMB). Be sure you know which
+function you want when you click on a knob.</p>
+
+
+
+
+
+
+
+  
+<p><img src="MFCURef.jpg" alt="MFCU" height="172" width="600" /></p>
+
+
+
+
+
+
+
+  
+<h1>EFIS Control Panel</h1>
+
+
+
+
+
+
+
+  
+<p>The controls in this section of the FCU window primarily affect the
+ND window. As you would expect, the altimeter adjustments affect the
+altitude shown in the PFD.</p>
+
+
+
+
+
+
+
+  
+<h2><a name="FCUAltimeter" id="FCUAltimeter"></a>Altimeter adjustment</h2>
+
+
+
+
+
+
+
+  
+<p>The FCU reads the same flight simulator variables as any other
+panel. Using the flight sim command to automatically set the altimeter
+will change the value shown in the vasFMC FCU. Naturally, you can also
+set it manually.</p>
+
+
+
+
+
+
+
+  
+<p><img src="MFCUAltimeter.jpg" alt="Altimeter" height="236" width="387" /></p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Left click on the knob to enable altimeter changes.</li>
+
+
+
+
+
+
+
+    <li>Left click on either <em>in Hg</em> to set the altimeter using imperial units, or <em>hPa</em> to use metric units.</li>
+
+
+
+
+
+
+
+    <li>Use the mouse wheel over the knob to scroll the display to
+the desired setting. You can also click to the left or right of the
+knob to increase or decrease the value.</li>
+
+
+
+
+
+
+
+    <li>Right click on the knob to set standard pressure (STD). This disables changes - left click to enable changes again. </li>
+
+
+
+
+
+
+
+    <li>The altimeter displayed in the PFD will change with this
+selection. When STD pressure is set the PFD will display the altitude
+set as a flight level (FL). For example, 24,000 ft would be shown as
+"FL240" at STD pressure, but "24000" at any other pressure.</li>
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+  
+<h2><a name="FCUND" id="FCUND"></a>ND &amp; PFD control</h2>
+
+
+
+
+
+
+
+  
+<p><img src="MFCUEFIS.jpg" alt="EFIS" height="340" width="500" /></p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>To select the ND display mode, left/right click to rotate the
+knob left/right. You can also use the mouse wheel over the knob to
+scroll through the selections.</li>
+
+
+
+
+
+
+
+    <li>To select the range displayed by the ND, left/right click to
+rotate the knob left/right. You can also use the mouse wheel over the
+knob to scroll through the selections. Note that the selected distance
+represents the width of the display. Modes which have the aircraft in
+the center will extend half as far. That is, the selected distance is
+the diameter so the radius is half as wide.</li>
+
+
+
+
+
+
+
+    <li>To select whether VOR1, ADF1 or nothing is shown in the lower
+left of the ND, click the VOR/ADF/OFF selections under the left knob
+(1). The lower right display is similarly controlled by the VOR/ADF/OFF
+selections under the right knob (2).</li>
+
+
+
+
+
+
+
+    <li>To turn on/off the display of airports (<em>ARPT</em>), <em>NDBs</em>, <em>VORs</em> or crossing restrictions (<em>CSTR</em>),
+click the corresponding button above the knobs. Note that by default
+only airports with runways 2000m or longer will be shown. This helps
+declutter the ND, especially in large urban areas.</li>
+
+
+
+
+
+
+
+    <li>To show the ILS indicators on the PFD, click the ILS button under the altimeter knob.</li>
+
+
+
+
+
+
+
+    <li>To show the flight director (FD) arrows on the PFD, click the FD button under the altimeter knob.</li>
+
+
+
+
+
+
+
+  
+</ul>
+
+
+
+
+
+
+
+  
+<h1>Flight Control Unit (FCU)</h1>
+
+
+
+
+
+
+
+  
+<h2><a name="FCUAT" id="FCUAT"></a>Autothrottle (AT)</h2>
+
+
+
+
+
+
+
+  
+<p>The autothrottle (AT) controls let you hold a set speed, the current
+speed or a given N1 percentage (N1 is used only on turbojets &amp;
+turboprops).</p>
+
+
+
+
+
+
+
+  
+<p><img src="MFCUAT.jpg" alt="Autothrottle" height="253" width="394" /></p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Select Indicated Airspeed (IAS) or Mach by clicking the <em>SPD/MACH</em> button.</li>
+
+
+
+
+
+
+
+    <li>To hold the current speed, click the <em>A/THR</em> button to
+arm the AT. Then left click on the speed knob to engage AT. The display
+will change to show the speed being held, and the AT will adjust the
+engine power as needed to hold the given speed (up to the engine(s)
+limit). The light above the button label will come on and SPD will show
+in the PFD.</li>
+
+
+
+
+
+
+
+    <li>To change the set speed, scroll the mousewheel over the speed
+set knob. You can also click to the left/right of the knob to
+decrease/increase the set speed.</li>
+
+
+
+
+
+
+
+    <li>To hold a given N1 %, set the percentage of climb thrust on the MCDU PERF climb page. Then click the small screw next to the <em>LOC</em> button. The N1 indicator will show in the PFD.</li>
+
+
+
+
+
+
+
+    <li>To disengage the AT, click the <em>A/THR</em> button. The light above the label will go out along with the SPD indicator on the PFD.</li>
+
+
+
+
+
+
+
+  
+</ul>
+
+
+
+<br />
+
+
+
+
+
+
+
+
+
+
+
+    
+<p class="warning">Important: If you enabled the Airbus
+Throttle&nbsp;mode on the MCDU MENU/SETTINGS page, the At will behave
+differently. <br />
+Take a look into the advanced flight chapter for details.&nbsp;</p>
+
+
+
+
+
+
+
+  
+<h2><a name="FCUAltitude" id="FCUAltitude"></a>Altitude setting</h2>
+
+
+
+
+
+
+
+  
+<p>You can set a desired altitude and rate of climb/descent and the
+autopilot (AP) will manage the aircraft's pitch to achieve the goal you
+set (up to the aircraft's limits). The AP must be engaged for the
+controls to take effect.</p>
+
+
+
+
+
+
+
+  
+<p><img src="MFCUAltitude.jpg" alt="Altitude" height="221" width="313" /></p>
+
+
+
+
+
+
+
+  
+<p>To set the desired altitude:</p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Left click to the left/right of the altitude knob to change
+the altitude by 100 feet. You can also scroll the mousewheel over the
+knob to change in 100 foot increments.</li>
+
+
+
+
+
+
+
+    <li>Right click to the left/right  of the altitude knob to change the altitude by 1000 feet.</li>
+
+
+
+
+
+
+
+    <li>Left click to the left/right of the rate knob to change the
+rate by 100 feet. You can also scroll the mousewheel over the knob to
+change in 100 foot increments.</li>
+
+
+
+
+
+
+
+    <li>Right click to the left/right  to change the rate by 1000 feet.</li>
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+  
+<p>Speed dependend climb/descend (OP CLB/DES, FLCH):</p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Left or right click on the altitude knob to enable the
+flight level change mode. In this mode, the thrust and the speed (IAS
+or MACH) will be fixed and the actual climb/descent rate depend on the
+aircraft performance and the environment (altitude, wind changes, etc.).</li>
+
+
+
+</ul>
+
+
+
+
+
+
+
+  
+<p>To level off at the current altitude and enter V/S hold mode:</p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Left click on the V/S rate knob. Note that the actual altitude
+reached will depend on how quickly the aircraft responds to the V/S
+change. The preset altitude will not be changed. This is one way to
+effect a stepped climb or descent. The PFD will still show the ALT
+indicator.</li>
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+  
+<p>To hold the current vertical speed (climb or descent) and enter V/S hold mode:</p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Right click on the rate knob. </li>
+
+
+
+
+
+
+
+  
+</ul>
+
+
+
+
+
+
+
+  
+<h2><a name="FCULNAV" id="FCULNAV"></a>Lateral navigation (LNAV)</h2>
+
+
+
+
+
+
+
+  
+<p>You can set the FCU to control the aircraft's heading either in a
+fixed direction or to change directions as needed to follow the current
+flight plan. The AP must be engaged for the controls to take effect.</p>
+
+
+
+
+
+
+
+  
+<p><img src="MFCULNAV.jpg" alt="LNAV" height="234" width="220" /></p>
+
+
+
+
+
+
+
+  
+<p>To toggle flight plan following (LNAV):</p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Left click on the heading knob to enable lateral navigation (LNAV).</li>
+
+
+
+
+
+
+
+    <li>When vasFMC is following the flight plan the ND will show a
+solid flight plan line. The
+PFD will show (L)NAV. The heading indicator on the FCU will show "---" to
+show that the heading will follow the flight plan.</li>
+
+
+
+
+
+
+
+    <li>When vasFMC is not following the flight plan the ND will show
+a dashed flight plan line. The
+PFD will show HDG. The heading indicator on the FCU will show the
+current&nbsp;heading bug setting.</li>
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+  
+<p>To fly&nbsp;the current heading and enter the HDG mode:</p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Right click on the heading knob.</li>
+
+
+
+
+
+
+
+    <li>When tracking the current heading the heading bug will be set
+to the current heading and the autopilot heading mode will be engaged.</li>
+
+
+
+
+
+
+
+  
+</ul>
+
+
+
+
+
+
+
+  
+<p>To set the heading bug:</p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Left click to the left/right of the knob to change the heading by 1 degree. You can also scroll the mousewheel over the knob.</li>
+
+
+
+
+
+
+
+    <li>Right click to the left/right of the knob to change the heading by 10 degrees.</li>
+
+
+
+
+
+
+
+  
+</ul>
+
+
+
+
+
+
+
+  
+<h2><a name="FCUApproach" id="FCUApproach"></a>Approach control</h2>
+
+
+
+
+
+
+
+  
+<p>There are two buttons which will follow an ILS. Before the FCU can
+follow the signal, the ILS frequency must be set in NAV1 and an ILS
+signal must be received.</p>
+
+
+
+
+
+
+
+  
+<p>To have the FCU track only an ILS localizer:</p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Click the <em>LOC</em> button. This will turn off <em>APPR</em>. The PFD will show LOC.</li>
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+  
+<p>To have the FCU track both the localizer and glideslope:</p>
+
+
+
+
+
+
+
+  
+<ul>
+
+
+
+
+
+
+
+    <li>Click the <em>APPR</em> button. This will turn off <em>LOC</em>. The PFD will show LOC and G/S.</li>
+
+
+
+
+
+
+
+  
+</ul>
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+  
+<div id="footer">
+    
+<p>&copy; Copyright 2008 by Guy Finney and Alex Wemmer. All Rights Reserved.</p>
+
+
+
+
+
+
+
+    <!-- end #footer -->
+  </div>
+
+
+
+
+
+
+
+  <!-- end #container -->
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

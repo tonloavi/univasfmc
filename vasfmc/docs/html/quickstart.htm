@@ -1,0 +1,1509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+
+
+
+  
+  
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>vasFMC User's Guide</title>
+  <link href="vasfmc2.css" rel="stylesheet" type="text/css" />
+<!--[if IE 5]>
+<style type="text/css"> 
+/* place css box model fixes for IE 5* in this conditional comment */
+.twoColFixLtHdr #sidebar1 { width: 230px; }
+</style>
+<![endif]--><!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColFixLtHdr #sidebar1 { padding-top: 30px; }
+.twoColFixLtHdr #mainContent { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]-->
+</head>
+
+
+<body class="twoColFixLtHdr">
+
+
+
+
+
+
+<div id="container">
+  
+<div id="header">
+    
+<h1 align="center"><a href="http://vas-project.org"><img src="vasfmc-banner.png" alt="vasFMC Banner" longdesc="http://vasFMC - As REAL as it gets" height="94" width="640" /></a></h1>
+
+
+
+
+
+  <!-- end #header --></div>
+
+
+
+
+
+  
+<div id="sidebar1">
+    
+<h1>Contents</h1>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      
+      <li><a href="index.htm">Overview<br />
+
+
+
+
+    </a></li>
+
+
+
+
+
+      <li><a href="quickstart.htm">First Flight</a></li>
+
+
+
+
+
+      
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+        <li><a href="#BasicFlightInfo">Enter basic flight Info</a></li>
+
+
+
+
+
+        <li><a href="#EnterRoute">Enter route</a></li>
+
+
+
+
+
+        <li><a href="#ConfigND">Config nav display</a></li>
+
+
+
+
+
+        <li><a href="#NavFreq">Set nav freq</a></li>
+
+
+
+
+
+        <li><a href="#GoFly">Go flying!</a></li>
+
+
+
+
+
+        <li><a href="#Descent">Cruise &amp; descent</a></li>
+
+
+
+
+
+        <li><a href="#AddWaypoint">Add approach</a></li>
+
+
+
+
+
+        <li><a href="#Landing">Landing</a></li>
+
+
+
+
+
+      
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+      <li><a href="advanced.htm">Advanced Flight</a></li>
+
+
+  <li><a href="MCDURef.htm">MCDU - Flight Planning</a></li>
+
+
+
+
+
+      <li><a href="MFCURef.htm">FCU - Autopilot</a></li>
+
+
+
+
+
+      <li><a href="NDRef.htm">Nav Display</a></li>
+
+
+
+
+
+      <li>Primary Flight Display</li>
+
+
+
+
+
+      <li>ECAM</li>
+
+
+
+
+
+      <li>Tips</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+  <!-- end #sidebar1 --></div>
+
+
+
+
+
+  
+<div id="mainContent">
+    
+<h1>First Flight</h1>
+
+
+
+
+
+    
+<p>vasFMC can operate either as a standalone program or as gauges in
+your cockpit panel. We recommend that you run vasFMC as a standalone
+program initially to acquaint yourself with all the functions. This
+example is written from that perspective.</p>
+
+
+
+
+
+    
+<p>When you run vasFMC as a standalone program the console window will
+appear. It lets you set some program-wide options from the menu bar and
+has pushbuttons which toggle the dfferent windows. Each window is
+described in its own reference chapter in this manual.</p>
+
+<p>Important: Make sure that the Airbus A/THR mode is deactivated on the MCDU MENU/SETTINGS page!</p>
+
+
+
+
+
+    
+<p>        <strong><a href="MCDURef.htm">MCDU</a></strong>: Flight planning.<br />
+
+
+
+
+
+      <strong><a href="MFCURef.htm">FCU</a></strong>: Autopilot (AP) &amp; autothrottle (AT).<br />
+
+
+
+
+
+      <strong><a href="NDRef.htm">Nav Display</a></strong> (ND): Flight path and navigation rose.<br />
+
+
+
+
+
+      <strong>Primary Flight Display</strong> (PFD) - chapter not yet written.<br />
+
+
+
+
+
+      <strong>ECAM</strong>: Engine and control status - chapter not yet written.</p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Push the window visibility buttons so that you have the
+left MCDU, left ND, left PFD, ECAM and FCU windows visible. The "left" and "right"
+versions of some windows are identical; only one of each needs to be
+visible.</li>
+
+
+
+
+
+      <li>On the menu bar you can select two styles of display for some of the windows. Style A is shown here and is the default.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p>We are going to fly from London Heathrow (EGLL) to Paris De Gaulle
+(LFPG). We will depart EGLL using the MID4F SID with the MID
+transition, cross the channel on the M605 airway, and arrive at LFPG
+using the DPE4H STAR with the DPE transition. We will be cruising at an
+altitude of 25,000 feet. </p>
+
+
+
+
+
+    
+<p>The complete route is: MID4F.MID SFD M605 DPE.DPE4H.</p>
+
+
+
+
+
+    
+<p class="warning">SIDs and STARs change occasionally. This example is
+based on the 0609 AIRAC which comes&nbsp;with vasFMC. The specific
+SID/STAR which is current when you read this may be different. The
+method of entering them in the MCDU is the same, however.</p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Start the flight simulator.</li>
+
+
+
+
+
+      <li>Do not set any special weather. Wind direction affects
+which runways are in use and for the sake of this example we want calm
+winds on the ground so you can use the runways described here.</li>
+
+
+
+
+
+      <li>Start vasFMC.</li>
+
+
+
+
+
+      <li>vasFMC depends on the Battery and Avionics being turned on
+from your cockpit panel, and the windows/gauges will be blank until
+they are. This means they will be very likely be blank while you are
+selecting an aircraft and airport on the Create A Flight screen of
+MSFS. If the Battery and Avionics switches come on automatically when
+you see the cockpit, the vasFMC windows/gauges will also come on.
+Otherwise ensure those switches are turned on in your cockpit panel.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<h1><a name="BasicFlightInfo" id="BasicFlightInfo"></a>Enter Flight Information in the MCDU Window</h1>
+
+
+
+
+
+    
+<p>The MCDU display is organized as two columns (left &amp; right),
+each with six rows. The six buttons on each side of the display are
+called Line Select Keys, abbreviated as <strong>LSK</strong> (see highlighted area below).</p>
+
+
+
+
+
+    
+<p>Changing parameters in the MCDU consists of entering the data and
+pressing one of the LSKs to store it. The data may be entered from your
+computer keyboard or from the alphanumeric pad on the MCDU itself. Use
+only lowercase letters when using your computer keyboard (they will be
+displayed as uppercase). You can use the MCDU CLR key or the backspace
+key on your computer keyboard to make corrections. The line showing the
+written text is called scratchpad and is the bottom line of the MCDU.</p>
+
+
+
+
+
+    
+<p><img src="MCDULSK.jpg" alt="Line Select Key" height="264" width="378" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Press the LSK to the right of the CONFIRM entry. We will use the default aircraft parameters for this flight.<br />
+
+
+
+As the default parameters assume you are flying an Airbus A320,
+the&nbsp;weight of your actual aircraft may influence the display and
+behavior or vasFMC.<br />
+
+
+
+To ensure correct behavior use either an A320 or an aircraft within the same weight class (e.g. B737) for this flight.</li>
+
+
+
+
+
+      <li>Press the INIT key to make sure you are working with the INIT page.</li>
+
+
+
+
+
+      <li>Press the backspace key on your keyboard or the CLR key on
+the MCDU keypad (CLR will be shown at the bottom left of the screen).
+Then press the LSK next to the<em> FROM/TO </em>line  (this is the topmost LSK on the right side of the MCDU window). This will clear any previous flight plan.</li>
+
+
+
+
+
+      <li>Enter EGLL/LFPG using either your computer keyboard or the keys in the MCDU window.</li>
+
+
+
+
+
+      <li>Press the LSK  next to the <em>FROM/TO</em> menu item.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSMCDU1.jpg" alt="Airport entry" height="266" width="372" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>If you like you may enter an alternate airport to be used
+in case the planned destination is unreachable due to weather and press
+the LSK next to <em>ALTN</em>.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Enter your radio callsign or flight number (e.g. AAL123) and press the LSK next to <em>FLT NBR</em>.</li>
+
+
+
+
+
+      <li>Enter 250 and press the LSK next to <em>CRZ FL/TEMP</em>.
+This is our cruising altitude in "flight level" terms. (FLs are given
+in hundreds of feet, so&nbsp;250=25,000ft and 120=12,000ft.)</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<h1><a name="EnterRoute" id="EnterRoute"></a>Enter the Flight Route</h1>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Press the F-PLN button to switch to the Flight Plan page.</li>
+
+
+
+
+
+      <li>Press the LSK next to the departure point, EGLL.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSMCDU2.jpg" alt="Dep selection" height="265" width="373" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Press the LSK next to <em>DEPARTURE</em></li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSMCDU3.jpg" alt="Dep selection" height="267" width="374" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Scroll to runway 27R and press the LSK next to it. You can
+either use the mouse wheel to scroll the display or the up &amp; down
+arrow keys on the MCDU. Some SIDs are runway specific, so the list of
+SIDs on the next page will depend on our runway choice.</li>
+
+
+
+
+
+      <li>The next page shows you the SIDs available for the chosen runway. Scroll down to the MID4F entry and press the LSK for it.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p><img src="QSMCDU4.jpg" alt="SID selection" height="268" width="373" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Press the <em>INSERT*</em> LSK to insert this departure
+into our flight plan. The window will change back to the flight plan
+page and show the waypoints along the departure.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Enter SFD and press the LSK next to the destination (LFPG).
+Note that there is more than one SFD in the database so a menu of
+choices appears. Choices are sorted from nearest to farthest and list
+the lat/lon and distance from out current position.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p><img src="QSMCDU4a.jpg" alt="Waypoint" height="266" width="372" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Press the LSK for the topmost (nearest) SFD. This will
+insert the VOR into our route ahead of LFPG and switches back to the
+flight plan page.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Press the LSK next to SFD. We are now going to add the M605
+airway to the route, entering the airway at SFD and leaving it at DPE.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p><img src="QSMCDU4b.jpg" alt="Waypoint" height="267" width="373" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Enter M605/DPE and press the LSK next to <em>VIA/GO TO [ ] [ ]</em>.
+This tells vasFMC to go from SFD to DPE via the M605 airway. The screen
+will change back to the flight plan page where you can see the
+waypoints SFD07, WAFFU, HARDY, XIDIL, DPE06 and DPE have been added
+after SFD. vasFMC will add all waypoints along the airway to the plan
+up to and including the exit from the airway.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p><img src="QSMCDU12.jpg" alt="Via" height="268" width="377" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Press the LSK next to the destination (LFPG) at the bottom of the flight plan page.</li>
+
+
+
+
+
+      <li>Press the LSK next to <em>ARRIVAL</em>. This will bring up the page of runways for our destination. As with SIDs, some STARs are restricted to certain runways.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSMCDU5.jpg" alt="STAR selection" height="267" width="376" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Press the LSK next to runway ILS09L. Note that the ILS frequency and course are also listed.</li>
+
+
+
+
+
+      <li>The next page shows the arrivals we can choose from for
+this runway. Scroll down to the entry for DPE4H.09L and press the LSK
+for it.</li>
+
+
+
+
+
+      <li>There will be a list of transitions for the arrival on the
+right side of the display. Scroll down and select MERUE. This will
+bring us into runway 09L from the west.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSMCDU6.jpg" alt="Arrival selection" height="264" width="369" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Press the <em>INSERT</em> key to add this arrival to our
+flight plan. The screen will change back to the flight plan page where
+you can see the waypoints for the arrival have been added.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p class="warning">Note that we have not added any approach waypoints.
+The actual approach used will vary according to factors such as runway
+assignment, winds and visibility. If we know ahead of time what
+approach to use we can enter those waypoints manually. An example is
+shown in the approach section below.</p>
+
+
+
+
+
+    
+<h1><a name="ConfigND" id="ConfigND"></a>Configure the Nav Display (ND)</h1>
+
+
+
+
+
+    
+<p>The ND window is versatile and is where most of your attention will
+be focused during the flight. The features it displays are selectable
+in the ND (EFIS) part of the FCU window as shown in the highlighted area below.</p>
+
+
+
+
+
+    
+<p><img src="QSFCU.jpg" alt="FCU ND selection" height="100" width="600" /></p>
+
+
+
+
+
+    
+<p>Take a moment to left and right click on the knobs to see how they
+affect the ND window. Left clicking (or clicking to the left of a knob)
+rotates it counter-clockwise, and right clicking (or clicking to the
+right of a knob) moves it clockwise. You can also use the mouse wheel on the button to change it.</p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Left or right click on the left knob until it points to <em>PLAN</em>.</li>
+
+
+
+
+
+      <li>Left or right click on the right knob until it points to <em>20</em>.</li>
+
+
+
+
+
+      <li>In the MCDU window, select the F-PLN page. Scroll through
+the waypoints (using either the arrow keys or the mouse wheel)
+and notice how the ND changes with it. This is an easy way to check
+that the flight path doesn't have any waypoints that backtrack or go to
+far out of the way.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSND1.jpg" alt="Plan mode" height="357" width="338" />&nbsp;</p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>In the FCU window, select the <em>ARC</em> mode for the ND.
+In this mode up is always the direction we're facing, so the compass
+will move with the aircraft. Note that the flight plan is shown as a
+dashed green line at the moment. The dashed line indicates the autopilot
+is not yet set to follow the plan. The plan is always visible, though. If
+you can't see the flight plan line you may be on the wrong runway. This
+example uses runway 27R at EGLL.</li>
+
+
+
+
+
+      <li>In the FCU window, click the <em>VOR</em> button above the  knobs in the ND area. You may need to expand the range to <em>40</em>
+on the right knob to see them all. This will make nearby VORs visible
+in the ND. Similarly you can display crossing restrictions (<em>CSTR</em>), coastlines (<em>TERR</em>), NDBs (<em>NDB</em>) and airports (<em>ARPT</em>).</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSND3.jpg" alt="Arc mode" height="357" width="338" /></p>
+
+
+
+
+
+    
+<h1><a name="NavFreq" id="NavFreq"></a>Set the Navigation Frequencies</h1>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>On the MCDU, press the RAD NAV key. This page displays the
+frequencies in use by the aircraft's navigational instruments.
+Different aircraft will have different configurations of navigational
+gear. vasFMC provides access for 2 VOR/ILS and 2 ADF tuners, how many of them are active depends on your aircraft.</li>
+
+
+
+
+
+      <li>Enter MID (or a specific frequency such as 114.0) from your keyboard or the MCDU keypad, then press the LSK next to the <em>VOR1/FREQ</em>
+line. This will set the VOR1 tuner to the MID VOR, which we'll be
+passing over. The VOR1 freq will change to the MID frequency. We won't
+be using this VOR for navigation on this flight but you may want to
+know where nearby navaids are in the event you are given new
+instructions by ATC.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSMCDU8.jpg" alt="VOR setting" height="269" width="377" /></p>
+
+
+
+
+
+    
+<h1><a name="GoFly" id="GoFly"></a>Get Flying!</h1>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Set up your aircraft and panel autopilot as you normally
+would before takeoff and line up on runway 27R. Don't worry about
+setting up the vasFMC autopilot (FCU) for now.</li>
+
+
+
+
+
+      <li>Look at the Primary Flight Display window (PFD). Notice
+that many of the autopilot settings are shown here, along with most
+everything else you'll need for instrument flight.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSPFD1.jpg" alt="PFD" height="450" width="450" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Now look at the ND window. The dashed line shows the flight
+plan programmed into the CDU. When the line is dashed like, vasFMC is
+not controlling the flight path (i.e. autopilot). The line will be
+solid when vasFMC is controlling navigation as we will see later.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSND2.jpg" alt="Arc mode" height="357" width="338" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>In the FCU window, make sure the FD button is turned off
+for now. vasFMC can automate many of the takeoff procedures but that is
+beyond the scope of this tutorial. (Note: The FD can not be activated if no engine is running.)</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>The PFD and ND will track your movements in real time. The
+PFD will show many of the autopilot/autothrottle settings. The ND shows
+our ground and true airspeed along with the next waypoint, its
+distance, and ETA.</li>
+
+
+
+
+
+      <li>Take off as you normally would, stabilizing the speed and
+climb rate and head for the first set of waypoints. You may engage the
+panel autopilot and autothrottle if you wish. Turn left as indicated by
+the flight path shown in the ND.</li>
+
+
+
+
+
+      <li>In the MCDU window press the DIR key. The next page will
+show a list of the upcoming waypoints in order from top to bottom. If
+we engage the vasFMC heading control at this point it will try to fly
+the aircraft back to the direct line between the previous and next
+waypoints. This is not realistic. What we want instead is to turn from
+our present position to intercept a waypoint on our route.</li>
+
+
+
+
+
+      <li>Press the LSK next to the  waypoint LON8, then press the LSK for <em>INSERT</em>. Note how the ND changes the projected course, and the F-PLN page shows our present position as <em>T-P</em>.</li>
+
+
+
+
+
+      <li>In the FCU window left click on the heading knob. The path
+line in the ND will change from dashed to solid to indicate vasFMC is
+controlling lateral navigation (LNAV). Also note that the FD indicator
+has come on in the FCU window.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSND5.jpg" alt="Lateral navigation (LNAV)" height="357" width="338" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Notice that the wind direction and speed are also displayed
+in the upper left corner along with our ground speed (GS) and true
+airspeed (TAS).</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>As we continue our climb you will notice an arrow in the ND
+window pointing toward the flight path. This marks the estimated Top Of
+Climb (TOC) for our current speed and rate of climb.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSND7.jpg" alt="Top of climb" height="357" width="338" /></p>
+
+
+
+
+
+    
+<h1><a name="Descent" id="Descent"></a>Configure For Cruise and Descent</h1>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>In the MCDU window, scroll down to the DPE waypoint. Notice
+that speed and altitude restrictions have been added for you. You are
+expected to be no more than 280 knots and at 21,000 ft by the time you
+get to DPE. vasFMC will calculate the Top of Descent point using "at" and "at or below" altitude restrictions that are in place.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p><img src="QSND7a.jpg" alt="Top of descent" height="269" width="370" /></p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      
+
+      <li>In the ND window, the estimated top of descent is shown as
+an arrow pointing away from the flight path. This is where you should
+reduce thrust and begin descending in order to make the 21,000 ft
+restriction at DPE. This arrow is only shown when climbing or on level flight and will disappear when descending.<br />
+
+
+
+  </li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left"><img src="QSND8.jpg" alt="Top of descent" height="357" width="338" /></p>
+
+
+
+
+
+    
+<h1><a name="AddWaypoint" id="AddWaypoint"></a>Manually Add Waypoints for Approach</h1>
+
+
+
+
+
+    
+<p>The arrival we are using on this flight actually lines us up very
+nicely with runway 09L. Other arrivals, particularly in the USA, only
+get you close to the destination airport. From the arrival termination
+point you may have several approaches that you can use to get you to a
+particular runway. The waypoints for an approach can be added in
+exactly the same manner as we used to add the SFD waypoint at the beginning of this flight.</p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>Enter the waypoint name on the F-PLN page.</li>
+
+
+
+
+
+      <li>Press the left LSK for the waypoint to insert the new waypoint before.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p align="left">The approach for LFPG runway 09L calls for us to be at
+3000 ft at a distance of 8nm from the ILS (or 6.9nm from the CGN VOR).
+Other arrivals and approaches may call for altitude restrictions at
+certain waypoints.</p>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+      <li>As we approach our estimated TOD we slow down and set the
+autopilot to descend to our glideslope intercept of 3000 ft. The arrow
+pointing toward the flight path in the ND shows us where we will reach
+that altitude at our current ground speed and rate of descent. Adjust
+both within realistic limits so that you make the altitude restiction
+as required.</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<h1><a name="Landing" id="Landing"></a>Landing</h1>
+
+
+
+
+
+    
+<ul>
+
+
+
+
+  <li>The ND in Plan mode will keep you apprised of the wind direction
+and speed so you can adjust your heading to compensate if you are
+flying by hand.</li>
+
+
+
+
+
+      <li>Disengage the autopilot and land as you normally would.</li>
+
+
+
+
+
+      <li>If you are using an ILS approach, you can also change the
+ND to an ILS rose. Right click in the ND and select Mode-&gt;ILS Rose.
+This will function the same way as any ILS indicator.</li>
+
+
+
+
+
+      <li>The PFD will also show ILS progress if the <a href="MFCURef.htm#FCUND">ILS button on the MFCU</a> is engaged.</li>
+
+
+
+  <li>Happy landing!</li>
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+    
+<p>&nbsp;</p>
+
+
+
+
+
+    
+<p>&nbsp;</p>
+
+
+
+
+
+  </div>
+
+
+
+
+
+  
+<div id="footer">
+    
+<p>&copy; Copyright 2009 by Guy Finney and Alex Wemmer. All Rights Reserved.</p>
+
+
+
+
+
+  <!-- end #footer --></div>
+
+
+
+
+
+<!-- end #container --></div>
+
+
+
+
+
+</body>
+</html>

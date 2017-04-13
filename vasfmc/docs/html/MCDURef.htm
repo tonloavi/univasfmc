@@ -1,0 +1,4509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>vasFMC User's Guide</title>
+  <link href="vasfmc2.css" rel="stylesheet" type="text/css" />
+<!--[if IE 5]>
+<style type="text/css"> 
+/* place css box model fixes for IE 5* in this conditional comment */
+.twoColFixLtHdr #sidebar1 { width: 230px; }
+</style>
+<![endif]--><!--[if IE]>
+<style type="text/css"> 
+/* place css fixes for all versions of IE in this conditional comment */
+.twoColFixLtHdr #sidebar1 { padding-top: 30px; }
+.twoColFixLtHdr #mainContent { zoom: 1; }
+/* the above proprietary zoom property gives IE the hasLayout it needs to avoid several bugs */
+</style>
+<![endif]-->
+</head>
+
+
+<body class="twoColFixLtHdr">
+
+
+
+
+
+
+
+
+<div id="container">
+  
+<div id="header">
+    
+<h1 align="center"><a href="http://vas-project.org"><img src="vasfmc-banner.png" alt="vasFMC Banner" longdesc="http://vasFMC - As REAL as it gets" height="94" width="640" /></a></h1>
+
+
+
+
+
+
+
+
+    <!-- end #header -->
+  </div>
+
+
+
+
+
+
+
+
+  
+<div id="sidebar1">
+    
+<h1>Contents</h1>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      
+
+
+
+      <li><a href="index.htm">Overview<br />
+
+
+
+
+    </a></li>
+
+
+
+
+
+
+
+
+      <li><a href="quickstart.htm">First Flight</a></li>
+  <li><a href="advanced.htm">Advanced Flight</a></li>
+
+
+
+
+
+
+
+
+      <li><a href="MCDURef.htm">MCDU - Flight Planning</a></li>
+
+
+
+
+
+
+
+
+      
+  
+  
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUDIR">DIR page</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUPROG">PROG page</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUPERF">PERF page</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUINIT">INIT page</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUDATA">DATA page</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUFPLN">F-PLN page</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUHolds">Holds</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDURAD">RAD NAV page</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUFUEL">FUEL PRED page</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUSEC">SEC F-PLN page</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUATC">ATC COMM page</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUMENU">MCDU MENU page</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUAirport">Airport key</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUPaste">Paste key</a></li>
+
+
+
+
+
+
+
+
+        <li><a href="#MCDUArrows">Arrow keys</a></li>
+
+
+
+
+
+
+    <li><a href="#MCDUKeys">Keyboard control</a></li>
+
+
+
+
+
+
+
+
+      
+  
+  
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li><a href="MFCURef.htm">FCU - Autopilot</a></li>
+
+
+
+
+
+
+
+
+      <li><a href="NDRef.htm">Nav Display</a></li>
+
+
+
+
+
+
+
+
+      <li>Primary Flight Display</li>
+
+
+
+
+
+
+
+
+      <li>ECAM</li>
+
+
+
+
+
+
+
+
+      <li>Tips</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    <!-- end #sidebar1 -->
+  </div>
+
+
+
+
+
+
+
+
+  
+<div id="mainContent">
+    
+<h1><a name="MCDUHome" id="MCDUHome"></a>MCDU: Flight Planning</h1>
+
+
+
+
+
+
+
+
+    
+<p>The MCDU window is where all flight planning and flight route
+interaction takes place. Information is arranged on several
+pages/screens which are selected by pressing one of the Page Keys. Data
+you enter is stored in one of the data fields on the active MCDU page
+by clicking a Line Select Key (LSK). You can enter data from either
+your computer keyboard or by clicking on the MCDU alphanumeric keys.
+Use the Backspace key on your keyboard or the CLR key on the MCDU to
+correct errors. Use lowercase letters only.</p>
+
+
+
+
+
+
+
+
+    
+<p class="warning">vasFMC is a work in progress, and as such not all of the functionality implied by the Page keys is implemented at this time.</p>
+
+
+
+
+
+
+
+
+    
+<p><strong>Clicking on a key in the image below will take you to a description of that key.</strong></p>
+
+
+
+
+
+
+
+
+    
+<p><img src="MCDURef.jpg" alt="MCDU" usemap="#MCDUImgMap" border="0" height="627" width="600" />
+      <map name="MCDUImgMap" id="MCDUImgMap">
+<area shape="rect" coords="51,301,93,327" href="#MCDUDIR" alt="DIR" />
+<area shape="rect" coords="99,302,141,327" href="#MCDUPROG" alt="PROG" />
+<area shape="rect" coords="146,301,188,328" href="#MCDUPERF" alt="PERF" />
+<area shape="rect" coords="198,301,240,328" href="#MCDUINIT" alt="INIT" />
+<area shape="rect" coords="246,302,290,327" href="#MCDUDATA" alt="DATA" />
+<area shape="rect" coords="51,337,93,365" href="#MCDUFPLN" alt="FPLN" />
+<area shape="rect" coords="98,338,141,365" href="#MCDURAD" alt="RADNAV" />
+<area shape="rect" coords="147,337,187,364" href="#MCDUFUEL" alt="FUEL" />
+<area shape="rect" coords="197,338,239,361" href="#MCDUSEC" alt="SECFPLN" />
+<area shape="rect" coords="248,337,292,363" href="#MCDUATC" alt="ATC" />
+<area shape="rect" coords="298,335,341,364" href="#MCDUMENU" alt="MENU" />
+<area shape="rect" coords="52,372,91,398" href="#MCDUAirport" alt="Airport" />
+<area shape="rect" coords="98,372,141,401" href="#MCDUPaste" alt="Paste" />
+<area shape="rect" coords="50,403,144,466" href="#MCDUArrows" alt="Arrows" />
+</map>
+
+
+
+
+
+
+
+
+    </p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUDIR" id="MCDUDIR"></a>DIR Page</h1>
+
+
+
+
+
+
+
+
+    
+<p>This page allows you to go directly to a waypoint which is already
+present in your flight plan, or to a waypoint you enter by hand. When
+pressing DIR TO INSERT the lateral navigation mode changes to NAV, this
+making your input effective immediatly.</p>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 361px; height: 236px;" src="MCDUDIRPage.jpg" alt="DIR Page" /></p>
+
+
+
+
+
+
+
+
+    
+<p>To go directly to an existing waypoint, scroll the waypoint list
+with the mouse wheel or arrow keys on the MCDU and press the LSK for
+the desired waypoint. To go to a waypoint not in the list, enter its
+name and press the LSK next to <em>WAYPOINT[ ]</em>. The FMC sets the course when you press the <em>INSERT</em> LSK. You can scroll the list, select another waypoint or press the <em>ERASE</em> LSK at any time before <em>INSERT</em>.</p>
+
+
+
+
+
+
+
+
+    
+<p>Note that if you go directly to a waypoint and skip some in the
+process (e.g. ATC has given you a "direct to" instruction), you will
+not be able to go back to the skipped waypoints. The flight plan prior
+to the selected waypoint is erased.</p>
+
+
+
+
+
+
+
+
+    
+<p>The FMC will insert your&nbsp;present position as a waypoint named T-P.</p>
+
+
+
+
+
+
+
+
+    
+<p><a href="#MCDUHome">Back to the top</a></p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUPROG" id="MCDUPROG"></a>PROG Page</h1>
+
+
+
+
+
+
+
+
+    
+<p>The Progress page is primarily used to enter a new cruising FL or to
+show the direct bearing/distance to an entered waypoint (right LSK 4).</p>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 363px; height: 239px;" src="MCDUPROGPage.jpg" alt="PROG Page" /></p>
+
+
+
+
+
+
+
+
+    
+<h2>Cruise Flightlevel</h2>
+
+
+
+
+
+
+
+
+    
+<p class="warning">vasFMC does not yet support VNAV (vertical
+navigation). That is, it will not climb or descend the aircraft for
+you. You can change the cruising flight level by entering a new value
+and clicking the <em>CRZ</em> LSK, however this will not change the autopilot's altitude setting.</p>
+
+
+
+
+
+
+
+<h2>Distance Information</h2>
+
+
+
+
+
+
+
+
+    
+<p>You can get the direction and distance to any intersection or navaid
+in the navigation database, whether or not it is in your flight plan.</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Enter the name of the waypoint.</li>
+
+
+
+
+
+
+
+
+      <li>Click the <em>TO [ ]</em> LSK. The bearing and distance to the entered waypoint will be updated continuously.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+<br />
+
+
+
+
+
+
+
+You may also enter runways here, e.g. LOWW34 - this will show you the distance to the runway's threshold.
+    
+<p><a href="#MCDUHome">Back to the top</a></p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUPERF" id="MCDUPERF"></a>PERF Page</h1>
+
+
+
+
+
+
+
+
+    
+<p>The PERF page helps you automate throttle settings for different
+phases of your flight, from takeoff to approach. Ideally, after setting
+the throttle parameters here you should be able to press the <a href="MFCURef.htm#FCUAT">N1 AT button</a>
+and not have to change the throttle settings until you are on final
+approach. Please note that at speeds entered on the PERF pages will
+only be taken into account automatically, if they are entered before the respective flight phase.</p>
+
+
+
+
+
+
+
+
+    
+<p>You can scroll between the different pages with the <em>NEXT PHASE</em> and <em>PREV PHASE</em> LSKs. If you are airborne, the <em>PREV PHASE</em> LSK will be replaced by an APPR PHASE<em></em> LSK, which when pressed (twice) will activate the approach phase (tune the ILS, set the speed to green dot speed).</p>
+
+
+
+
+
+
+
+
+    
+<p class="warning">The autothrottle (AT) automation works fairly well
+for high quality simulations and the default MSFS turbojets. However,
+the quality of free and payware aircraft varies greatly and you will
+likely find it necessary to switch between N1 hold and speed/mach hold
+in some aircraft during the various phases of flight.</p>
+
+
+
+
+
+
+
+
+    
+<h2>Takeoff</h2>
+
+
+
+
+
+
+
+
+    
+<p>A thorough discussion of V-speeds is beyond the scope of this
+manual. MSFS has good information on these values in its ATP lessons,
+and there is plenty of reference material available on the web.</p>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 364px; height: 237px;" src="MCDUPerf1.jpg" alt="PERF Takeoff" /></p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Enter the V1 speed and press the <em>V1</em> LSK. Continue entering the <em>VR</em> and <em>V2</em> speeds in the same way.  The V-speed settings are marked on the PFD and result in audio callouts.</li>
+
+
+
+
+
+
+
+
+      <li>Enter the transition altitude in feet and press the <em>TRANS ALT</em> LSK. Above this altitude the A style PFD will blink the altimeter as a reminder to set STD pressure (see the <a href="MFCURef.htm#FCUAltimeter">FCU altimeter section</a>).</li>
+
+
+
+
+
+
+
+
+      <li>Enter the altitude (above sea level, in feet) at which the
+AT thrust should be reduced from takeoff N1 power to climb N1 power
+(set on the Climb screen, see below) and the altitude at which the
+aircraft should start to accelerate to the climb speed (set on the
+Climb screen, see below), and press the <em>THR RED/ACC</em> LSK. E.g.
+enter 1500/1500 if you want the aircraft to reduce the thrust and to
+accelerate at 1500ft above sea level. Note: These altitude values will
+be reset automatically to 1000ft above field elevation whenever the
+departure airport is changed.</li>
+
+
+
+
+
+
+  <li>Enter the flaps and elevator trim setting to be used for takeoff, e.g. 1/-0.4</li>
+
+
+
+
+
+
+
+
+      <li>Enter the takeoff N1 percentage and press the <em>FLEX TAKEOFF N1</em> LSK.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<h2>Climb</h2>
+
+
+
+
+
+
+
+
+    
+<p>Once you have reached the <em>THR&nbsp;ACC</em> altitude (set on the Takeoff screen above), the AT enters the climb phase.</p>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 364px; height: 242px;" src="MCDUPerf2.jpg" alt="PERF Climb" /></p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Enter the  N1 percentages to be used for climbing to the cruise altitude and press the <em>INITIAL CLIMB N1</em> and<em> MAXIMUM CLIMB N1 </em>LSK. The climb thrust will reach the maximum value at an altitude of 30000 ft.</li>
+
+
+
+
+
+
+
+
+      <li>Enter the speed value for climbing which the aircraft
+should accelerate to after reaching the acceleration altitude (which is
+entered in the <span style="font-style: italic;">TAKE OFF</span> screen).</li>
+
+
+
+
+
+
+
+  <li>Enter the mach value for climbing and press the <em>PRESEL MACH</em>
+LSK. When the aircraft's speed reaches this value, the AT will switch
+to mach hold mode and the mach value will be set to this value.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p class="warning">Note that the AT will remain in N1 hold mode regardless of the <em>PRESEL SPD</em> or <em>PRESEL MACH</em>. That is, the throttle will remain at the climb N1 % regardless of the speed setting. You can <a href="MFCURef.htm#FCUAT">switch between speed/mach hold and N1 hold  through the FCU</a>.</p>
+
+
+
+
+
+
+
+
+    
+<h2>Cruise</h2>
+
+
+
+
+
+
+
+
+    
+<p>Once you have reached your cruise altitude (set on the INIT or PROG pages), the AT enters the cruise phase.</p>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 362px; height: 240px;" src="MCDUPerf3.jpg" alt="PERF Cruise" /></p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Enter the cruising mach value and press the <em>PRESEL MACH</em> LSK. When you are about within 500 feet of the cruise altitude the AT will switch from N1 hold to mach hold automatically.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<h2>Descent</h2>
+
+
+
+
+
+
+
+
+    
+<p>Once you have started to descent&nbsp;from your cruise altitude, the AT enters the descent phase.</p>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 362px; height: 240px;" src="MCDUPerf4.jpg" alt="PERF Descent" /></p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Enter the desired descent speed and/or mach value and press the <em>PRESEL SPD</em> or <em>PRESEL MACH</em> LSK as appropriate.</li>
+
+
+
+
+
+
+
+
+      <li>When the IAS reaches the <em>PRESEL SPD</em> during the descent, the AT will automatically switch from mach hold to speed hold.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<h2>Approach</h2>
+
+
+
+
+
+
+
+
+    
+When the approach phase is activated, the values on the approach page are in affect.<br />
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 364px; height: 247px;" src="MCDUPerf5.jpg" alt="PERF Approach" /></p>
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+  <li>Enter the transition level at LLSK4. When descending below this
+level with the altimeter set to STD, the STD will start to blink on the
+PFD.</li>
+
+
+
+
+
+
+  <li>Entere either the MDA or the DH for the planned approach.</li>
+
+
+
+
+
+
+  <li>Select either CONF3 of FULL for the flaps setting to be used on approach.</li>
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+    
+<h2>Go Around (Missed Approach)</h2>
+
+
+
+
+
+
+
+
+    
+<p>(Not yet implemented.)</p>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 363px; height: 240px;" src="MCDUPerf6.jpg" alt="PERF Go Around" /></p>
+
+
+
+
+
+
+
+
+    
+<p><a href="#MCDUHome">Back to the top</a></p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUINIT" id="MCDUINIT"></a>INIT Page</h1>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 362px; height: 233px;" src="MCDUINITPage.jpg" alt="INIT Page" /></p>
+
+
+
+
+
+
+
+
+    
+<p>The INIT page lets you enter basic flight planning information prior to your flight:</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Clear any previous flight plan by clicking on the <em>CLR</em> key followed by the <em>FROM/TO</em> LSK.</li>
+
+
+
+
+
+
+
+
+      <li>Set the origin and destination airports by entering them as ORIG/DEST (e.g. KLAX/KSLC) and clicking the <em>FROM/TO</em> LSK. This will load them as the first two waypoints on the F-PLN page.</li>
+
+
+
+
+
+
+
+
+      <li>(optional) Set the alternate airport by entering its name and clicking the <em>ALTN</em> LSK.</li>
+
+
+
+
+
+
+
+
+      <li>Set the cruising flight level by entering a FL value (in 100's of feet) and clicking the <em>CRZ FL/TEMP</em>
+LSK. Note this will not change the autopilot's altitude setting. You
+must do that separately. The cruising altitude will be used for TOD
+calculations as noted above on the PROG page.</li>
+
+
+
+
+
+
+
+
+      <li>Enter your radio callsign and click the <em>FLT NBR</em> LSK.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p>The <em>LAT/LONG</em> fields will show your current position once you are airborne. <em>ALTN RTE, WIND</em> and <em>COST INDEX</em> are not currently supported.</p>
+
+
+
+
+
+
+
+
+    
+<p>If you save the flight (from the DATA page), the <em>CO RTE</em> field will be filled in with the filename.</p>
+
+
+
+
+
+
+
+<p>On the INIT B page (reachable by the left/right cursors of the MCDU)
+you can see your current ZFW (zero fuel weight), BLOCK fuel and TOW
+(takeoff weight).&nbsp;</p>
+
+
+
+
+
+
+
+
+<p>Note: The INIT page can only be accessed during pre-flight and taxi phases.</p>
+
+
+
+
+
+
+<p>Note: The INIT B page can not be accessed after the engines are
+started. To see your weight and fuel during the flight, use the FUEL
+PRED page.</p>
+
+
+
+
+
+
+
+<p><a href="#MCDUHome">Back to the top</a></p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUDATA" id="MCDUDATA"></a>DATA Page</h1>
+
+
+
+
+
+
+
+
+    
+<p>The selections on the left side of the DATA page let you look up
+information about a given waypoint, navaid or airport. All show
+lat/long coordinates. <em>NAVAIDS</em> show the frequency and type of navaid. <em>RUNWAYS</em> list the runways available at the given airport.</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for the name you want to look up.</li>
+
+
+
+
+
+
+
+
+      <li>Enter the name from your keyboard or the MCDU keypad.</li>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for IDENT. If there is more than one entry
+for the name you will see a list of choices which you can scroll
+through. Click the left LSK for the one you want. The distance and
+lat/long will help you determine the correct entry.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p>You can look up additional names of the same type (waypoint, navaid or airport) by repeating the last two steps.</p>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 365px; height: 244px;" src="MCDUDATAPage.jpg" alt="DATA page" /></p>
+
+
+
+
+
+
+
+
+    
+<p>The selections on the right side of the DATA page let you load, save
+or delete vasFMC flight plans (deleting an existing flight plan is done
+on the load screen). By default vasFMC looks for flight plans in the
+"fps" subdirectory where it is installed (e.g. C:\Program
+Files\vasfmc2\fps). You can also download flight plans from <a href="http://www.vroute.net">vRoute</a> through the MENU page as described below.</p>
+
+
+
+
+
+
+
+
+    
+<p><a href="#MCDUHome">Back to the top</a></p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUFPLN" id="MCDUFPLN"></a>F-PLN Page</h1>
+
+
+
+
+
+
+
+
+    
+<p>The Flight Plan page is where you will spend most of your time in
+the MCDU window. This is where you specify what waypoints the aircraft
+will pass through all the way from your origin to your destination. You
+can:</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Add/delete  individual waypoints.</li>
+
+
+
+
+
+
+
+
+      <li>Add waypoint via airways.</li>
+
+
+
+
+
+
+
+
+      <li>Choose a SID (departure) and STAR (arrival).</li>
+
+
+
+
+
+
+
+
+      <li>Get  information for your landing runway.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p>Some 3rd party flight planning applications can export plans in the
+format used by vasFMC. You can load these plans from the DATA page
+instead of building them on the F-PLN page.</p>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 361px; height: 242px;" src="MCDUFPLNPage.jpg" alt="F-PLN Page" /></p>
+
+
+
+
+
+
+
+
+    
+<p>You can use the mouse wheel to scroll through the whole flight plan
+as needed. The bottom line will always show the destination airport,
+ETA (in UTC) and distance. <em>EFOB</em> (estimated fuel on board) is
+not yet implemented. The screenshot above shows part of a flight plan
+from LOWG&nbsp;(Graz) to LOWW (Vienna).</p>
+
+
+
+
+
+
+
+
+    
+<p>The top waypoint shows the most recently passed waypoint,
+when you passed it (1338 UTC), and at what indicated speed and altitude
+(154kts, 1526ft). In smaller print below it is the SID, STAR or airway
+the waypoint is part of (e.g. XANU1G SID from LOWG) and the direction
+(168 degrees) and distance (1nm) to the next waypoint (GRZ). If the
+waypoint is not associated with a SID, STAR or airway, that part of the
+2nd line will be blank.</p>
+
+
+
+
+
+
+
+
+    
+<p>The next waypoint (in white) shows the next waypoint we should pass
+(GRZ) and an estimated arrival time (1338 UTC). The track and distance
+fields are the same as described above. Since we haven't arrived there
+yet the speed and altitude fields are empty, but you can see an
+altitude restriction (+2200ft), this means we shall pass this waypoint
+at or above 2200ft.</p>
+
+
+
+
+
+
+
+
+    
+<h2><a name="MCDUSIDSTAR" id="MCDUSIDSTAR"></a>Entering a SID or STAR</h2>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for either the origin (SID) or destination (STAR) airport.</li>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for <em>DEPARTURE</em> or <em>ARRIVAL</em> as appropriate.</li>
+
+
+
+
+
+
+
+
+      <li>Choose a runway. Some SIDs/STARs are only used for certain runways at an airport.</li>
+
+
+
+
+
+
+
+
+      <li>Scroll through the list of SIDs/STARs to find the one you
+want. A SID or STAR will be listed several times if it has multiple
+transition points. When you click the LSK for a given SID/STAR the
+transition point will be shown in the <em>TRANS</em> field in the upper right.</li>
+
+
+
+
+
+
+
+
+      <li>Press the <em>INSERT</em> LSK when you have the procedure
+and transition you want. The display will change to show you the
+waypoints for the chosen SID/STAR. The ND will also show the chosen
+route graphically.</li>
+
+
+
+
+
+
+
+
+      <li>Choosing a new SID or STAR will replace the SID or STAR
+which was in the flight plan before. You don't need to remove the
+waypoints individually.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<h2>Waypoint formats</h2>
+
+
+
+
+
+
+
+
+    
+<p>A waypoint can be entered in several different ways:</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>As a named waypoint (e.g. PRINO).</li>
+
+
+
+
+
+
+
+
+      <li>As lat/long coordinates in the Jeppesen format
+Xdd.mm.t/Yddd.mm.t. Substitute "N" or "S" for "X" latitude, and "E" or
+"W" for "Y" longitude. Note the longitude starts with three digits. The
+format is degrees/minutes/tenths. A waypoint on a NAT Track can be
+entered as N53.0.0/W20.0.0.</li>
+
+
+
+
+
+
+
+
+      <li>As a place/bearing/distance tuple. A named waypoint is
+followed by a (magnetic) bearing and distance from the waypoint. For
+example, BLH/080/100 specifies a point 100 miles from the BLH VOR at a
+bearing of 080 degrees. A waypoint created in this manner will be given
+an artificial name beginning with "PBD".</li>
+
+
+
+
+
+
+
+
+      <li>An overfly waypoint is entered by including an asterisk in the name (e.g. BLH* or *BLH).</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<h2>Adding a waypoint</h2>
+
+
+
+
+
+
+
+
+    
+<p>A new waypoint can be inserted either before a selected waypoint.
+For example you can insert waypoints before the destination airport to
+define an approach.</p>
+
+
+
+
+
+
+
+
+    
+<p>Inserting a new waypoint before another:</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Scroll the list of waypoints until the one you want to insert before is visible.</li>
+
+
+
+
+
+
+
+
+      <li>Enter the new waypoint  on your keyboard or the MCDU keypad.</li>
+
+
+
+
+
+
+
+
+      <li>Press the LSK of the waypoint you want to insert <em>before</em>.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<h2>Deleting a waypoint</h2>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Press the Backspace key on your keyboard or the CLR key on the MCDU keypad.</li>
+
+
+
+
+
+
+
+
+      <li>Click the LSK of the waypoint to be deleted.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<h2>Adding an airway</h2>
+
+
+
+
+
+
+
+
+    
+<p>An airway is added as the airway name and the exit waypoint. For
+example, J169/BLH. Note that the entrance and exit points for the
+airway must be on the airway's official waypoint list as defined by the
+national or regional aviation authority. This is part of the data that
+is distributed by Navigraph.</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for the waypoint where you enter the airway.</li>
+
+
+
+
+
+
+
+
+      <li>Enter the airway name and termination point, separated by a slash.</li>
+
+
+
+
+
+
+
+
+      <li>Press the LSK for <em>VIA/GO TO [ ] / [ ].</em></li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<h2>Changing the destination</h2>
+
+
+
+
+
+
+
+
+    
+<p>If you must divert to a new destination you can enter it and clear
+any STAR for your previous destination. The change will be reflected on
+the INIT page and ND.</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for the waypoint where you want to depart from your existing flight plan.</li>
+
+
+
+
+
+
+
+
+      <li>Enter the new destination airport and click the LSK for <em>NEW DEST [ ]</em>.</li>
+
+
+
+
+
+
+
+
+      <li>The F-PLN page will be updated with the new destination, and any star for the previous destination will be erased.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<h2>Altitude &amp; speed restrictions</h2>
+
+
+
+
+
+
+
+
+    
+<p class="warning">The current release does not use&nbsp;speed
+restrictions in any way, though this is planned for a future release.
+For now you should consider these as reminders only.</p>
+
+
+
+
+
+
+
+
+    
+<p>To set altitude and/or speed restrictions for a given waypoint:</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>For an altitude restriction alone, enter the altitude in feet.</li>
+
+
+
+
+
+
+
+
+      <li>For a speed restriction alone, enter the speed followed by a slash (e.g. "250/").</li>
+
+
+
+
+
+
+
+
+      <li>For both restrictions enter the speed, a slash, and the altitude (e.g. "250/14000").</li>
+
+
+
+
+
+
+  <li>Altitude restriction can be of the following types: "at" (e.g.
+14000), "at or below" (e.g. -14000) or "at or above" (e.g. +14000).</li>
+
+
+
+
+
+
+
+
+      <li>Click the right side LSK for the waypoint.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p><a href="#MCDUHome">Back to the top</a></p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUHolds" id="MCDUHolds"></a>Performing Holds</h1>
+
+
+
+
+
+
+
+
+    
+<p>When the skies are crowded as they often are during an online
+fly-in, ATC may control the flow of traffic into a busy airport by
+requiring aircraft to hold over a waypoint. Holds consist of an inbound
+course, a turn direction and a leg length. vasFMC can automate holds
+for you very simply. Note that the actual pattern flown depends on your
+speed. Higher speeds will make wider turns and longer legs. Keeping
+this constant is your responsibility.</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>On the F-PLN page, press the LSK for the waypoint you want to hold over.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p><img src="MCDUHold1.jpg" height="221" width="363" /></p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Enter the inbound course direction and press the <em>INB CRS</em> LSK.</li>
+
+
+
+
+
+
+
+
+      <li>Enter L or R for the turn direction (L is the default) and press the <em>TURN</em> LSK.</li>
+
+
+
+
+
+
+
+
+      <li>Enter the length of time for each leg, in minutes, and press the <em>TIME</em> LSK.</li>
+
+
+
+
+
+
+
+
+      <li>Press the <em>INSERT</em> LSK to insert the hold in the flight plan.</li>
+
+
+
+
+
+
+
+
+      <li>Press the F-PLN page key to view the modified flight plan.
+The ND will also show the holding pattern as a loop to the left or
+right of the waypoint.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p><img src="MCDUHold2.jpg" height="221" width="363" /></p>
+
+
+
+
+
+
+
+
+    
+<p>In the example above notice that the MCDU now reads HOLD R at RYANN, and has an <em>EXIT</em>
+LSK on the right side. When you arrive at RYANN the aircraft will make
+a right turn to the reciprocal of whatever inbound course you set for
+the hold (i.e. it will turn away from the inbound course). It will then
+fly that reciprocal course for the length of time you entered for the
+leg, then make another right turn to the inbound course. It will keep
+making these turns until you tell it to exit the holding pattern.</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>To exit the hold, press the <em>EXIT</em> LSK. The aircraft
+will continue holding in the pattern until it comes back to the inbound
+waypoint. Then it will move on to the next waypoint in the plan.</li>
+
+
+
+
+
+
+
+
+      <li>You can exit the hold prematurely (before coming back to
+the waypoint inbound) by removing the waypoint from the plan (see above
+for how to remove a waypoint). The aircraft will immediately turn to
+intercept the next waypoint.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p><a href="#MCDUHome">Back to the top</a></p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDURAD" id="MCDURAD"></a>RAD NAV Page</h1>
+
+
+
+
+
+
+
+
+    
+<p>This page lets you tune up to two VOR/ILS frequencies and two ADF
+frequencies according to your aircraft's equipment. If your aircraft
+has only one VOR or ADF tuner the second tuner in vasFMC will have no
+effect.</p>
+
+
+
+
+
+
+
+
+    
+<p><img src="MCDURADNAVPage.jpg" alt="RAD NAV Page" height="221" width="363" /></p>
+
+
+
+
+
+
+
+
+    
+<p>Frequencies can be tuned either by entering the numeric frequency (e.g. 113.2) or the name of a navaid (e.g. DAG).</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Enter the numeric frequency or navaid name. If there are
+duplicate navaid names a list will be shown allowing you to scroll to
+the one you want and click its LSK.</li>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for the tuner to be set.</li>
+
+
+
+
+
+
+
+
+      <li>You can set the OBS or CRS (course) for the VOR gauge or autopilot by entering a magnetic heading and clicking the <em>CRS</em> LSK.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p><a href="#MCDUHome">Back to the top</a></p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUFUEL" id="MCDUFUEL"></a>FUEL PRED Page</h1>
+
+
+
+
+
+
+
+
+    
+<p>The fuel prediction page is currently only very simple, showing the gross weight and the fuel on board values.</p>
+
+
+
+
+
+
+<p><img style="width: 361px; height: 244px;" src="MCDUFuelPred.jpg" alt="RAD NAV Page" /></p>
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUSEC" id="MCDUSEC"></a>SEC F-PLN Page</h1>
+
+
+
+
+
+
+
+
+    
+<p>The functionality of the Secondary Flightplan page is limited in
+this release. You can copy the active flight plan to it, and activate
+it (effectively copying it back). You cannot edit it, though.</p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUATC" id="MCDUATC"></a>ATC COMM Page</h1>
+
+
+
+
+
+
+
+
+    
+<p>Not currently implemented.</p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUMENU" id="MCDUMENU"></a>MCDU MENU Page</h1>
+
+
+
+
+
+
+
+
+    
+<p>This page has miscellaneous, but very useful, functions.</p>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 365px; height: 239px;" src="MCDUMENUPage.jpg" alt="MENU page" /></p>
+
+
+
+
+
+
+
+
+    
+<h2>FMGC</h2>
+
+
+
+
+
+
+
+
+    
+<p>The <em>FMGC</em> selection functions much like an About... menu
+item in a Windows program. It gives the program version and the version
+of the navigation database it is using. It can also be used to change
+the aircraft data profile. Pressing the LLSK 2 button will offer you
+the known profiles to choose from. The profile will influence certain
+aircraft parameters like stall speeds, weights, auto throttle tuning
+values, etc.</p>
+
+
+
+
+
+
+<p><img style="width: 364px; height: 244px;" src="MCDUMENUPageFMGC.jpg" alt="RAD NAV Page" /></p>
+
+
+
+
+
+
+<p></p>
+
+
+
+
+
+
+
+
+    
+<h2>ACARS: Weather</h2>
+
+
+
+
+
+
+
+
+    
+<p>This function lets you get current weather reports (both METAR and
+TAF) for an airport. This requires an active Internet connection.</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for ACARS.</li>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for WEATHER.</li>
+
+
+
+
+
+
+
+
+      <li>Enter the airport name from your keyboard or the MCDU keypad, then press the LSK for <em>AIRPORT</em>.</li>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for the type of Wx report you want.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p>You can get reports for additional airports by repeating the last two steps.</p>
+
+
+
+
+
+
+
+
+    
+<h2>ACARS: vRoute flight plans</h2>
+
+
+
+
+
+
+
+
+    
+<p>In addition to loading a stored flight flightplan from a file on your system, you can download flight plans from <a href="http://www.vroute.net">vRoute</a> directly into the FMC. This requires an active Internet connection.</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for ACARS.</li>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for VROUTE FLIGHTPLANS.</li>
+
+
+
+
+
+
+
+
+      <li>Enter the origin and destination airports separated by a slash (e.g. KLAX/KATL).</li>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for <em>FROM/TO</em>.</li>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for <em>REQ FP</em>.</li>
+
+
+
+
+
+
+
+
+      <li>If multiple flight plans are available you can use the left
+and right arrow keys on the MCDU keypad to scroll between them. The
+distance, route and suggested flight levels are shown.</li>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for <em>TO ACTIVE</em>. The screen will
+change to the INIT page where you can enter the cruising flight level.
+The F-PLN page will show the route's waypoints.</li>
+
+
+
+
+
+
+  <li>If the ACTIVE AIRAC ONLY setting is set to YES, only routes matching your currently installed AIRAC will be found.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p class="warning"> Routes which include a SID or STAR will not load
+correctly from vRoute in this release. The SID/STAR will be interpreted
+as a waypoint and will most likely not be found. Departures and
+arrivals should be set from the <a href="#MCDUSIDSTAR">F-PLN</a> page by clicking  the origin and destination airport LSK.</p>
+
+
+
+
+
+
+<p><img style="width: 366px; height: 244px;" src="MCDUMENUPageVROUTE.jpg" alt="RAD NAV Page" /></p>
+
+
+
+
+
+
+
+
+    
+<h2>ACARS: ICAO flight plans</h2>
+
+
+
+
+
+
+
+
+    
+<p>As in version 1 of vasFMC you can enter an entire route  instead of entering waypoints one by one.</p>
+
+
+
+
+
+
+
+
+    
+<p class="tip">If you have a real world route you can copy it in
+Windows, then use the PASTE key to insert it in the FMC scratchpad
+line. Only the first 25 characters will be shown, but the entire route
+will still be recorded.</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for ACARS</li>
+
+
+
+
+
+
+
+
+      <li>Click the LSK for ICAO RTE.</li>
+
+
+
+
+
+
+
+
+      <li>Enter the origin &amp; destination airports, then click the <em>FROM/TO</em> LSK.</li>
+
+
+
+
+
+
+
+
+      <li>Enter or PASTE the waypoints separated by spaces, then click the <em>INSERT</em> LSK.</li>
+
+
+
+
+
+
+
+
+      <li>Click the <em>TO ACTIVE</em> LSK. The screen will change to the INIT page where you can enter the cruising altitude. The F-PLN page will show the new route.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+
+
+    
+<p> For example, a route from KORD to KBOS could be entered as: "SPA J14 PXT J191 RBV J222 JFK".</p>
+
+
+
+
+
+
+
+
+    
+<p class="warning">You cannot (yet) enter a SID or STAR this way. Departures and arrivals should be set from the <a href="#MCDUSIDSTAR">F-PLN</a> page by clicking  the origin and destination airport LSK.</p>
+
+
+
+
+
+
+
+
+    
+<h2>SQUAWKBOX</h2>
+
+
+
+
+
+
+
+
+    
+<p>This feature controls your transponder when using Squawkbox. FSInn
+users can ignore this feature since FSInn already controls the
+transponder.</p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>The top line shows the transponder status.</li>
+
+
+
+
+
+
+
+
+      <li>MANUAL: vasFMC will not influence the transponder.</li>
+
+
+
+
+
+
+
+
+      <li>AUTOMATIC: As soon as you are airborne, vasFMC will turn on
+the transponder until you are on the ground again, then vasFMC will
+switch it off automatically.</li>
+
+
+
+
+
+
+
+
+      <li>ON and OFF: Turns the transponder on or off. It will remain on or off until you change it.</li>
+
+
+
+
+
+
+  <li>Pressing the IDENT LSK will make your transponder to send the ident signal.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+<p><img style="width: 365px; height: 241px;" src="MCDUMENUPageSBOX.jpg" alt="RAD NAV Page" /></p>
+
+
+
+
+
+
+
+
+    
+<h2>CHECKLIST</h2>
+
+
+
+
+
+
+This page contains the fully configurable checklists. The checklist to
+be loaded is specified in the aircraft data profile which may be loaded
+on the MCDU MENU -&gt; FMGC page.<br />
+
+
+
+
+
+
+<br />
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+  <li>You may advance through the checklist in the following ways:</li>
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  <ul>
+
+
+
+
+
+
+    <li>Pressing the FORWARD LSK on the checklist page.</li>
+
+
+
+
+
+
+    <li>Using the hidden clickspot on the FCU right below the SPD/MACH button.</li>
+
+
+
+
+
+
+    <li>Using the FSUIPC offset command with the FSUIPC offset described in the vasFMC FSUIPC readme.&nbsp;</li>
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  </ul>
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+  <li>Items not yet executed are displayed white.</li>
+
+
+
+
+
+
+  <li>The current item is display magenta.</li>
+
+
+
+
+
+
+  <li>Accomplished items are displayed green.</li>
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+<br />
+
+
+
+
+
+
+You may also jump between checklists with the &lt;- and -&gt; buttons of the MCDU.
+<p><img style="width: 363px; height: 240px;" src="MCDUMENUPageCHECKLIST.jpg" alt="RAD NAV Page" /></p>
+
+
+
+
+
+
+<h2>SETTINGS</h2>
+
+
+
+
+
+
+
+
+    
+<p>This page contains miscellaneous parameters that are unique to
+vasFMC (i.e. they are not present in a real world FMC). All the
+settings have two choices which can be toggled with the respective LSK.</p>
+
+
+
+
+
+
+
+
+    
+<p><img style="width: 366px; height: 241px;" src="MCDUMENUSettings.jpg" alt="Misc settings" /></p>
+
+
+
+
+
+
+
+
+    
+<ul>
+
+
+
+
+
+
+
+
+      <li>INPUTAREAS will draw boxes around the mouse button hotspots on the <a href="MFCURef.htm">FCU</a>. This helps new users to remember them.</li>
+
+
+
+
+
+
+
+
+      <li>SOUNDS toggles the vasFMC sounds (like voice altitude callouts) on or off.</li>
+
+
+
+
+
+
+  <li>SOUND CHANNELS enables simultaneous playback of vasFMC sounds from different sources (e.g. co-pilot or computer callouts).</li>
+
+
+
+
+
+
+
+
+      
+
+      <li>TIME SYNC will synchronize the flight simulator's time with the real world.</li>
+
+
+
+
+
+
+
+
+      <li>DATE SYNC will synchronize the flight simulartor's date with the real world.</li>
+
+
+
+
+
+
+
+
+    
+</ul>
+
+
+
+
+
+
+<br />
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+  <li>TCAS toggles the display of other traffic on the ND.</li>
+
+
+
+
+
+
+  <li>FLY BY WIRE toggles the fly by wire system. The fly by wire
+system is currently tuned for the project airbus models and may not
+work with other aircraft.</li>
+
+
+
+
+
+
+  <li>A/THR MODE sets if&nbsp;either the FLIGHTSIM or VASFMC shall
+handle the autothrottle. The VASFMC mode may not work with all aircraft
+models.</li>
+
+
+
+
+
+
+  <li>AIRBUS A/THR When set to yes, your throttle levelwill behave liks
+in the real Airbus with detends for IDLE, CLIMB, FLEX/MCT and TOGA.</li>
+
+
+
+
+
+
+  <li>AIRBUS FLAPS en/disables Airbus like flap handling, e.g. flaps "1" and "1+F" handling.</li>
+
+
+
+
+
+
+  <li>SEPARATE THR LEVER should be turned on if you have separate hardware throttle lever inputs.</li>
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+<h2>FLY BY WIRE BANK / PITCH</h2>
+
+
+
+
+
+
+These pages may be used to change the fly by wire control parameters.<br />
+
+
+
+
+
+
+<h2>DISPLAY1</h2>
+
+
+
+
+
+
+This page presents various display related settings.
+<p><img style="width: 362px; height: 244px;" src="MCDUMENUPageDISP1.jpg" alt="Misc settings" /></p>
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+  <li>The upper three settings change the font sizes used by the FMC.</li>
+
+
+
+
+
+
+  <li>The lower three change the refresh rates of the FMC displays. You may enter refresh rates in milliseconds.</li>
+
+
+
+
+
+
+  <li>SHOW FPS toggles the refresh rate display on the FMC displays.</li>
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+<h2>DISPLAY2</h2>
+
+
+
+
+
+
+This page presents various display related settings.
+<p><img style="width: 362px; height: 242px;" src="MCDUMENUPageDISP2.jpg" alt="Misc settings" /></p>
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+  <li>ND SCROLL and CDU SCROLL define the scroll behavior of the MCDU up/down buttons and the mouse wheel.</li>
+
+
+
+
+
+
+  <li>ND WIND CORR is only active in B-style and may be used to change the ND&nbsp;display reference (heading or track).</li>
+
+
+
+
+
+
+  <li>FCU/MCP F/O (not available in the gauge version) toggles the right EFIS on and off.</li>
+
+
+
+
+
+
+  <li>CDU DISP ONLY toggles the MCDU to display only mode which may be used for hardware CDUs.</li>
+
+
+
+
+
+
+  <li>KEEP ON TOP toggles the FMC display to keep on top mode.</li>
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+<h2>INTERFACES</h2>
+
+
+
+
+
+
+<img style="width: 365px; height: 245px;" src="MCDUMENUPageIFACE.jpg" alt="Misc settings" /><br />
+
+
+
+
+
+
+<ul>
+
+
+
+
+
+
+  <li>FMC MODE may be set to SINGLE (single mode), MASTER (this vasFMC
+instance accepts connections from other vasFMC instances) or SLAVE
+(this vasFMC is connected to a master vasFMC instance). This function
+may be used to couple various vasFMC instances running on various PCs.</li>
+
+
+
+
+
+
+  <li>IOCP SERVER En/disables the vasFMC IOCP server, refer to the vasFMC IOCP readme for details.</li>
+
+
+
+
+
+
+  <li>CPFLIGHT MCP En/disables the vasFMC CPFLIGHT integration, refer to the vasFMC CPFLIGHT readme for details.</li>
+
+
+
+
+
+
+</ul>
+
+
+
+
+
+
+
+
+    
+<p><a href="#MCDUHome">Back to the top</a></p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUAirport" id="MCDUAirport"></a>Airport Key</h1>
+
+
+
+
+
+
+
+
+    
+<p>You can click on the AIRPORT key at any time to change the screen to
+the bottom of the flight plan page, which contains the destination
+airport.</p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUPaste" id="MCDUPaste"></a>Paste Key</h1>
+
+
+
+
+
+
+
+
+    
+<p>The PASTE key works exactly like the paste function (CTL-V) in
+Windows. It pastes whatever is in the Windows cut buffer into the MCDU
+scratchpad.</p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUArrows" id="MCDUArrows"></a>Arrow Keys</h1>
+
+
+
+
+
+
+
+
+    
+<p>The up &amp; down arrow keys scroll the MCDU screen in the direction
+indicated. In cases where a page key has more than one screen, the left
+&amp; right arrow keys scroll through the screens within the page. If a
+page scrollable small horizontal (upper right corner) and/or vertical
+(lower right corner) arrows will be shown on the page.</p>
+
+
+
+
+
+
+
+
+    
+<p><a href="#MCDUHome">Back to the top<br />
+
+
+
+
+
+
+
+</a></p>
+
+
+
+
+
+
+
+
+    
+<h1><a name="MCDUKeys" id="MCDUKeys"></a>Keyboard Control</h1>
+
+
+
+
+
+
+
+
+    
+<p>The MCDU keypad can be controlled through your computer's keyboard:</p>
+
+
+
+
+
+
+
+
+    
+<table class="KeyTable" cellpadding="2">
+
+
+
+
+
+
+
+
+      <tbody>
+
+
+
+
+
+
+
+    <tr>
+
+
+
+
+
+
+
+
+        <th scope="col">
+      
+      
+      
+      
+      
+      
+      
+      <div align="center">MCDU Key</div>
+
+
+
+
+
+
+
+      </th>
+
+
+
+
+
+
+
+
+        <th scope="col">
+      
+      
+      
+      
+      
+      
+      
+      <div align="center">Keyboard equivalent</div>
+
+
+
+
+
+
+
+      </th>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>Alphanumeric keys</td>
+
+
+
+
+
+
+
+
+        <td>a-z, 0-9, +, -, space</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>CLR</td>
+
+
+
+
+
+
+
+
+        <td>Backspace</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>Up/Down arrows</td>
+
+
+
+
+
+
+
+
+        <td>Up / Down Arrow<br />
+
+
+
+
+
+
+
+or<br />
+
+
+
+
+
+
+
+Page Up/Down</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>Left/Right arrows</td>
+
+
+
+
+
+
+
+
+        <td>Left / Right Arrow<br />
+
+
+
+
+
+
+
+or<br />
+
+
+
+
+
+
+
+Home/End</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>LSK on left</td>
+
+
+
+
+
+
+
+
+        <td>F1-F6</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>LSK on right</td>
+
+
+
+
+
+
+
+
+        <td>F7-F12</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>Page keys, 1st row</td>
+
+
+
+
+
+
+
+
+        <td>SHIFT F1-F6</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>Page keys, 2nd row</td>
+
+
+
+
+
+
+
+
+        <td>SHIFT F7-F12</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>Airport</td>
+
+
+
+
+
+
+
+
+        <td>CTL F1</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>Paste</td>
+
+
+
+
+
+
+
+
+        <td>Insert<br />
+
+
+
+
+
+
+
+or<br />
+
+
+
+
+
+
+
+CTL F12</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>Overfly</td>
+
+
+
+
+
+
+
+
+        <td>*</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+    
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+    
+<p>Other characteristics of the MCDU window can also be set from your keyboard:</p>
+
+
+
+
+
+
+
+
+    
+<table class="KeyTable" border="0" cellpadding="2">
+
+
+
+
+
+
+
+
+      <tbody>
+
+
+
+
+
+
+
+    <tr>
+
+
+
+
+
+
+
+
+        <th scope="col">
+      
+      
+      
+      
+      
+      
+      
+      <div align="center">Key</div>
+
+
+
+
+
+
+
+      </th>
+
+
+
+
+
+
+
+
+        <th scope="col">
+      
+      
+      
+      
+      
+      
+      
+      <div align="center">Function</div>
+
+
+
+
+
+
+
+      </th>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>ALT K</td>
+
+
+
+
+
+
+
+
+        <td>Toggles window borders - keep on top</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>ALT D</td>
+
+
+
+
+
+
+
+
+        <td>Toggles display-only mode</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      
+      <tr>
+
+
+
+
+
+
+
+
+        <td>ALT U</td>
+
+
+
+
+
+
+
+
+        <td>Puts the MCDU in the upper left corner of the screen</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+      <tr>
+
+
+
+
+
+
+
+
+        <td>ALT (SHIFT) arrows</td>
+
+
+
+
+
+
+
+
+        <td>Moves MCDU window in the specified direction</td>
+
+
+
+
+
+
+
+
+      </tr>
+
+
+
+
+
+
+
+
+    
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+    
+<p><a href="#MCDUHome">Back to the top</a></p>
+
+
+
+
+
+
+
+
+    
+<p>&nbsp;</p>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+  
+<div id="footer">
+    
+<p>&copy; Copyright 2008 by Guy Finney and Alex Wemmer. All Rights Reserved.</p>
+
+
+
+
+
+
+
+
+    <!-- end #footer -->
+  </div>
+
+
+
+
+
+
+
+
+  <!-- end #container -->
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

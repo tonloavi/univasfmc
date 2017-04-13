@@ -1,0 +1,70 @@
+[preparation|../checklist/preparation_cl.wav]
+parking brake|on|../checklist/parking_brake.wav|../checklist/on.wav
+thrust levers|idle|../checklist/thrust_levers.wav|../checklist/idle.wav
+eng master switches|off|../checklist/engine_master_switches.wav|../checklist/off.wav
+gear lever|down|../checklist/gear_lever.wav|../checklist/down.wav
+flaps|up|../checklist/flaps.wav|../checklist/up.wav
+spoilers|retract|../checklist/spoilers.wav|../checklist/retracted.wav
+bat 1+2|on|../checklist/battery_1_and_2.wav|../checklist/on.wav
+avionics|on|../checklist/avionics.wav|../checklist/on.wav
+aircraft lighting|as req|../checklist/aircraft_lighting.wav|../checklist/as_required.wav
+mcdu load f-plan|as req|../checklist/mcdu_load_fplan.wav|../checklist/as_required.wav
+mcdu init page|set|../checklist/mcdu_init_page.wav|../checklist/set.wav
+#mcdu init b page|set|../checklist/mcdu_init_b_page.wav|../checklist/set.wav
+mcdu f-pln page|set|../checklist/mcdu_fplan_page.wav|../checklist/set.wav
+mcdu perf page|set|../checklist/mcdu_perf_page.wav|../checklist/set.wav
+fuel load|checked|../checklist/fuel_load.wav|../checklist/checked.wav
+-- complete --||../checklist/checklist_completed.wav
+
+[before p/b or start|../checklist/berfore_push_or_start_cl.wav]
+takeoff data|inserted|../checklist/takeoff_data.wav|../checklist/inserted.wav
+altimeters|set|../checklist/altimeters.wav|../checklist/set.wav
+no smoking signs|on|../checklist/no_smoking_signs.wav|../checklist/on.wav
+seat belts|on|../checklist/seat_belt_signs.wav|../checklist/on.wav
+beacon|on|../checklist/beacon.wav|../checklist/on.wav
+thrust levers|idle|../checklist/thrust_levers.wav|../checklist/idle.wav
+parking brake|as req|../checklist/parking_brake.wav|../checklist/as_required.wav
+-- complete --||../checklist/checklist_completed.wav
+
+[engine start|../checklist/engine_start_cl.wav]
+engine area|clear|../checklist/engine_area.wav|../checklist/clear.wav
+-- complete --||../checklist/checklist_completed.wav
+
+[taxi|../checklist/taxi_cl.wav]
+anti ice|as req|../checklist/anti_ice.wav|../checklist/as_required.wav
+elevator trim|set|../checklist/elevator_trim.wav|../checklist/set.wav
+flight controls|checked|../checklist/flight_controls.wav|../checklist/checked.wav
+flaps|set|../checklist/flaps.wav|../checklist/set.wav
+brakes|checked|../checklist/brakes.wav|../checklist/checked.wav
+flight director|on|../checklist/flight_director.wav|../checklist/on.wav
+cabin report|recvd|../checklist/cabin_report.wav|../checklist/received.wav
+-- complete --||../checklist/checklist_completed.wav
+
+[takeoff|../checklist/takeoff_cl.wav]
+takeoff memo|all green|../checklist/takeoff_memo.wav|../checklist/all_green.wav
+flaps|set|../checklist/flaps.wav|../checklist/set.wav
+packs|as req.|../checklist/packs.wav|../checklist/as_required.wav
+aircraft lighting|set|../checklist/aircraft_lighting.wav|../checklist/set.wav
+-- complete --||../checklist/checklist_completed.wav
+
+[landing|../checklist/landing_cl.wav]
+no smoking signs|on|../checklist/no_smoking_signs.wav|../checklist/on.wav
+seat belts|on|../checklist/seat_belt_signs.wav|../checklist/on.wav
+cabin report|recvd|../checklist/cabin_report.wav|../checklist/received.wav
+ldg memo|all green|../checklist/ldg_memo.wav|../checklist/all_green.wav
+flaps|set|../checklist/flaps.wav|../checklist/set.wav
+-- complete --||../checklist/checklist_completed.wav
+
+[after landing|../checklist/after_landing_cl.wav]
+spoilers|retract|../checklist/spoilers.wav|../checklist/retracted.wav
+flaps|retract|../checklist/flaps.wav|../checklist/retracted.wav
+aircraft lighting|as req|../checklist/aircraft_lighting.wav|../checklist/as_required.wav
+-- complete --||../checklist/checklist_completed.wav
+
+[parking|../checklist/parking_cl.wav]
+parking brake|on|../checklist/parking_brake.wav|../checklist/on.wav
+anti ice|off|../checklist/anti_ice.wav|../checklist/off.wav
+eng master switches|off|../checklist/engine_master_switches.wav|../checklist/off.wav
+seat belts|off|../checklist/seat_belt_signs.wav|../checklist/off.wav
+aircraft lighting|as req|../checklist/aircraft_lighting.wav|../checklist/as_required.wav
+-- complete --||../checklist/checklist_completed.wav

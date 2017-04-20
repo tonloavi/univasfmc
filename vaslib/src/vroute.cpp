@@ -42,7 +42,8 @@ VRoute::VRoute(const QString& vroute_host, const QString& vroute_dir) :
 {
     MYASSERT(m_http != 0);
 //    m_http->setHost(m_vroute_host);
-    MYASSERT(connect(m_http, SIGNAL(requestFinished(int, bool)), this, SLOT(slotCmdFin(int, bool))));
+//    MYASSERT(connect(m_http, SIGNAL(requestFinished(int, bool)), this, SLOT(slotCmdFin(int, bool))));
+    connect(m_http, SIGNAL(requestFinished(int, bool)), this, SLOT(slotCmdFin(int, bool)));
 }
 
 /////////////////////////////////////////////////////////////////////////////

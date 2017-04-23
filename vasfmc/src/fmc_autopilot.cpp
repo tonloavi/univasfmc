@@ -1156,7 +1156,7 @@ void FMCAutopilot::setHeadingHold(bool set_current_hdg)
         setNAVCouple(false);
         m_fmc_control->fsAccess().setAPHeadingHold(true);
         if (set_current_hdg)
-            m_fmc_control->fsAccess().setAPHeading(Navcalc::round(m_flightstatus->smoothedMagneticHeading()));
+            m_fmc_control->setAPHeading(Navcalc::round(m_flightstatus->smoothedMagneticHeading()));
     }
 }
 
@@ -1210,7 +1210,7 @@ void FMCAutopilot::setALTHold(bool set_current_alt)
     if (isFLChangeModeActive()) setFLChangeMode(false, false);
     m_fmc_control->fsAccess().setAPAltHold(true);
     if (set_current_alt)
-        m_fmc_control->fsAccess().setAPAlt((int)m_flightstatus->smoothed_altimeter_readout.lastValue());
+        m_fmc_control->setAPAlt((int)m_flightstatus->smoothed_altimeter_readout.lastValue());
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -1479,9 +1479,9 @@ void FMCAutopilot::calculateLateral()
             }
 
             if (m_takeoff_lateral_target_track < 0)
-                m_fmc_control->fsAccess().setAPHeading(m_flightstatus->smoothedMagneticHeading());
+                m_fmc_control->setAPHeading(m_flightstatus->smoothedMagneticHeading());
             else
-                m_fmc_control->fsAccess().setAPHeading(m_takeoff_lateral_target_track + 
+                m_fmc_control->setAPHeading(m_takeoff_lateral_target_track +
                                                        m_flightstatus->wind_correction_angle_deg);
         }
     }
@@ -1567,7 +1567,7 @@ void FMCAutopilot::calculateLateral()
     // set autopilot heading 
 
     m_last_nav_calculated_heading = autopilot_heading;
-    if (isNAVCoupled() && !isTakeoffModeActiveLateral()) m_fmc_control->fsAccess().setAPHeading(autopilot_heading);
+    if (isNAVCoupled() && !isTakeoffModeActiveLateral()) m_fmc_control->setAPHeading(autopilot_heading);
 }
 
 /////////////////////////////////////////////////////////////////////////////

@@ -473,9 +473,9 @@ void FMCFCUStyleA::slotInputMouseButton(const QString& text, QMouseEvent* event)
         if (!m_fmc_control->fmcAutoPilot().isNAVCoupled())
         {
             if (event->button() == Qt::LeftButton)
-                m_fmc_control->fsAccess().setAPHeading(Navcalc::trimHeading(((int)flightstatus->APHdg())-1));
+                m_fmc_control->setAPHeading(Navcalc::trimHeading(((int)flightstatus->APHdg())-1));
             else if (event->button() == Qt::RightButton)
-                m_fmc_control->fsAccess().setAPHeading(Navcalc::trimHeading(((int)flightstatus->APHdg())-10));
+                m_fmc_control->setAPHeading(Navcalc::trimHeading(((int)flightstatus->APHdg())-10));
         }
     }
     else if (text == FMC_FCU_INPUT_KNOB_HDG_RIGHT && event != 0)
@@ -483,9 +483,9 @@ void FMCFCUStyleA::slotInputMouseButton(const QString& text, QMouseEvent* event)
         if (!m_fmc_control->fmcAutoPilot().isNAVCoupled())
         {
             if (event->button() == Qt::LeftButton)
-                m_fmc_control->fsAccess().setAPHeading(Navcalc::trimHeading(((int)flightstatus->APHdg())+1));
+                m_fmc_control->setAPHeading(Navcalc::trimHeading(((int)flightstatus->APHdg())+1));
             else if (event->button() == Qt::RightButton)
-                m_fmc_control->fsAccess().setAPHeading(Navcalc::trimHeading(((int)flightstatus->APHdg())+10));
+                m_fmc_control->setAPHeading(Navcalc::trimHeading(((int)flightstatus->APHdg())+10));
         }
     }
     else if (text == FMC_FCU_INPUT_KNOB_ALT && event != 0)
@@ -504,16 +504,16 @@ void FMCFCUStyleA::slotInputMouseButton(const QString& text, QMouseEvent* event)
     else if (text == FMC_FCU_INPUT_KNOB_ALT_LEFT && event != 0)
     {
         if (event->button() == Qt::LeftButton && m_alt_set_mode == ALT_SET_MODE_100FT)
-            m_fmc_control->fsAccess().setAPAlt(qMax(flightstatus->APAlt() - 100, 0));
+            m_fmc_control->setAPAlt(qMax(flightstatus->APAlt() - 100, 0));
         else if (event->button() == Qt::RightButton || m_alt_set_mode == ALT_SET_MODE_1000FT)
-            m_fmc_control->fsAccess().setAPAlt(qMax(flightstatus->APAlt() - 1000, 0));
+            m_fmc_control->setAPAlt(qMax(flightstatus->APAlt() - 1000, 0));
     }
     else if (text == FMC_FCU_INPUT_KNOB_ALT_RIGHT && event != 0)
     {
         if (event->button() == Qt::LeftButton && m_alt_set_mode == ALT_SET_MODE_100FT)
-            m_fmc_control->fsAccess().setAPAlt(qMin(flightstatus->APAlt()+100, 50000));
+            m_fmc_control->setAPAlt(qMin(flightstatus->APAlt()+100, 50000));
         else if (event->button() == Qt::RightButton || m_alt_set_mode == ALT_SET_MODE_1000FT)
-            m_fmc_control->fsAccess().setAPAlt(qMin(flightstatus->APAlt()+1000, 50000));
+            m_fmc_control->setAPAlt(qMin(flightstatus->APAlt()+1000, 50000));
     }
 
     else if (text == FMC_FCU_INPUT_KNOB_VS && event != 0)

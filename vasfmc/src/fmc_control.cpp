@@ -585,6 +585,16 @@ void FMCControl::switchToXPlane()
 
 /////////////////////////////////////////////////////////////////////////////
 
+void FMCControl::setAPHeading(double heading) {
+    fsAccess().setAPHeading(heading);
+}
+
+void FMCControl::setAPAlt(unsigned int alt) {
+    fsAccess().setAPAlt(alt);
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
 #ifdef HAVE_PLIB
 void FMCControl::switchToFGFS()
 {

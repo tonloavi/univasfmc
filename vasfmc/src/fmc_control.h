@@ -199,6 +199,9 @@ public:
 
     void setupFlightStatusChecker();
 
+    void setAPHeading(double heading);
+    void setAPAlt(unsigned int alt);
+
     //TODO move to FMCAutopilot!!
     BankController* bankController() const { return m_bank_controller; }
     PitchController* pitchController() const { return m_pitch_controller; }

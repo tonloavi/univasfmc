@@ -586,11 +586,15 @@ void FMCControl::switchToXPlane()
 /////////////////////////////////////////////////////////////////////////////
 
 void FMCControl::setAPHeading(double heading) {
-    fsAccess().setAPHeading(heading);
+    if(isRnavModeOn()) {
+        fsAccess().setAPHeading(heading);
+    }
 }
 
 void FMCControl::setAPAlt(unsigned int alt) {
-    fsAccess().setAPAlt(alt);
+    if (isVnavModeOn()) {
+        fsAccess().setAPAlt(alt);
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////////

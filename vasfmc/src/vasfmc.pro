@@ -252,7 +252,8 @@ HEADERS	+= \
     fmc_gps.h \
     fmc_gps_defines.h \
     fmc_gps_style_g.h \
-    checklist.h
+    checklist.h \
+    fmc_navmode.h
 
 # Extra headers for the gauge
 win32:gauge {
@@ -310,7 +311,8 @@ SOURCES	+= \
     fmc_gps.cpp \
     fmc_gps_style_g.cpp \
     main.cpp \
-    checklist.cpp
+    checklist.cpp \
+    fmc_navmode.cpp
 
 # Source files specific for the gauge
 win32:gauge {
@@ -345,4 +347,5 @@ FORMS += \
     ui/fmc_cdu.ui \
     ui/fmc_console.ui \
     ui/fmc_fcu.ui \
-    ui/fmc_gps.ui
+    ui/fmc_gps.ui \
+    ui/fmc_navmode.ui

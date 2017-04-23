@@ -419,6 +419,8 @@ void FMCControl::setupDefaultConfig()
     m_control_cfg->setValue(CFG_SYNC_CLOCK_TIME, 0);
     m_control_cfg->setValue(CFG_SYNC_CLOCK_DATE, 0);
     m_control_cfg->setValue(CFG_TCAS, CFG_TCAS_ON);
+    m_control_cfg->setValue(CFG_RNAV_MODE, 1);
+    m_control_cfg->setValue(CFG_VNAV_MODE, 1);
 
     m_control_cfg->setValue(CFG_NOISE_GENERATION_INTERVAL_MS, 200);
     m_control_cfg->setValue(CFG_ADF_NOISE_LIMIT_DEG, 45.0);
@@ -1698,6 +1700,10 @@ bool FMCControl::isTCASOff() const { return m_control_cfg->getIntValue(CFG_TCAS)
 bool FMCControl::isTCASStandby() const { return m_control_cfg->getIntValue(CFG_TCAS) == CFG_TCAS_STDBY; }
 bool FMCControl::isTCASOn() const { return m_control_cfg->getIntValue(CFG_TCAS) == CFG_TCAS_ON; }
 
+bool FMCControl::isVnavModeOn() const { return m_control_cfg->getIntValue(CFG_VNAV_MODE) == 1; }
+bool FMCControl::isVnavModeOff() const { return m_control_cfg->getIntValue(CFG_VNAV_MODE) == 0; }
+bool FMCControl::isRnavModeOn() const { return m_control_cfg->getIntValue(CFG_RNAV_MODE) == 1; }
+bool FMCControl::isRnavModeOff() const { return m_control_cfg->getIntValue(CFG_RNAV_MODE) == 0; }
 /////////////////////////////////////////////////////////////////////////////
 
 void FMCControl::setKeepOnTop(bool yes)

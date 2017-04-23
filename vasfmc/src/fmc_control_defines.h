@@ -71,6 +71,8 @@
 #define CFG_FCU_LEFT_ONLY_MODE "fcu_left_only_mode"
 #define CFG_CDU_DISPLAY_ONLY_MODE "cdu_display_only_mode"
 #define CFG_TCAS "tcas"
+#define CFG_VNAV_MODE "vnav"
+#define CFG_RNAV_MODE "rnav"
 
 #define CFG_NOISE_GENERATION_INTERVAL_MS "noise_generation_intervall_ms"
 #define CFG_ADF_NOISE_LIMIT_DEG "adf_noise_limit_degrees"

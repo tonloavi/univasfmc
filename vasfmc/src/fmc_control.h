@@ -381,6 +381,12 @@ public:
     bool isTCASOn() const;
     bool isTCASStandby() const;
     bool isTCASOff() const;
+
+    bool isVnavModeOn() const;
+    bool isVnavModeOff() const;
+    bool isRnavModeOn() const;
+    bool isRnavModeOff() const;
+
     void toggleTCAS();
 
     void startPushBack(uint pushback_dist_before_turn_m,

@@ -36,6 +36,7 @@
 
 #include "ui_fmc_console.h"
 
+class fmc_navmodeHandler;
 class FMCGPSHandler;
 class FMCFCUHandler;
 class FMCCDUHandler;
@@ -84,6 +85,7 @@ public:
     FMCPFDHandler *fmcPFDLeftHandler() { return m_pfd_left_handler; }
     FMCNavdisplayHandler *fmcNavdisplayLeftHandler() { return m_navdisplay_left_handler; }
     FMCECAMHandler* fmcUpperEcamHandler() { return m_upper_ecam_handler; }
+    fmc_navmodeHandler* fmc_navmodeHandler() {return fmc_navmodeHandler};
     //TODOFMCECAMHandler* fmcLowerEcamHandler() { return m_lower_ecam_handler; }
 #endif
 
@@ -108,6 +110,7 @@ protected slots:
     void slotGPSButton();
 #if !VASFMC_GAUGE
     void slotNDRightButton();
+    void slotNavmodeButton();
     void slotPFDRightButton();
     void slotCDURightButton();
 #endif
@@ -155,6 +158,7 @@ protected:
     QSplashScreen* m_splash;
     InfoDlgImpl* m_info_dlg;
 
+    fmc_navmodeHandler* m_navmode_handler;
     FMCGPSHandler* m_gps_handler;
     FMCFCUHandler* m_fcu_handler;
     FMCCDUHandler* m_cdu_left_handler;

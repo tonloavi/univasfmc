@@ -42,6 +42,7 @@
 #include "fmc_control.h"
 #include "opengltext.h"
 #include "vas_path.h"
+#include "fmc_navmode.h"
 #ifdef USE_OPENAL
 // To destroy ALContext Singleton
 #include "fmc_sounds.h"
@@ -72,7 +73,7 @@ FMCConsole::FMCConsole(QWidget* parent, Qt::WindowFlags fl, const QString& style
     m_gps_handler(0), m_fcu_handler(0), m_cdu_left_handler(0), m_cdu_right_handler(0), m_navdisplay_left_handler(0), 
     m_pfd_left_handler(0), m_navdisplay_right_handler(0), m_pfd_right_handler(0), m_logline_count(0),
     m_quit_action(0), m_fsaccess_msfs_action(0), m_fsaccess_xplane_action(0), m_fsaccess_fgfs_action(0), 
-    m_style_a_action(0), m_style_b_action(0), m_style_g_action(0)
+    m_style_a_action(0), m_style_b_action(0), m_style_g_action(0), m_navmode_handler(0)
 {
     Logger::log(QString("FMCConsole: current_dir=%1").arg(QDir::currentPath()));
 
@@ -134,9 +135,9 @@ FMCConsole::FMCConsole(QWidget* parent, Qt::WindowFlags fl, const QString& style
     MYASSERT(connect(cdu_right_btn, SIGNAL(clicked()), this, SLOT(slotCDURightButton())));
     MYASSERT(connect(upper_ecam_btn, SIGNAL(clicked()), this, SLOT(slotUpperECAMButton())));
     MYASSERT(connect(fcu_btn, SIGNAL(clicked()), this, SLOT(slotFCUButton())));
-    MYASSERT(connect(gps_btn, SIGNAL(clicked()), this, SLOT(slotGPSButton())));
+    MYASSERT(connect(gps_btn, SIGNAL(clicked()), this, SLOT(slotNavmodeButton())));
     //TODO
-    gps_btn->setEnabled(false);
+    //gps_btn->setEnabled(false);
     //TODOMYASSERT(connect(lower_ecam_btn, SIGNAL(clicked()), this, SLOT(slotLowerECAMButton())));
     MYASSERT(connect(pfd_right_btn, SIGNAL(clicked()), this, SLOT(slotPFDRightButton())));
     MYASSERT(connect(nd_right_btn, SIGNAL(clicked()), this, SLOT(slotNDRightButton())));
@@ -204,6 +205,9 @@ FMCConsole::FMCConsole(QWidget* parent, Qt::WindowFlags fl, const QString& style
     // setup right FMC CDU
     m_cdu_right_handler = new FMCCDUHandler(this, m_main_config, CFG_CDU_RIGHT_FILENAME, m_fmc_control, false);
     MYASSERT(m_cdu_right_handler != 0);
+
+    m_navmode_handler = new fmc_navmodeHandler(this, m_main_config, m_fmc_control);
+    MYASSERT(m_navmode_handler != 0);
 #endif
 
     // setup upper ECAM display
@@ -259,6 +263,7 @@ FMCConsole::~FMCConsole()
     delete m_navdisplay_right_handler;
     delete m_pfd_right_handler;
     delete m_fmc_sounds_handler;
+    delete m_navmode_handler;
 
 #ifdef USE_OPENAL
     AlContext::destroyContext();
@@ -700,6 +705,13 @@ void FMCConsole::slotPFDLeftButton()
 void FMCConsole::slotNDRightButton()
 {
     m_navdisplay_right_handler->isVisible() ? m_navdisplay_right_handler->hide() : m_navdisplay_right_handler->show();
+}
+
+void FMCConsole::slotNavmodeButton() {
+    if (m_navmode_handler == NULL) {
+        qWarning() << "Warning Message";
+    }
+    m_navmode_handler->isVisible() ? m_navmode_handler->hide() : m_navmode_handler->show();
 }
 
 /////////////////////////////////////////////////////////////////////////////

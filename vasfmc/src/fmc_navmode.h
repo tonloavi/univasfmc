@@ -27,9 +27,9 @@ public:
 
 public slots:
 
-    void slotRnavCheckBoxTriggered() {m_fmc_control->setRnavMode(rnavChackBox->isChecked());}
+    void slotRnavCheckBoxTriggered() {m_fmc_control->setRnavMode(ui->rnavChackBox->isChecked());}
 
-    void slotVnavCheckBoxTriggered() {m_fmc_control->setVnavMode(vnavCheckBox->isChecked());}
+    void slotVnavCheckBoxTriggered() {m_fmc_control->setVnavMode(ui->vnavCheckBox->isChecked());}
 
 protected:
 

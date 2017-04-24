@@ -7,12 +7,22 @@ fmc_navmode::fmc_navmode(FMCControl *fmc_control, QWidget *parent, Qt::WindowFla
     ui(new Ui::fmc_navmode)
 {
     ui->setupUi(this);
+    MYASSERT(connect(rnavChackBox, SIGNAL(clicked()), this, SLOT(slotRnavCheckBoxTriggered())));
+    MYASSERT(connect(vnavCheckBox, SIGNAL(clicked()), this, SLOT(slotVnavCheckBoxTriggered())));
 }
 
 
 fmc_navmode::~fmc_navmode()
 {
     delete ui;
+}
+
+void fmc_navmode::slotRnavCheckBoxTriggered() {
+
+}
+
+void fmc_navmode::slotVnavCheckBoxTriggered() {
+
 }
 
 ///////////////////////////////////////////////////

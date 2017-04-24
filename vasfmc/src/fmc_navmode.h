@@ -6,6 +6,7 @@
 #include "defines.h"
 #include "config.h"
 #include "vas_widget.h"
+#include "ui_fmc_navmode.h"
 
 class FMCControl;
 
@@ -13,7 +14,7 @@ namespace Ui {
 class fmc_navmode;
 }
 
-class fmc_navmode : public VasWidget
+class fmc_navmode : public VasWidget, private Ui::fmc_navmode
 {
     Q_OBJECT
 
@@ -21,9 +22,17 @@ public:
     fmc_navmode(FMCControl* fmc_control, QWidget *parent, Qt::WindowFlags fl);
     ~fmc_navmode();
 
+public slots:
+
+    void slotRnavCheckBoxTriggered();
+
+    void slotVnavCheckBoxTriggered();
+
 private:
     Ui::fmc_navmode *ui;
 };
+
+
 
 /////////////////////////////////////////////////
 

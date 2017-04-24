@@ -4,8 +4,11 @@
 #include <QWidget>
 #include <QTimer>
 #include "defines.h"
+#include "assert.h"
+#include "logger.h"
 #include "config.h"
 #include "vas_widget.h"
+#include "fmc_control.h"
 #include "ui_fmc_navmode.h"
 
 class FMCControl;
@@ -24,9 +27,9 @@ public:
 
 public slots:
 
-    void slotRnavCheckBoxTriggered();
+    void slotRnavCheckBoxTriggered() {m_fmc_control->setRnavMode(rnavChackBox->isChecked());}
 
-    void slotVnavCheckBoxTriggered();
+    void slotVnavCheckBoxTriggered() {m_fmc_control->setVnavMode(vnavCheckBox->isChecked());}
 
 protected:
 

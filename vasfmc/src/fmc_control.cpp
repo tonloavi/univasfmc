@@ -1718,6 +1718,22 @@ bool FMCControl::isVnavModeOn() const { return m_control_cfg->getIntValue(CFG_VN
 bool FMCControl::isVnavModeOff() const { return m_control_cfg->getIntValue(CFG_VNAV_MODE) == 0; }
 bool FMCControl::isRnavModeOn() const { return m_control_cfg->getIntValue(CFG_RNAV_MODE) == 1; }
 bool FMCControl::isRnavModeOff() const { return m_control_cfg->getIntValue(CFG_RNAV_MODE) == 0; }
+
+void FMCControl::setRnavMode(bool enabled) {
+    if(enabled) {
+        m_control_cfg->setValue(CFG_RNAV_MODE, 1);
+    } else {
+        m_control_cfg->setValue(CFG_RNAV_MODE, 0);
+    }
+}
+
+void FMCControl::setVnavMode(bool enabled) {
+    if(enabled) {
+        m_control_cfg->setValue(CFG_VNAV_MODE, 1);
+    } else {
+        m_control_cfg->setValue(CFG_VNAV_MODE, 0);
+    }
+}
 /////////////////////////////////////////////////////////////////////////////
 
 void FMCControl::setKeepOnTop(bool yes)

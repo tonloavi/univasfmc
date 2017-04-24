@@ -4,7 +4,7 @@
 
 fmc_navmode::fmc_navmode(FMCControl *fmc_control, QWidget *parent, Qt::WindowFlags fl) :
     VasWidget(parent, fl),
-    ui(new Ui::fmc_navmode)
+    ui(new Ui::fmc_navmode), m_fmc_control(fmc_control)
 {
     ui->setupUi(this);
     MYASSERT(connect(rnavChackBox, SIGNAL(clicked()), this, SLOT(slotRnavCheckBoxTriggered())));
@@ -18,11 +18,11 @@ fmc_navmode::~fmc_navmode()
 }
 
 void fmc_navmode::slotRnavCheckBoxTriggered() {
-
+    m_fmc_control->setRnavMode(rnavChackBox->isChecked());
 }
 
 void fmc_navmode::slotVnavCheckBoxTriggered() {
-
+    m_fmc_control->setVnavMode(vnavCheckBox->isChecked());
 }
 
 ///////////////////////////////////////////////////

@@ -387,8 +387,10 @@ public:
 
     bool isVnavModeOn() const;
     bool isVnavModeOff() const;
+    void setVnavMode(bool enabled);
     bool isRnavModeOn() const;
     bool isRnavModeOff() const;
+    void setRnavMode(bool enabled);
 
     void toggleTCAS();
 

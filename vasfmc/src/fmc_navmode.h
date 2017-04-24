@@ -28,6 +28,10 @@ public slots:
 
     void slotVnavCheckBoxTriggered();
 
+protected:
+
+    FMCControl* m_fmc_control;
+
 private:
     Ui::fmc_navmode *ui;
 };

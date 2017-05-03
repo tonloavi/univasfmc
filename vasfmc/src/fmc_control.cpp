@@ -597,6 +597,12 @@ void FMCControl::setAPAlt(unsigned int alt) {
     }
 }
 
+bool FMCControl::setAPVs(int vs_ft_min) {
+    if (isVnavModeOn()) {
+        fsAccess().setAPVs(vs_ft_min);
+    }
+}
+
 /////////////////////////////////////////////////////////////////////////////
 
 #ifdef HAVE_PLIB

@@ -201,6 +201,7 @@ public:
 
     void setAPHeading(double heading);
     void setAPAlt(unsigned int alt);
+    bool setAPVs(int vs_ft_min);
 
     //TODO move to FMCAutopilot!!
     BankController* bankController() const { return m_bank_controller; }

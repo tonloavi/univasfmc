@@ -1813,12 +1813,12 @@ void FMCAutopilot::calculateVertical()
                 if (m_flightstatus->APVs() > 2000)
                 {
                     Logger::log("FMCAutopilot:calculateVertical: Reducing climb rate");
-                    m_fmc_control->fsAccess().setAPVs(2000);
+                    m_fmc_control->setAPVs(2000);
                 }
                 else if (m_flightstatus->APVs() < -2000)
                 {
                     Logger::log("FMCAutopilot:calculateVertical: Reducing descent rate");
-                    m_fmc_control->fsAccess().setAPVs(-2000);
+                    m_fmc_control->setAPVs(-2000);
                 }
             }
             else
@@ -1887,7 +1887,7 @@ void FMCAutopilot::calculateVertical()
 //                             arg(vs_change, 0, 'f', 0).arg(m_fl_change_cmd_vs, 0, 'f', 0).arg(vs, 0, 'f', 0).
 //                             arg(m_flightstatus->smoothedFlightDirectorPitch(), 0, 'f', 2));
             
-                m_fmc_control->fsAccess().setAPVs(Navcalc::round(m_fl_change_cmd_vs));
+                m_fmc_control->setAPVs(Navcalc::round(m_fl_change_cmd_vs));
             }
         }
     }
@@ -1900,7 +1900,7 @@ void FMCAutopilot::calculateVertical()
             Navcalc::round(Navcalc::getVsByFlightPath(m_flightstatus->ground_speed_kts, m_flightpath_angle)));
 
         if (m_flightstatus->APVs() != m_vertical_speed && abs_ap_alt_diff > ALT_CAPTURE_VS_INHIBIT)
-            m_fmc_control->fsAccess().setAPVs(m_vertical_speed);
+            m_fmc_control->setAPVs(m_vertical_speed);
     }
     else if (isVsModeActive())
     {
@@ -1910,7 +1910,7 @@ void FMCAutopilot::calculateVertical()
         // set the AP VS when the VS mode is engaged
 
         if (m_do_set_vs_to_ap)
-            m_fmc_control->fsAccess().setAPVs(m_vertical_speed);
+            m_fmc_control->setAPVs(m_vertical_speed);
         else if (m_flightstatus->APVs() != m_vertical_speed && abs_ap_alt_diff > ALT_CAPTURE_VS_INHIBIT)
             setVerticalSpeedInternal(m_flightstatus->APVs());
     }

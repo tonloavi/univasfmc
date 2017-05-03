@@ -184,8 +184,6 @@ public:
 
     virtual void writeFMCStatusToSim(const FMCStatusData&) {};
 
-protected:
-
     //! this method shall only be called by FMCAutopilot
     virtual bool setAPVs(int vs_ft_min) = 0;
 

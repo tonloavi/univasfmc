@@ -167,18 +167,18 @@ FMCCDUPageManagerStyleA::FMCCDUPageManagerStyleA(Config* cdu_config, FMCControl*
 {
     MYASSERT(fmc_control != 0);
 
-    addPage(new FMCCDUPageStyleATest(PAGE_TEST, this));
+//    addPage(new FMCCDUPageStyleATest(PAGE_TEST, this));
     addPage(new FMCCDUPageStyleADirect(PAGE_DIRECT, this));
     addPage(new FMCCDUPageStyleAInit(PAGE_INIT, this));
-    addPage(new FMCCDUPageStyleANavigation(PAGE_NAV, this));
-    addPage(new FMCCDUPageStyleAAirport(PAGE_AIRPORT, this));
+//    addPage(new FMCCDUPageStyleANavigation(PAGE_NAV, this));
+//    addPage(new FMCCDUPageStyleAAirport(PAGE_AIRPORT, this));
     addPage(new FMCCDUPageStyleAData(PAGE_DATA, this));
     addPage(new FMCCDUPageStyleAFPSave(PAGE_FPSAVE, this));
-    addPage(new FMCCDUPageStyleAProgress(PAGE_PROG, this));
-    addPage(new FMCCDUPageStyleAPerformance(PAGE_PERF, this));
-    addPage(new FMCCDUPageStyleAFuelPred(PAGE_FPRED, this));
-    addPage(new FMCCDUPageStyleASecFlightplan(PAGE_SECFP, this));
-    addPage(new FMCCDUPageStyleAATC(PAGE_ATC, this));
+//    addPage(new FMCCDUPageStyleAProgress(PAGE_PROG, this));
+//    addPage(new FMCCDUPageStyleAPerformance(PAGE_PERF, this));
+//    addPage(new FMCCDUPageStyleAFuelPred(PAGE_FPRED, this));
+//    addPage(new FMCCDUPageStyleASecFlightplan(PAGE_SECFP, this));
+//    addPage(new FMCCDUPageStyleAATC(PAGE_ATC, this));
     setWptPage(new FMCCDUPageStyleAWaypoint("WPT", this));
     setHoldingPage(new FMCCDUPageStyleAHolding("HOLD", this));
     setWptSelectPage(new FMCCDUPageStyleAWaypointSelect("WPTSEL", this));
